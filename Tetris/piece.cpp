@@ -13,15 +13,15 @@ Color* Piece::getPiece(){
 }
 
 bool Piece::isColliding(Color* board){
-
+    return true;
 }
 
 bool Piece::rotateLeft(Color* board){
-
+    return true;
 }
 
 bool Piece::rotateRight(Color* board){
-
+    return true;
 }
 
 

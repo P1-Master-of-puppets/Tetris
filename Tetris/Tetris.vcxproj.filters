@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Logic">
+      <UniqueIdentifier>{c32b4567-cd8b-4885-8d41-fde791be43cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic\Pieces">
+      <UniqueIdentifier>{cfa9b562-03a8-4828-be7d-9a0d764bdc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic">
+      <UniqueIdentifier>{f41349ef-da34-4ba5-8e4a-c96d2ff927c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\Pieces">
+      <UniqueIdentifier>{abdf6d94-d3a4-4dc3-96e5-b3d2125f60cf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Tetris.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leftL.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="leftS.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="longBar.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="piece.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="rightL.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="rightS.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="square.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="thomas.cpp">
+      <Filter>Source Files\Logic\Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="colors.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="longBar.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="piece.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="rightL.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="rightS.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="square.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="leftL.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="leftS.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

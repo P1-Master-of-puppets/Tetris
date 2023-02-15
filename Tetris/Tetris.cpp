@@ -4,6 +4,7 @@
 #include <iostream>
 #include "game.h"
 #include "ColorArray2D.h"
+#include "test.h"
 int main()
 {
     //Game game = Game();

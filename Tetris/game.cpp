@@ -26,7 +26,7 @@ const Piece* Game::getPiece()
 	// TODO: insert return statement here
 }
 
-const ColorArray2D Game::getBoardWithPiece()
+const ColorArray2D& Game::getBoardWithPiece()
 {
 	return ColorArray2D(1,1);
 }

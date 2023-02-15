@@ -18,10 +18,18 @@ ColorArray2D::ColorArray2D(int width, int height)
 {
 	_height = height;
 	_width = width;
-	_grid = new Color*[width];
-	for (int i = 0; i < width; i++)
+	_grid = new Color * [height];
+	for (int i = 0; i < height; i++)
 	{
-		_grid[i] = new Color[height];
+		_grid[i] = new Color[width];
+	}
+
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			_grid[i][j] = Color::Transparent;
+		}
 	}
 }
 

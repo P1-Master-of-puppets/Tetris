@@ -1,5 +1,5 @@
-#ifndef COORDONNEE_H
-#define COORDONNEE_H
+#ifndef COORDINATE_H__
+#define COORDINATE_H__
 
 struct Coordinate
 {
@@ -7,4 +7,4 @@ struct Coordinate
 	int y;
 };
 
-#endif
+#endif //COORDINATE_H__

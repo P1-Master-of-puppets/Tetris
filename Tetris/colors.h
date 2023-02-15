@@ -12,4 +12,4 @@ enum class Color{
     Orange
 };
 
-#endif
+#endif //COLORS_H__

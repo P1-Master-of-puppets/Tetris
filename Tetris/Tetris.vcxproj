@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="colorArray2D.cpp" />
+    <ClCompile Include="consoleDisplay.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
@@ -148,12 +149,16 @@
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
     <ClCompile Include="square.cpp" />
+    <ClCompile Include="testDisplay.cpp" />
+    <ClCompile Include="testGame.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="colorDisplay.hpp" />
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
+    <ClInclude Include="consoleDisplay.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="leftL.h" />
@@ -163,6 +168,8 @@
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
     <ClInclude Include="square.h" />
+    <ClInclude Include="testDisplay.h" />
+    <ClInclude Include="testGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

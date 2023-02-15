@@ -4,8 +4,10 @@
 #include <iostream>
 #include "game.h"
 #include "ColorArray2D.h"
+#include "testDisplay.h"
 int main()
 {
+    TestDisplay::testDisplayArray();
     //Game game = Game();
 }
 

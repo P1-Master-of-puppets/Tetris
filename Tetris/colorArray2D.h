@@ -1,5 +1,5 @@
-#ifndef COLORARRAY2D_H
-#define COLORARRAY2D_H
+#ifndef COLORARRAY2D_H__
+#define COLORARRAY2D_H__
 
 #include"colors.h"
 //https://www.geeksforgeeks.org/cpp-return-2d-array-from-function/
@@ -15,4 +15,4 @@ public:
 	int getWidth();
 	Color** getGrid();
 };
-#endif
+#endif //COLORARRAY2D_H__

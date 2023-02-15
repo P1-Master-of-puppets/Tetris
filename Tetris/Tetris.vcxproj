@@ -149,6 +149,7 @@
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
     <ClCompile Include="square.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="testDisplay.cpp" />
     <ClCompile Include="testGame.cpp" />
     <ClCompile Include="Tetris.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
     <ClInclude Include="square.h" />
+    <ClInclude Include="test.h" />
     <ClInclude Include="testDisplay.h" />
     <ClInclude Include="testGame.h" />
   </ItemGroup>

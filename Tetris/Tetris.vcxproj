@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
@@ -151,7 +152,9 @@
     <ClCompile Include="thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
+    <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />

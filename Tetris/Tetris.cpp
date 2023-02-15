@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include "game.h"
+#include "ColorArray2D.h"
 int main()
 {
-    Game game = Game();
+    //Game game = Game();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

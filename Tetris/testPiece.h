@@ -1,6 +1,8 @@
 #ifndef TESTPIECE_H__
 #define TESTPIECE_H__
 
+#include <iostream>
+
 class TestPiece
 {
 public:

@@ -5,12 +5,19 @@
 #include "game.h"
 #include "colorArray2D.h"
 #include "testDisplay.h"
+#include "testPiece.h"
 
 int main()
 {
     std::cout << "Execution" << std::endl;
+    TestPiece::testTranslateLeft();
+    TestPiece::testTranslateRight();
+    TestPiece::testRotateLeft();
+    TestPiece::testRotateRight();
+    TestPiece::testIsColliding();
     //TestDisplay::testDisplayArray();
     //Game game = Game();
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

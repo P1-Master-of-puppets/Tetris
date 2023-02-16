@@ -11,8 +11,10 @@ private:
 public:
 	ColorArray2D(int width, int height);
 	~ColorArray2D();
-	int getHeight();
-	int getWidth();
-	Color** getGrid();
+	int getHeight() const;
+	int getWidth() const;
+	Color** getGrid() const;
+	const Color* operator[](int i) const;
+	Color* operator[](int i);
 };
 #endif //COLORARRAY2D_H__

@@ -18,29 +18,29 @@ public:
     /// </summary>
     /// <param name="board">Game board</param>
     /// <returns>False if rotation failed, true if rotation suceeded</returns>
-    virtual bool rotateRight(const ColorArray2D& board);
+    virtual bool rotateRight(const ColorArray2D& board) = 0;
     /// <summary>
     /// Rotates piece to the left
     /// </summary>
     /// <param name="board">Game board</param>
     /// <returns>False if rotation failed, true if rotation suceeded</returns>
-    virtual bool rotateLeft(const ColorArray2D& board);
+    virtual bool rotateLeft(const ColorArray2D& board) = 0;
     /// <summary>
     /// Verify if pieces has a colision and needs to be placeds
     /// </summary>
     /// <param name="board">Game board</param>
     /// <returns>False if piece can still go down, true if piece touches bottom</returns>
-    bool isColliding(const ColorArray2D& board);
+    bool isColliding(const Piece* future, const ColorArray2D& board);
     /// <summary>
     /// Coordinate
     /// </summary>
     /// <returns></returns>
-    const Coordinate& getCoordinate();
+    const Coordinate& getCoordinate() const;
     /// <summary>
     /// Pieces Color2DArray
     /// </summary>
     /// <returns></returns>
-    const ColorArray2D* getPiece();
+    ColorArray2D* getPiece() const;
 };
 
 #endif // PIECE_H__

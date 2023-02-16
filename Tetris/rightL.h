@@ -8,6 +8,8 @@ class RightL : Piece
 public:
     RightL();
     ~RightL();
+    bool rotateRight(const ColorArray2D& board);
+    bool rotateLeft(const ColorArray2D& board);
 };
 
 #endif // RightL_H__

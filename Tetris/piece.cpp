@@ -1,7 +1,6 @@
 #include "piece.h"
 
 Piece::Piece(int width, int height){
-    
     _array = new ColorArray2D(width, height);
 }
 
@@ -9,30 +8,32 @@ Piece::~Piece(){
     delete  _array;
 }
 
-bool Piece::rotateRight(const ColorArray2D& board)
+bool Piece::isColliding(const Piece* future, const ColorArray2D& board)
 {
-    //TODO IMPLEMENT
-    return false;
+    
+    for(int i = 0; i < future->getPiece()->getWidth(); i++){
+        for(int j = 0; j < future->getPiece()->getHeight(); j++){
+            if(*(future->getPiece())[i][j] != Color::Transparent){
+                if(board[future->getCoordinate().x + i][future->getCoordinate().y + j] != Color::Transparent
+                   || future->getCoordinate().x + i < 0 
+                   || future->getCoordinate().x + i > board.getWidth()
+                   || future->getCoordinate().y + j < 0
+                   || future->getCoordinate().y + j > board.getHeight()){
+                    return false;
+                }
+            }
+        }
+    }
+
+    return true;
 }
 
-bool Piece::rotateLeft(const ColorArray2D& board)
-{
-    //TODO IMPLEMENT
-    return false;
-}
-
-bool Piece::isColliding(const ColorArray2D& board)
-{
-    //TODO IMPLEMENT
-    return false;
-}
-
-const Coordinate& Piece::getCoordinate()
+const Coordinate& Piece::getCoordinate() const
 {
     return _coordinate;
 }
 
-const ColorArray2D* Piece::getPiece()
+ColorArray2D* Piece::getPiece() const
 {
     return _array;
 }

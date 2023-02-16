@@ -1,15 +1,15 @@
 #include "colorArray2D.h"
 
-int ColorArray2D::getHeight()
+int ColorArray2D::getHeight() const
 {
 	return _height;
 }
-int ColorArray2D::getWidth()
+int ColorArray2D::getWidth() const
 {
 	return _width;
 }
 
-Color** ColorArray2D::getGrid()
+Color** ColorArray2D::getGrid() const
 {
 	return _grid;
 }
@@ -40,4 +40,12 @@ ColorArray2D::~ColorArray2D()
 		delete[] _grid[i];
 	}
 	delete[] _grid;
+}
+
+const Color* ColorArray2D::operator[](int i) const{
+	return _grid[i];
+}
+
+Color* ColorArray2D::operator[](int i){
+	return _grid[i];
 }

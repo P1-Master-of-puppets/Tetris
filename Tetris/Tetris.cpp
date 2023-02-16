@@ -5,7 +5,7 @@
 #include "game.h"
 #include "colorArray2D.h"
 #include "testDisplay.h"
-#include "test.h"
+
 int main()
 {
     std::cout << "Execution" << std::endl;

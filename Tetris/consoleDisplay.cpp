@@ -69,10 +69,7 @@ void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
 	{
 		for (int j = 0; j < colorArray.getWidth(); j++)
 		{
-
-			//displayWithColor(colorArray.getGrid()[i][j]);
 			displayWithoutColor(colorArray.getGrid()[i][j]);
-
 		}
 		std::cout << std::endl;
 	}

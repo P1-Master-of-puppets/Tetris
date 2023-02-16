@@ -26,7 +26,7 @@ const Piece* Game::getPiece()
 	// TODO: insert return statement here
 }
 
-const ColorArray2D Game::getBoardWithPiece()
+const ColorArray2D& Game::getBoardWithPiece()
 {
 	return ColorArray2D(1,1);
 }
@@ -43,10 +43,10 @@ bool Game::rotatePieceRight()
 
 bool Game::translatePieceLeft()
 {
-	return false;
+	return _currentPiece->translateLeft(_board);
 }
 
 bool Game::translatePieceRight()
 {
-	return false;
+	return _currentPiece->translateRight(_board);
 }

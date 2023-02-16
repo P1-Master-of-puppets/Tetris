@@ -9,6 +9,7 @@ private:
 	int _height;
 	Color** _grid;
 public:
+	ColorArray2D(const ColorArray2D& colorArray2D);
 	ColorArray2D(int width, int height);
 	~ColorArray2D();
 	int getHeight() const;
@@ -16,5 +17,6 @@ public:
 	Color** getGrid() const;
 	const Color* operator[](int i) const;
 	Color* operator[](int i);
+	void fill(Color color);
 };
 #endif //COLORARRAY2D_H__

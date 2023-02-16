@@ -3,6 +3,7 @@
 
 #include "colorArray2D.h"
 #include "coordinate.h"
+#include "colors.h"
 
 class Piece
 {
@@ -13,6 +14,18 @@ public:
     Piece(int width, int height);
     virtual ~Piece() = 0;
 
+    /// <summary>
+    /// Translate piece to the right
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    bool translateRight(const ColorArray2D& board);
+    /// <summary>
+    /// Translate piece to the left
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    bool translateLeft(const ColorArray2D& board);
     /// <summary>
     /// Rotates piece to the right
     /// </summary>

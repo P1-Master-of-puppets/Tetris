@@ -156,7 +156,6 @@
     <ClCompile Include="thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="colorDisplay.hpp" />
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
     <ClInclude Include="consoleDisplay.h" />
@@ -172,6 +171,7 @@
     <ClInclude Include="test.h" />
     <ClInclude Include="testDisplay.h" />
     <ClInclude Include="testGame.h" />
+    <ClInclude Include="thomas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

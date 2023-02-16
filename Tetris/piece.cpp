@@ -2,14 +2,61 @@
 
 Piece::Piece(int width, int height){
     _array = new ColorArray2D(width, height);
+    _coordinate.x = 5;
+    _coordinate.y = 0;
 }
 
 Piece::~Piece(){
     delete  _array;
 }
 
-bool Piece::isColliding(const Piece* future, const ColorArray2D& board)
+bool Piece::translateRight(const ColorArray2D& board)
 {
+    int newCoordsX = _coordinate.x + 1;
+    Color** gridPiece = _array->getGrid();
+    Color** gridBoard = board.getGrid();
+    for (int i = 0; i < _array->getWidth(); i++)
+    {
+        for (int j = 0; i < _array->getHeight(); i++)
+        {
+            if (gridPiece[i][j] != Color::Transparent)
+            {
+                if (i + newCoordsX > board.getWidth() || gridBoard[i + newCoordsX][j + _coordinate.y] != Color::Transparent)
+                {
+                    return false;
+                }
+            }
+        }
+    }
+    _coordinate.x = newCoordsX;
+    return true; 
+}
+
+bool Piece::translateLeft(const ColorArray2D& board)
+{
+    int newCoordsX = _coordinate.x - 1;
+    Color** gridPiece = _array->getGrid();
+    Color** gridBoard = board.getGrid();
+    for (int i = 0; i < _array->getWidth(); i++)
+    {
+        for (int j = 0; i < _array->getHeight(); i++)
+        {
+            if (gridPiece[i][j] != Color::Transparent)
+            {
+                if (i + newCoordsX < 0 || gridBoard[i + newCoordsX][j + _coordinate.y] != Color::Transparent)
+                {
+                    return false;
+                }
+            }
+        }
+    }
+    _coordinate.x = newCoordsX;
+    return true;
+}
+
+
+
+bool Piece::isColliding(const Piece* future, const ColorArray2D& board){
     
     for(int i = 0; i < future->getPiece()->getWidth(); i++){
         for(int j = 0; j < future->getPiece()->getHeight(); j++){

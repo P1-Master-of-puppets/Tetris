@@ -20,7 +20,7 @@ public:
 
     const ColorArray2D& getBoard();
     const Piece* getPiece();
-    const ColorArray2D getBoardWithPiece();
+    const ColorArray2D& getBoardWithPiece();
     bool rotatePieceLeft();
     bool rotatePieceRight();
     bool translatePieceLeft();

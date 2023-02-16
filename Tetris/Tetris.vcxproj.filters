@@ -125,14 +125,14 @@
     <ClInclude Include="consoleDisplay.h">
       <Filter>Header Files\Display</Filter>
     </ClInclude>
-    <ClInclude Include="colorDisplay.hpp">
-      <Filter>Header Files\Display</Filter>
-    </ClInclude>
     <ClInclude Include="testDisplay.h">
       <Filter>Header Files\Tests</Filter>
     </ClInclude>
     <ClInclude Include="test.h">
       <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="thomas.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

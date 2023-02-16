@@ -3,7 +3,7 @@
 void TestDisplay::testDisplayArray()
 {
 	ColorArray2D board = ColorArray2D(10, 20);
-
+	board.fill(Color::Transparent);
 	ConsoleDisplay display = ConsoleDisplay();
 
 	board.getGrid()[19][9] = Color::Cyan;

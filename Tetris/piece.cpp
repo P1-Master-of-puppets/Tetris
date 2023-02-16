@@ -56,21 +56,65 @@ bool Piece::translateLeft(const ColorArray2D& board)
 
 
 
-bool Piece::isColliding(const Piece* future, const ColorArray2D& board){
+bool Piece::isColliding(const ColorArray2D* future, const Coordinate pos, const ColorArray2D& board){
     
-    for(int i = 0; i < future->getPiece()->getWidth(); i++){
-        for(int j = 0; j < future->getPiece()->getHeight(); j++){
-            if(*(future->getPiece())[i][j] != Color::Transparent){
-                if(board[future->getCoordinate().x + i][future->getCoordinate().y + j] != Color::Transparent
-                   || future->getCoordinate().x + i < 0 
-                   || future->getCoordinate().x + i > board.getWidth()
-                   || future->getCoordinate().y + j < 0
-                   || future->getCoordinate().y + j > board.getHeight()){
-                    return false;
+    for(int i = 0; i < future->getWidth(); i++){
+        for(int j = 0; j < future->getHeight(); j++){
+            if(*future[i][j] != Color::Transparent){
+                if(board[pos.x + i][pos.y + j] != Color::Transparent
+                   || pos.x + i < 0 
+                   || pos.x + i > board.getWidth()
+                   || pos.y + j < 0
+                   || pos.y + j > board.getHeight()){
+                    return true;
                 }
             }
         }
     }
+
+    return false;
+}
+
+bool Piece::rotateLeft(const ColorArray2D& board){
+    
+    ColorArray2D* newArray = new ColorArray2D(_array->getWidth(), _array->getHeight());
+
+    for(int i = 0; i < _array->getWidth(); i++){
+        for(int j = 0; j < _array->getHeight(); j++){
+            *newArray[i][j] = *_array[_array->getWidth()-1-j][i];
+        }
+    }
+
+    if(isColliding(newArray, _coordinate, board)){
+        delete newArray;
+        return false;
+    }
+
+    delete _array;
+
+    _array = newArray;
+
+    return true;
+}
+
+bool Piece::rotateRight(const ColorArray2D& board){
+
+    ColorArray2D* newArray = new ColorArray2D(_array->getWidth(), _array->getHeight());
+
+    for(int i = 0; i < _array->getWidth(); i++){
+        for(int j = 0; j < _array->getHeight(); j++){
+            *newArray[i][j] = *_array[j][_array->getWidth()-1-i];
+        }
+    }
+
+    if(isColliding(newArray, _coordinate, board)){
+        delete newArray;
+        return false;
+    }
+
+    delete _array;
+
+    _array = newArray;
 
     return true;
 }

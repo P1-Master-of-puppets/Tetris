@@ -8,9 +8,6 @@ class LongBar : Piece
 public:
     LongBar();
     ~LongBar();
-
-    bool rotateRight(Color *board);
-    bool rotateLeft(Color *board);
 };
 
 #endif // LONGBAR_H__

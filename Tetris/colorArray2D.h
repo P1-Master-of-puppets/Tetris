@@ -15,6 +15,6 @@ public:
 	void fill(Color color);
 	int getHeight();
 	int getWidth();
-	Color** getGrid();
+	Color** getGrid() const;
 };
 #endif //COLORARRAY2D_H__

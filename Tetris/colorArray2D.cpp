@@ -9,7 +9,7 @@ int ColorArray2D::getWidth()
 	return _width;
 }
 
-Color** ColorArray2D::getGrid()
+Color** ColorArray2D::getGrid() const
 {
 	return _grid;
 }

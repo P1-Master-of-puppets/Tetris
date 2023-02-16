@@ -19,13 +19,13 @@ public:
     /// </summary>
     /// <param name="board"></param>
     /// <returns></returns>
-    bool translateRight(ColorArray2D& board);
+    bool translateRight(const ColorArray2D& board);
     /// <summary>
     /// Translate piece to the left
     /// </summary>
     /// <param name="board"></param>
     /// <returns></returns>
-    bool translateLeft(ColorArray2D& board);
+    bool translateLeft(const ColorArray2D& board);
     /// <summary>
     /// Rotates piece to the right
     /// </summary>

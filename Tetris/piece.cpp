@@ -11,7 +11,7 @@ Piece::~Piece(){
     delete  _array;
 }
 
-bool Piece::translateRight(ColorArray2D& board)
+bool Piece::translateRight(const ColorArray2D& board)
 {
     int newCoordsX = _coordinate.x + 1;
     Color** gridPiece = _array->getGrid();
@@ -33,7 +33,7 @@ bool Piece::translateRight(ColorArray2D& board)
     return true; 
 }
 
-bool Piece::translateLeft(ColorArray2D& board)
+bool Piece::translateLeft(const ColorArray2D& board)
 {
     int newCoordsX = _coordinate.x - 1;
     Color** gridPiece = _array->getGrid();

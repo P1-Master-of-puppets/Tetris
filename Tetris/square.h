@@ -8,6 +8,8 @@ class Square : Piece
 public:
     Square();
     ~Square();
+    bool rotateLeft(const ColorArray2D& board);
+    bool rotateRight(const ColorArray2D& board);
 };
 
 #endif // SQUARE_H__

@@ -31,13 +31,13 @@ public:
     /// </summary>
     /// <param name="board">Game board</param>
     /// <returns>False if rotation failed, true if rotation suceeded</returns>
-    bool rotateRight(const ColorArray2D& board);
+    virtual bool rotateRight(const ColorArray2D& board);
     /// <summary>
     /// Rotates piece to the left
     /// </summary>
     /// <param name="board">Game board</param>
     /// <returns>False if rotation failed, true if rotation suceeded</returns>
-    bool rotateLeft(const ColorArray2D& board);
+    virtual bool rotateLeft(const ColorArray2D& board);
     /// <summary>
     /// Verify if pieces has a colision and needs to be placeds
     /// </summary>

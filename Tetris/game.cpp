@@ -43,10 +43,10 @@ bool Game::rotatePieceRight()
 
 bool Game::translatePieceLeft()
 {
-	return false;
+	return _currentPiece->translateLeft(_board);
 }
 
 bool Game::translatePieceRight()
 {
-	return false;
+	return _currentPiece->translateRight(_board);
 }

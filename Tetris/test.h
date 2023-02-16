@@ -4,6 +4,7 @@
 #include "piece.h"
 #include <iostream>
 #include <queue>
+#include "consoleDisplay.h"
 
 class Test
 {

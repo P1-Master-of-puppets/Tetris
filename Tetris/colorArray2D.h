@@ -9,8 +9,10 @@ private:
 	int _height;
 	Color** _grid;
 public:
+	ColorArray2D(const ColorArray2D& colorArray2D);
 	ColorArray2D(int width, int height);
 	~ColorArray2D();
+	void fill(Color color);
 	int getHeight();
 	int getWidth();
 	Color** getGrid();

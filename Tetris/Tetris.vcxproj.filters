@@ -134,5 +134,8 @@
     <ClInclude Include="test.h">
       <Filter>Header Files\Tests</Filter>
     </ClInclude>
+    <ClInclude Include="thomas.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

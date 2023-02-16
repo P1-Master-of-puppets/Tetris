@@ -3,10 +3,22 @@
 Piece::Piece(int width, int height){
     
     _array = new ColorArray2D(width, height);
+    _coordinate.x = 5;
+    _coordinate.y = 0;
 }
 
 Piece::~Piece(){
     delete  _array;
+}
+
+bool Piece::translateRight(const ColorArray2D& board)
+{
+    return false;
+}
+
+bool Piece::translateLeft(const ColorArray2D& board)
+{
+    return false;
 }
 
 bool Piece::rotateRight(const ColorArray2D& board)

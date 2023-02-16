@@ -41,6 +41,8 @@ bool LongBar::rotateBar(const ColorArray2D& board){
 
     _array = newArray;
 
+    vertical = !vertical;
+
     return true;
 }
 

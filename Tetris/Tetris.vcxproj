@@ -156,7 +156,6 @@
     <ClCompile Include="thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="colorDisplay.hpp" />
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
     <ClInclude Include="consoleDisplay.h" />

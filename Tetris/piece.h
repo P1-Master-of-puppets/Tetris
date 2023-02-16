@@ -14,6 +14,18 @@ public:
     virtual ~Piece() = 0;
 
     /// <summary>
+    /// Translate piece to the right
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    bool translateRight(const ColorArray2D& board);
+    /// <summary>
+    /// Translate piece to the left
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    bool translateLeft(const ColorArray2D& board);
+    /// <summary>
     /// Rotates piece to the right
     /// </summary>
     /// <param name="board">Game board</param>

@@ -2,6 +2,10 @@
 #define TESTPIECE_H__
 
 #include <iostream>
+#include "piece.h"
+#include "consoleDisplay.h"
+#include "colorArray2D.h"
+#include "thomas.h"
 
 class TestPiece
 {

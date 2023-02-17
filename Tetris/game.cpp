@@ -28,6 +28,8 @@ const Piece* Game::getPiece()
 
 const ColorArray2D& Game::getBoardWithPiece()
 {
+	//Todo : Mathias check const ColorArray2D& Game::getBoardWithPiece()
+	//Warning : Le retour est temporaire. (Detruit out of scope)
 	return ColorArray2D(1,1);
 }
 

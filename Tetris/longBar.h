@@ -3,7 +3,7 @@
 
 #include "piece.h"
 
-class LongBar : Piece
+class LongBar : public Piece
 {
 public:
     LongBar();

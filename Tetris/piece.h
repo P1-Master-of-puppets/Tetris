@@ -50,6 +50,11 @@ public:
     /// <returns></returns>
     const Coordinate& getCoordinate() const;
     /// <summary>
+    /// Coordinate
+    /// </summary>
+    /// <returns></returns>
+    void setCoordinate(Coordinate newCoords);
+    /// <summary>
     /// Pieces Color2DArray
     /// </summary>
     /// <returns></returns>

@@ -1,9 +1,11 @@
 #ifndef THOMAS_H__
 #define THOMAS_H__
 
+#include <iostream>
+#include <typeinfo>
 #include "piece.h"
 
-class Thomas : Piece
+class Thomas : public Piece
 {
 public:
     Thomas();

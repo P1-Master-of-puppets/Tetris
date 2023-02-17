@@ -40,7 +40,7 @@ void displayWithoutColor(Color color) {
 		break;
 	case Color::Cyan:
 	case Color::Yellow:
-	case Color::Purple:
+	case Color::Purple: std::cout << "O" << std::endl; break;
 	case Color::Green:
 	case Color::Blue:
 	case Color::Red:

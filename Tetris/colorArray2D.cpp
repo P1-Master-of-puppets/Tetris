@@ -32,7 +32,7 @@ ColorArray2D::ColorArray2D(int width, int height)
 {
 	_height = height;
 	_width = width;
-	_grid = new Color * [height];
+	_grid = new Color*[height];
 	for (int i = 0; i < height; i++)
 	{
 		_grid[i] = new Color[width];
@@ -48,11 +48,11 @@ ColorArray2D::~ColorArray2D()
 	delete[] _grid;
 }
 
-const Color* ColorArray2D::operator[](int i) const{
+Color*& ColorArray2D::operator[](int i) const{
 	return _grid[i];
 }
 
-Color* ColorArray2D::operator[](int i){
+Color*& ColorArray2D::operator[](int i){
 	return _grid[i];
 }
 

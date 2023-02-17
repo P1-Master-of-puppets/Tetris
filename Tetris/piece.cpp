@@ -2,6 +2,7 @@
 
 Piece::Piece(int width, int height){
     _array = new ColorArray2D(width, height);
+    _array->fill(Color::Transparent);
     _coordinate.x = 5;
     _coordinate.y = 0;
 }
@@ -44,7 +45,7 @@ bool Piece::isColliding(const ColorArray2D* future, const Coordinate pos, const 
     
     for(int i = 0; i < future->getWidth(); i++){
         for(int j = 0; j < future->getHeight(); j++){
-            if(*future[i][j] != Color::Transparent){
+            if((*future)[i][j] != Color::Transparent){
                 if(board[pos.x + i][pos.y + j] != Color::Transparent
                    || pos.x + i < 0 
                    || pos.x + i > board.getWidth()
@@ -65,7 +66,7 @@ bool Piece::rotateLeft(const ColorArray2D& board){
 
     for(int i = 0; i < _array->getWidth(); i++){
         for(int j = 0; j < _array->getHeight(); j++){
-            *newArray[i][j] = *_array[_array->getWidth()-1-j][i];
+            (*newArray)[i][j] = (*_array)[_array->getWidth()-1-j][i];
         }
     }
 
@@ -87,7 +88,7 @@ bool Piece::rotateRight(const ColorArray2D& board){
 
     for(int i = 0; i < _array->getWidth(); i++){
         for(int j = 0; j < _array->getHeight(); j++){
-            *newArray[i][j] = *_array[j][_array->getWidth()-1-i];
+            (*newArray)[i][j] = (*_array)[j][_array->getWidth()-1-i];
         }
     }
 
@@ -106,6 +107,10 @@ bool Piece::rotateRight(const ColorArray2D& board){
 const Coordinate& Piece::getCoordinate() const
 {
     return _coordinate;
+}
+
+void Piece::setCoordinate(Coordinate newCoords){
+    _coordinate = newCoords;
 }
 
 ColorArray2D* Piece::getPiece() const

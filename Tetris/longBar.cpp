@@ -2,10 +2,10 @@
 
 LongBar::LongBar() : Piece(4, 4)
 {
-    *_array[2][0] = Color::Cyan;
-    *_array[2][1] = Color::Cyan;
-    *_array[2][2] = Color::Cyan;
-    *_array[2][3] = Color::Cyan;
+    (*_array)[2][0] = Color::Cyan;
+    (*_array)[2][1] = Color::Cyan;
+    (*_array)[2][2] = Color::Cyan;
+    (*_array)[2][3] = Color::Cyan;
     vertical = true;
 }
 

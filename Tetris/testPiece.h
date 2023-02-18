@@ -6,6 +6,13 @@
 #include "consoleDisplay.h"
 #include "colorArray2D.h"
 #include "thomas.h"
+#include "longBar.h"
+#include "rightL.h"
+#include "rightS.h"
+#include "leftL.h"
+#include "leftS.h"
+#include "square.h"
+
 
 class TestPiece
 {

@@ -5,22 +5,68 @@ void TestPiece::testTranslateRight(){
 }
 
 void TestPiece::testTranslateLeft(){
-    std::cout << "testTranslaterLeft" << std::endl;
+    std::cout << "\ntestTranslateLeft\n" << std::endl;
 }
 
 void TestPiece::testRotateRight(){
-    std::cout << "testRotateRight" << std::endl;
+    std::cout << "\ntestRotateRight\n" << std::endl;
+    
+    
+    Piece* maPiece = new LeftS();
+    ConsoleDisplay monDisplay;
+    ColorArray2D board(10,20);
+
+    std::cout << "Piece actuelle :" << std::endl;
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateRight(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateRight(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateRight(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateRight(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
 }
 
 void TestPiece::testRotateLeft(){
-    std::cout << "testRotateLeft" << std::endl;
+    std::cout << "\ntestRotateLeft\n" << std::endl;
+    
+    
+    Piece* maPiece = new LeftS();
+    ConsoleDisplay monDisplay;
+    ColorArray2D board(10,20);
+
+    std::cout << "Piece actuelle :" << std::endl;
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateLeft(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateLeft(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateLeft(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    std::cout << "Piece apres rotateRight :" << std::endl;
+    maPiece->rotateLeft(board);
+    monDisplay.display2DArray(*(maPiece->getPiece()));
 }
 
 void TestPiece::testIsColliding(){
 
-    std::cout << "\n\ntestIsColliding\n\n" << std::endl;
-
-
+    std::cout << "\ntestIsColliding\n" << std::endl;
 
     ColorArray2D board(10,20);
 
@@ -41,8 +87,6 @@ void TestPiece::testIsColliding(){
     if(maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board)){
         std::cout << " Reussite!" << std::endl;
     }
-
-
 
     std::cout << "Test de collision avec le bas du board: ";
     newCoords.x = 5;

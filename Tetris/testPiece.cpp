@@ -9,12 +9,6 @@ void TestPiece::testTranslateLeft(){
 }
 
 void TestPiece::testRotateRight(){
-
-
-
-
-
-
     std::cout << "testRotateRight" << std::endl;
 }
 
@@ -34,20 +28,53 @@ void TestPiece::testIsColliding(){
     ConsoleDisplay monDisplay;
     Piece* maPiece = new Thomas();
     Coordinate newCoords;
+
+    board.getGrid()[15][5] = Color::Blue;
+    board.getGrid()[15][7] = Color::Blue;
+    board.getGrid()[15][6] = Color::Blue;
+
+
+    std::cout << "Test de collision avec pieces dans board : ";
     newCoords.x = 5;
     newCoords.y = 14;
-
     maPiece->setCoordinate(newCoords);
+    if(maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board)){
+        std::cout << " Reussite!" << std::endl;
+    }
 
-    board.getGrid()[5][15] = Color::Blue;
-    board.getGrid()[6][15] = Color::Blue;
-    board.getGrid()[7][15] = Color::Blue;
 
-    std::cout << "Board : \n" << std::endl;
 
-    monDisplay.display2DArray(board);
+    std::cout << "Test de collision avec le bas du board: ";
+    newCoords.x = 5;
+    newCoords.y = 18;
+    maPiece->setCoordinate(newCoords);
+    if(maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board)){
+        std::cout << " Reussite!" << std::endl;
+    }
 
-    std::cout << maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board) << "\n\n";
+    std::cout << "Test de collision avec cote droit du board: ";
+    newCoords.x = 8;
+    newCoords.y = 14;
+    maPiece->setCoordinate(newCoords);
+    if(maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board)){
+        std::cout << " Reussite!" << std::endl;
+    }
+
+    std::cout << "Test de collision avec cote gauche du board: ";
+    newCoords.x = -1;
+    newCoords.y = 14;
+    maPiece->setCoordinate(newCoords);
+    if(maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board)){
+        std::cout << " Reussite!" << std::endl;
+    }
+
+    std::cout << "Test de collision avec rien: ";
+    newCoords.x = 3;
+    newCoords.y = 7;
+    maPiece->setCoordinate(newCoords);
+    if(!maPiece->isColliding(maPiece->getPiece(), maPiece->getCoordinate(), board)){
+        std::cout << " Reussite!" << std::endl;
+    }
 
 
 }

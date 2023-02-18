@@ -46,13 +46,18 @@ bool Piece::isColliding(const ColorArray2D* future, const Coordinate pos, const 
     for(int i = 0; i < future->getWidth(); i++){
         for(int j = 0; j < future->getHeight(); j++){
             if((*future)[i][j] != Color::Transparent){
-                if(board[pos.x + i][pos.y + j] != Color::Transparent
-                   || pos.x + i < 0 
-                   || pos.x + i > board.getWidth()
-                   || pos.y + j < 0
-                   || pos.y + j > board.getHeight()){
+
+                // Veryfy out of bound first to avoid core dumps
+                if(pos.x + j < 0 || pos.x + j > board.getWidth()-1 || 
+                   pos.y + i < 0 || pos.y + i > board.getHeight()-1){
                     return true;
                 }
+
+                // Verify if overlapping with element in board
+                if(board[pos.y + i][pos.x + j] != Color::Transparent){
+                    return true;
+                }
+
             }
         }
     }

@@ -1,52 +1,52 @@
 #include "consoleDisplay.h"
 
 void displayWithColor(Color color) {
-	//switch (color)
-	//{
-	//case Color::Transparent:
-	//	std::cout << " ";
-	//	break;
-	//case Color::Cyan:
-	//	std::cout << hue::aqua << "#" << hue::reset;
-	//	break;
-	//case Color::Yellow:
-	//	std::cout << hue::yellow << "#" << hue::reset;
-	//	break;
-	//case Color::Purple:
-	//	std::cout << hue::purple << "#" << hue::reset;
-	//	break;
-	//case Color::Green:
-	//	std::cout << hue::green << "#" << hue::reset;
-	//	break;
-	//case Color::Blue:
-	//	std::cout << hue::blue << "#" << hue::reset;
-	//	break;
-	//case Color::Red:
-	//	std::cout << hue::red << "#" << hue::reset;
-	//	break;
-	//case Color::Orange:
-	//	std::cout << hue::white << "#" << hue::reset;
-	//	break;
-	//default:
-	//	break;
-	//}
+	switch (color)
+	{
+	case Color::Transparent:
+		std::cout << ". ";
+		break;
+	case Color::Cyan:
+		std::cout << "\x1B[36m# \033[0m";
+		break;
+	case Color::Yellow:
+		std::cout << "\x1B[33m# \033[0m";
+		break;
+	case Color::Purple:
+		std::cout << "\x1B[35m# \033[0m";
+		break;
+	case Color::Green:
+		std::cout << "\x1B[32m# \033[0m";
+		break;
+	case Color::Blue:
+		std::cout << "\x1B[34m# \033[0m";
+		break;
+	case Color::Red:
+		std::cout << "\x1B[31m# \033[0m";
+		break;
+	case Color::Orange:
+		std::cout << "\x1B[37m# \033[0m";
+		break;
+	default:
+		break;
+	}
 }
 
 void displayWithoutColor(Color color) {
 	switch (color)
 	{
 	case Color::Transparent:
-		std::cout << " ";
+		std::cout << ". ";
 		break;
-	case Color::Cyan:
-	case Color::Yellow:
-	case Color::Purple: std::cout << "O" << std::endl; break;
-	case Color::Green:
-	case Color::Blue:
-	case Color::Red:
-	case Color::Orange:
+	case Color::Cyan:	std::cout << "C "; break;
+	case Color::Yellow: std::cout << "Y "; break;
+	case Color::Purple: std::cout << "P "; break;
+	case Color::Green:	std::cout << "G "; break;
+	case Color::Blue:	std::cout << "B "; break;
+	case Color::Red:	std::cout << "R "; break;
+	case Color::Orange: std::cout << "O "; break;
 	default:
-		std::cout << "#";
+		std::cout << "# ";
 		break;
 	}
 }
@@ -62,16 +62,31 @@ ConsoleDisplay::~ConsoleDisplay()
 
 void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
 {
+	for(int i = 0; i < colorArray.getWidth()*2 + 3; i++){
+		std::cout << "#";
+	}
+
+	std::cout << std::endl << "#";
+
 	//Change console color only if in windows.
 	//Linux might be using a different lib.
 	Color currentColor;
 	for (int i = 0; i < colorArray.getHeight(); i++)
 	{
+		std::cout << " ";
 		for (int j = 0; j < colorArray.getWidth(); j++)
 		{
-			displayWithoutColor(colorArray.getGrid()[i][j]);
+			displayWithColor(colorArray.getGrid()[i][j]);
+			//displayWithoutColor(colorArray.getGrid()[i][j]);
 		}
-		std::cout << std::endl;
+		std::cout << "#" << std::endl << "#";
 	}
+
+	for(int i = 0; i < colorArray.getWidth()*2 + 2; i++){
+		std::cout << "#";
+	}
+
+	std::cout << std::endl;
+
 }
 

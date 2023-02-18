@@ -37,6 +37,8 @@ ColorArray2D::ColorArray2D(int width, int height)
 	{
 		_grid[i] = new Color[width];
 	}
+
+	fill(Color::Transparent);
 }
 
 ColorArray2D::~ColorArray2D()

@@ -2,10 +2,68 @@
 
 void TestPiece::testTranslateRight(){
     std::cout << "testTranslaterRight" << std::endl;
+    
+    Piece* maPiece = new Thomas();
+    ConsoleDisplay monDisplay;
+    ColorArray2D board(10,20);
+
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation a droite.." << std::endl;
+    maPiece->translateRight(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation a droite.." << std::endl;
+    maPiece->translateRight(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation a droite.." << std::endl;
+    maPiece->translateRight(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+
+    delete maPiece;
 }
 
 void TestPiece::testTranslateLeft(){
     std::cout << "\ntestTranslateLeft\n" << std::endl;
+    
+    Piece* maPiece = new Thomas();
+    ConsoleDisplay monDisplay;
+    ColorArray2D board(10,20);
+
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    std::cout << "Translation a gauche.." << std::endl;
+    maPiece->translateLeft(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+    delete maPiece;
 }
 
 void TestPiece::testRotateRight(){
@@ -34,6 +92,8 @@ void TestPiece::testRotateRight(){
     std::cout << "Piece apres rotateRight :" << std::endl;
     maPiece->rotateRight(board);
     monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    delete maPiece;
 }
 
 void TestPiece::testRotateLeft(){
@@ -62,6 +122,9 @@ void TestPiece::testRotateLeft(){
     std::cout << "Piece apres rotateRight :" << std::endl;
     maPiece->rotateLeft(board);
     monDisplay.display2DArray(*(maPiece->getPiece()));
+
+    delete maPiece;
+
 }
 
 void TestPiece::testIsColliding(){
@@ -120,5 +183,6 @@ void TestPiece::testIsColliding(){
         std::cout << " Reussite!" << std::endl;
     }
 
+    delete maPiece;
 
 }

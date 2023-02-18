@@ -60,6 +60,31 @@ ConsoleDisplay::~ConsoleDisplay()
 {
 }
 
+void ConsoleDisplay::displayBoardWithPiece(ColorArray2D& board, Piece* somePiece){
+
+	ColorArray2D combinedBoard(board.getWidth(), board.getHeight());
+
+	for(int i = 0; i < board.getHeight(); i++){
+		for(int j = 0; j < board.getWidth(); j++){
+			combinedBoard[i][j] = board[i][j];
+		}
+	}
+
+	for(int i = 0; i < somePiece->getPiece()->getHeight(); i++){
+		for(int j = 0; j < somePiece->getPiece()->getWidth(); j++){
+			if(somePiece->getCoordinate().y + i < board.getHeight() && 
+			   somePiece->getCoordinate().y + i >= 0 &&
+			   somePiece->getCoordinate().x + j < board.getWidth() &&
+			   somePiece->getCoordinate().x + j >= 0){
+				combinedBoard[somePiece->getCoordinate().y + i][somePiece->getCoordinate().x + j] = (*somePiece->getPiece())[i][j];
+			}
+		}
+	}
+
+	display2DArray(combinedBoard);
+
+}
+
 void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
 {
 	for(int i = 0; i < colorArray.getWidth()*2 + 3; i++){

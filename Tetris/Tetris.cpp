@@ -10,11 +10,6 @@
 int main()
 {
     std::cout << "Execution" << std::endl;
-    TestPiece::testTranslateLeft();
-    TestPiece::testTranslateRight();
-    TestPiece::testRotateLeft();
-    TestPiece::testRotateRight();
-    TestPiece::testIsColliding();
     //TestDisplay::testDisplayArray();
     //Game game = Game();
     return 0;

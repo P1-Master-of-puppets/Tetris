@@ -1,3 +1,4 @@
+#include "inputClavier.h"
 #include <iostream>
 // #include <conio.h>
 #include <string>
@@ -5,36 +6,63 @@
 
 using namespace std;
 
+bool isUpPressed()
+{
+    if (GetAsyncKeyState(VK_UP)) return true;
+    else return false;
+}
+
+bool isDownPressed()
+{
+    if (GetAsyncKeyState(VK_DOWN)) return true;
+    else return false;
+}
+
+bool isLeftPressed()
+{
+    if (GetAsyncKeyState(VK_LEFT)) return true;
+    else return false;
+}
+
+bool isRightPressed()
+{
+    if (GetAsyncKeyState(VK_RIGHT)) return true;
+    else return false;
+}
+
 int main ()
 {
-    int waitingTime = 130; // Temps minimal entre chaque input, peut être ajusté en fonction des besoins
+    if(isUpPressed())
+    {
+        cout << "Up arrow" << endl;
+    }
     while (true)
     {
-        if (GetAsyncKeyState(VK_UP))
+        int waitingTime = 130; // Temps entre chaque touche appuyée
+        if(isUpPressed())
         {
             cout << "Up arrow" << endl;
             // break;
             Sleep(waitingTime);
         }
-        if (GetAsyncKeyState(VK_DOWN))
+        if(isDownPressed())
         {
             cout << "Down arrow" << endl;
             // break;
             Sleep(waitingTime);
         }
-        if (GetAsyncKeyState(VK_LEFT))
+        if(isLeftPressed())
         {
             cout << "Left arrow" << endl;
             // break;
             Sleep(waitingTime);
         }
-        if (GetAsyncKeyState(VK_RIGHT))
+        if(isRightPressed())
         {
             cout << "Right arrow" << endl;
             // break;
             Sleep(waitingTime);
         }
-        // On peut rajouter des touches ici
     }
     return 0;
 }

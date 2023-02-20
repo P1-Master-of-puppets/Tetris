@@ -13,6 +13,7 @@ int main()
     //TestDisplay::testDisplayArray();
     //TestPiece::testTranslateLeft();
     //TestPiece::testTranslateRight();
+    TestPiece::testTouchBottom();
     //Game game = Game();
     return 0;
 }

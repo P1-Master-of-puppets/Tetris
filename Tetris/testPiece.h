@@ -22,6 +22,7 @@ public:
 	static void testRotateRight();
 	static void testRotateLeft();
 	static void testIsColliding();
+	static void testTouchBottom();
 };
 
 #endif // TESTPIECE_H__

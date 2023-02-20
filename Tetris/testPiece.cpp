@@ -24,19 +24,10 @@ void TestPiece::testTranslateRight(){
 
 void TestPiece::testTranslateLeft(){
     std::cout << "\ntestTranslateLeft\n" << std::endl;
-    Piece* bloc = new Square();
-   
 
-    
-   
     ConsoleDisplay monDisplay;
     ColorArray2D board(10,20);
-    monDisplay.displayBoardWithPiece(board, bloc);
-    bloc->translateLeft(board);
-    bloc->translateLeft(board);
-    bloc->translateLeft(board);
-    bloc->translateLeft(board);
-    monDisplay.displayBoardWithPiece(board, bloc);
+
     Piece* maPiece = new Thomas();
 
     monDisplay.displayBoardWithPiece(board, maPiece);
@@ -72,11 +63,105 @@ void TestPiece::testTranslateLeft(){
     std::cout << "Translation a gauche.." << std::endl;
     maPiece->translateLeft(board);
     monDisplay.displayBoardWithPiece(board, maPiece);
-    monDisplay.displayBoardWithPiece(board, bloc);
 
     delete maPiece;
 }
 
+void TestPiece::testTouchBottom()
+{
+    Piece* maPiece = new Thomas();
+    ConsoleDisplay monDisplay;
+    ColorArray2D board(10, 20);
+
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+    std::cout << "Translation en bas" << std::endl;
+    maPiece->touchBottom(board);
+    monDisplay.displayBoardWithPiece(board, maPiece);
+
+
+    delete maPiece;
+}
 void TestPiece::testRotateRight(){
     std::cout << "\ntestRotateRight\n" << std::endl;
     

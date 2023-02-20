@@ -40,6 +40,20 @@ bool Piece::translateLeft(const ColorArray2D& board)
     
     return true; 
 }
+bool Piece::touchBottom(const ColorArray2D& board)
+{
+    Coordinate newCoords = _coordinate;
+
+    newCoords.y++;
+
+    if (isColliding(_array, newCoords, board)) {
+        return true;
+    }
+
+    _coordinate = newCoords;
+
+    return false;
+}
 
 bool Piece::isColliding(const ColorArray2D* future, const Coordinate pos, const ColorArray2D& board){
     
@@ -47,7 +61,7 @@ bool Piece::isColliding(const ColorArray2D* future, const Coordinate pos, const 
         for(int j = 0; j < future->getHeight(); j++){
             if((*future)[i][j] != Color::Transparent){
 
-                // Veryfy out of bound first to avoid core dumps
+                // Verify out of bound first to avoid core dumps
                 if(pos.x + j < 0 || pos.x + j > board.getWidth()-1 || 
                    pos.y + i < 0 || pos.y + i > board.getHeight()-1){
                     return true;

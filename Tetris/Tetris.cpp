@@ -11,6 +11,8 @@ int main()
 {
     std::cout << "Execution" << std::endl;
     //TestDisplay::testDisplayArray();
+    //TestPiece::testTranslateLeft();
+    //TestPiece::testTranslateRight();
     //Game game = Game();
     return 0;
 }

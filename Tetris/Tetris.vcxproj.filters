@@ -81,7 +81,7 @@
     <ClCompile Include="testDisplay.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="testPiece.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,9 +126,6 @@
       <Filter>Header Files\Display</Filter>
     </ClInclude>
     <ClInclude Include="testDisplay.h">
-      <Filter>Header Files\Tests</Filter>
-    </ClInclude>
-    <ClInclude Include="test.h">
       <Filter>Header Files\Tests</Filter>
     </ClInclude>
     <ClInclude Include="thomas.h">

@@ -1,11 +1,7 @@
-// Tetris.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "game.h"
-#include "colorArray2D.h"
-#include "testDisplay.h"
-#include "testPiece.h"
+#inlcude "input"
+
 
 int main()
 {
@@ -15,7 +11,7 @@ int main()
 
 	while (game.getState() == GameState::OnGoing)
 	{
-		
+		std::cout << "Run" << std::endl;
 	}
     return 0;
 }

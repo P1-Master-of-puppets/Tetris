@@ -5,9 +5,18 @@ int Game::countLineScore(const int& nbLine)
 	return 0;
 }
 
+
+
 Game::Game()
 {
 	_board = ColorArray2D(10, 20);
+	//Fill the queue with random pieces
+	// this might be changed for a less rng aproach
+	for (int i = 0; i < 8; i++)
+	{
+		_queue.push(getRandomPiece());
+	}
+	_state = GameState::Initiated;
 }
 
 Game::~Game()
@@ -17,30 +26,21 @@ Game::~Game()
 const ColorArray2D& Game::getBoard()
 {
 	return _board;
-	// TODO: insert return statement here
 }
 
 const Piece* Game::getPiece()
 {
 	return _currentPiece;
-	// TODO: insert return statement here
-}
-
-const ColorArray2D& Game::getBoardWithPiece()
-{
-	//Todo : Mathias check const ColorArray2D& Game::getBoardWithPiece()
-	//Warning : Le retour est temporaire. (Detruit out of scope)
-	return ColorArray2D(1,1);
 }
 
 bool Game::rotatePieceLeft()
 {
-	return false;
+	return _currentPiece->rotateRight(_board);
 }
 
 bool Game::rotatePieceRight()
 {
-	return false;
+	return _currentPiece->rotateRight(_board);
 }
 
 bool Game::translatePieceLeft()
@@ -51,4 +51,42 @@ bool Game::translatePieceLeft()
 bool Game::translatePieceRight()
 {
 	return _currentPiece->translateRight(_board);
+}
+
+GameState Game::getState()
+{
+	return _state;
+}
+
+void Game::start()
+{
+	_state = GameState::OnGoing;
+}
+
+
+Piece* Game::getRandomPiece() {
+	switch (rand() % 7)
+	{
+	case 0:
+		return new LeftL();
+		break;
+	case 1:
+		return new LeftS();
+		break;
+	case 2:
+		return new LongBar();
+		break;
+	case 3:
+		return new RightL();
+		break;
+	case 4:
+		return new RightS();
+		break;
+	case 5:
+		return new Square();
+		break;
+	case 6:
+		return new Thomas();
+		break;
+	}
 }

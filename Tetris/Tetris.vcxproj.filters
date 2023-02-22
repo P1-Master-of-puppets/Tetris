@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Display">
       <UniqueIdentifier>{50e099da-00b9-42ba-bd21-322bfd61b339}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{9cfefe1a-508f-4dc4-8dd8-7614e2b3d3f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -84,6 +87,12 @@
     <ClCompile Include="testPiece.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
+    <ClCompile Include="inputClavier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameState.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -130,6 +139,12 @@
     </ClInclude>
     <ClInclude Include="thomas.h">
       <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="gameInput.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inputClavier.h">
+      <Filter>Header Files\Controller</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

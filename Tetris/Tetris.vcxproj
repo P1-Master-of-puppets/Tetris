@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -142,6 +142,8 @@
     <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="consoleDisplay.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameState.h" />
+    <ClCompile Include="inputClavier.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
     <ClCompile Include="longBar.cpp" />
@@ -161,6 +163,8 @@
     <ClInclude Include="consoleDisplay.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="gameInput.h" />
+    <ClInclude Include="inputClavier.h" />
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />
     <ClInclude Include="longBar.h" />

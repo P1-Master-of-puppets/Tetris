@@ -6,4 +6,4 @@ bool isDownPressed();
 bool isLeftPressed();
 bool isRightPressed();
 
-#endif // INPUT_CLAVIER_H__
+#endif

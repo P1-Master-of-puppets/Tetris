@@ -1,15 +1,17 @@
 #ifndef KEYBOARD_INPUT
 #define KEYBOARD_INPUT
 
-class KeyboardInput{
+#include <Windows.h>
 
-    public:
-        static bool left();
-        static bool right();
-        static bool rotateRight();
-        static bool rotateLeft();
-        static bool dropFaster();
-        static bool dropOnce();
+class KeyboardInput {
+
+public:
+	static bool translateLeft();
+	static bool translateRight();
+	static bool rotateRight();
+	static bool rotateLeft();
+	static bool dropFaster();
+	static bool dropOnce();
 };
 
 #endif

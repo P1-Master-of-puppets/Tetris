@@ -143,7 +143,9 @@
     <ClCompile Include="consoleDisplay.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameState.h" />
-    <ClCompile Include="inputClavier.cpp" />
+    <ClCompile Include="inputDevice.cpp" />
+    <ClCompile Include="inputDevice.h" />
+    <ClCompile Include="keyboardInput.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
     <ClCompile Include="longBar.cpp" />
@@ -163,8 +165,7 @@
     <ClInclude Include="consoleDisplay.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="gameInput.h" />
-    <ClInclude Include="inputClavier.h" />
+    <ClInclude Include="keyboardInput.h" />
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />
     <ClInclude Include="longBar.h" />

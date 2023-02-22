@@ -1,25 +1,31 @@
-#include "inputKeyboard.h"
+#include "keyboardInput.h"
 
-static bool KeyboardInput::left(){
+bool KeyboardInput::translateLeft(){
+    //Left arrow or "A"
     return GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(0x44);
 }
 
-static bool KeyboardInput::right(){
+bool KeyboardInput::translateRight(){
+    //Right arrow or "D"
     return GetAsyncKeyState(VK_RIGHT) || GetAsyncKeyState(0x41);
 }
 
-static bool KeyboardInput::rotateRight(){
+bool KeyboardInput::rotateRight(){
+    //E
     return GetAsyncKeyState(0x45);
 }
 
-static bool KeyboardInput::rotateLeft(){
+bool KeyboardInput::rotateLeft(){
+    //Q
     return GetAsyncKeyState(0x51);
 }
 
-static bool KeyboardInput::dropFaster(){
+bool KeyboardInput::dropFaster(){
+    //Down arrow or "S"
     return GetAsyncKeyState(VK_DOWN) || GetAsyncKeyState(0x53);
 }
 
-static bool KeyboardInput::dropOnce(){
+bool KeyboardInput::dropOnce(){
+    //Space
     return GetAsyncKeyState(VK_SPACE);
 }

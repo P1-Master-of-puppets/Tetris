@@ -1,13 +1,13 @@
 #include "inputDevice.h"
 
-bool InputDevice::left()
+bool InputDevice::translateLeft()
 {
-    return KeyboardInput::left();
+    return KeyboardInput::translateLeft();
 }
 
-bool InputDevice::right()
+bool InputDevice::translateRight()
 {
-    return KeyboardInput::right();
+    return KeyboardInput::translateRight();
 }
 
 bool InputDevice::rotateRight()

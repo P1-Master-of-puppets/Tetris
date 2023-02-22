@@ -40,6 +40,9 @@
     <Filter Include="Header Files\Controller">
       <UniqueIdentifier>{9cfefe1a-508f-4dc4-8dd8-7614e2b3d3f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{97642535-1242-40ef-bf35-3ed520cdc141}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -87,11 +90,17 @@
     <ClCompile Include="testPiece.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
-    <ClCompile Include="inputClavier.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="gameState.h">
       <Filter>Header Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="inputDevice.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="inputDevice.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboardInput.cpp">
+      <Filter>Source Files\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,10 +149,7 @@
     <ClInclude Include="thomas.h">
       <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
-    <ClInclude Include="gameInput.h">
-      <Filter>Header Files\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="inputClavier.h">
+    <ClInclude Include="keyboardInput.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
   </ItemGroup>

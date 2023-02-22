@@ -13,6 +13,7 @@
 #include "consoleDisplay.h"
 #include <iostream>
 #include <queue>
+#include <vector>
 
 class Game
 {
@@ -20,13 +21,18 @@ private:
     GameState _state;
     Piece* _currentPiece = nullptr;
     ColorArray2D _board = ColorArray2D(10,20);
-    unsigned int _score = 0;
-    std::queue<Piece*> _queue;
-
-    bool _isDirty = true;
     ConsoleDisplay _display;
+    std::queue<Piece*> _queue;
+    unsigned int _score = 0;
+    bool _isDirty = true;
+
+
+
+    int* getFullRows(int& size);
+    void removeRows(int* rows, int& size);
     int countLineScore(const int& nbLine);
     Piece* getRandomPiece();
+    void putPieceInBoard();
 public:
     Game();
     ~Game();

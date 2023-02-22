@@ -14,7 +14,7 @@ public:
 	~ColorArray2D();
 	int getHeight() const;
 	int getWidth() const;
-	Color** getGrid() const;
+	Color** getGrid();
 	Color*& operator[](int i) const;
 	Color*& operator[](int i);
 	void fill(Color color);

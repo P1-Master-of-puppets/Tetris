@@ -70,7 +70,10 @@ void ConsoleDisplay::displayBoardWithPiece(ColorArray2D& board, Piece* somePiece
 			   somePiece->getCoordinate().y + i >= 0 &&
 			   somePiece->getCoordinate().x + j < board.getWidth() &&
 			   somePiece->getCoordinate().x + j >= 0){
-				combinedBoard[somePiece->getCoordinate().y + i][somePiece->getCoordinate().x + j] = (*somePiece->getPiece())[i][j];
+				if ((*somePiece->getPiece())[i][j] != Color::Transparent)
+				{
+					combinedBoard[somePiece->getCoordinate().y + i][somePiece->getCoordinate().x + j] = (*somePiece->getPiece())[i][j];
+				}
 			}
 		}
 	}

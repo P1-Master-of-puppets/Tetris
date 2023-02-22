@@ -2,12 +2,12 @@
 
 bool KeyboardInput::translateLeft(){
     //Left arrow or "A"
-    return GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(0x44);
+    return GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(0x41);
 }
 
 bool KeyboardInput::translateRight(){
     //Right arrow or "D"
-    return GetAsyncKeyState(VK_RIGHT) || GetAsyncKeyState(0x41);
+    return GetAsyncKeyState(VK_RIGHT) || GetAsyncKeyState(0x44);
 }
 
 bool KeyboardInput::rotateRight(){

@@ -28,6 +28,9 @@ int main()
 		else if (input.rotateLeft())
 			game.rotatePieceLeft();
 
+		if (input.dropOnce())
+			game.translatePieceDown();
+
 		game.refreshUI();
 	}
 	return 0;

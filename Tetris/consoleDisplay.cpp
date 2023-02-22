@@ -88,7 +88,7 @@ void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
 		std::cout << "#";
 	}
 
-	std::cout << std::endl << "#";
+	std::cout << "\n" << "#";
 
 	//Change console color only if in windows.
 	//Linux might be using a different lib.
@@ -101,14 +101,14 @@ void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
 			displayWithColor(colorArray.getGrid()[i][j]);
 			//displayWithoutColor(colorArray.getGrid()[i][j]);
 		}
-		std::cout << "#" << std::endl << "#";
+		std::cout << "#" << "\n" << "#";
 	}
 
 	for(int i = 0; i < colorArray.getWidth()*2 + 2; i++){
 		std::cout << "#";
 	}
 
-	std::cout << std::endl;
+	std::cout << "\n";
 
 }
 

@@ -1,7 +1,7 @@
 #include "inputDevice.h"
 
 InputDevice::InputDevice() {
-    milliseconds requiredDelayMillis(250);
+    milliseconds requiredDelayMillis(inputDelay);
     lastDropFaster = high_resolution_clock::now() - requiredDelayMillis;
     lastDropOnce = high_resolution_clock::now() - requiredDelayMillis;
     lastRotateLeft = high_resolution_clock::now() - requiredDelayMillis;
@@ -12,7 +12,7 @@ InputDevice::InputDevice() {
 
 bool InputDevice::translateLeft()
 {
-    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastTranslateLeft).count() > 250 && KeyboardInput::translateLeft()) {
+    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastTranslateLeft).count() > inputDelay && KeyboardInput::translateLeft()) {
         lastTranslateLeft = high_resolution_clock::now();
         return true;
     }
@@ -23,7 +23,7 @@ bool InputDevice::translateLeft()
 
 bool InputDevice::translateRight()
 {
-    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastTranslateRight).count() > 250 && KeyboardInput::translateRight()) {
+    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastTranslateRight).count() > inputDelay && KeyboardInput::translateRight()) {
         lastTranslateRight = high_resolution_clock::now();
         return true;
     }
@@ -34,7 +34,7 @@ bool InputDevice::translateRight()
 
 bool InputDevice::rotateRight()
 {
-    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastRotateRight).count() > 250 && KeyboardInput::rotateRight()) {
+    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastRotateRight).count() > inputDelay && KeyboardInput::rotateRight()) {
         lastRotateRight = high_resolution_clock::now();
         return true;
     }
@@ -45,7 +45,7 @@ bool InputDevice::rotateRight()
 
 bool InputDevice::rotateLeft()
 {
-    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastRotateLeft).count() > 250 && KeyboardInput::rotateLeft()) {
+    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastRotateLeft).count() > inputDelay && KeyboardInput::rotateLeft()) {
         lastRotateLeft = high_resolution_clock::now();
         return true;
     }
@@ -56,7 +56,7 @@ bool InputDevice::rotateLeft()
 
 bool InputDevice::dropFaster()
 {
-    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastDropFaster).count() > 250 && KeyboardInput::dropFaster()) {
+    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastDropFaster).count() > inputDelay && KeyboardInput::dropFaster()) {
         lastDropFaster = high_resolution_clock::now();
         return true;
     }
@@ -67,7 +67,7 @@ bool InputDevice::dropFaster()
 
 bool InputDevice::dropOnce()
 {
-    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastDropOnce).count() > 250 && KeyboardInput::dropOnce()) {
+    if (duration_cast<milliseconds>(high_resolution_clock::now() - lastDropOnce).count() > inputDelay && KeyboardInput::dropOnce()) {
         lastDropOnce = high_resolution_clock::now();
         return true;
     }

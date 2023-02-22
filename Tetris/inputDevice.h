@@ -9,6 +9,7 @@ using namespace std::chrono;
 class InputDevice
 {
 private:
+	const int inputDelay = 100;
 	high_resolution_clock::time_point lastTranslateLeft;
 	high_resolution_clock::time_point lastTranslateRight;
 	high_resolution_clock::time_point lastRotateLeft;

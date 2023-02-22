@@ -1,27 +1,5 @@
 #include "game.h"
 
-void Game::putPieceInBoard()
-{
-	for (int i = 0; i < _currentPiece->getPiece()->getHeight(); i++) {
-		for (int j = 0; j < _currentPiece->getPiece()->getWidth(); j++) {
-			if (_currentPiece->getCoordinate().y + i < _board.getHeight() &&
-				_currentPiece->getCoordinate().y + i >= 0 &&
-				_currentPiece->getCoordinate().x + j < _board.getWidth() &&
-				_currentPiece->getCoordinate().x + j >= 0) {
-
-				if ((*_currentPiece->getPiece())[i][j] != Color::Transparent)
-				{
-					_board[_currentPiece->getCoordinate().y + i][_currentPiece->getCoordinate().x + j] = (*_currentPiece->getPiece())[i][j];
-				}
-			}
-		}
-	}
-}
-
-int Game::countLineScore(const int& nbLine)
-{
-	return 0;
-}
 
 Game::Game()
 {
@@ -129,9 +107,9 @@ void Game::refreshUI()
 {
 	if (_isDirty)
 	{
-		system("CLS");
 		_isDirty = false;
 		_display.displayBoardWithPiece(_board, _currentPiece);
+		std::cout << "\n" << "\n" << "\n" << "\n" << "\n" << "\n" << "\n";
 	}
 }
 
@@ -206,4 +184,27 @@ void Game::removeRows(int* rows, int& size) {
 			_board.getGrid()[0][i] = Color::Transparent;
 		}
 	}
+}
+
+void Game::putPieceInBoard()
+{
+	for (int i = 0; i < _currentPiece->getPiece()->getHeight(); i++) {
+		for (int j = 0; j < _currentPiece->getPiece()->getWidth(); j++) {
+			if (_currentPiece->getCoordinate().y + i < _board.getHeight() &&
+				_currentPiece->getCoordinate().y + i >= 0 &&
+				_currentPiece->getCoordinate().x + j < _board.getWidth() &&
+				_currentPiece->getCoordinate().x + j >= 0) {
+
+				if ((*_currentPiece->getPiece())[i][j] != Color::Transparent)
+				{
+					_board[_currentPiece->getCoordinate().y + i][_currentPiece->getCoordinate().x + j] = (*_currentPiece->getPiece())[i][j];
+				}
+			}
+		}
+	}
+}
+
+int Game::countLineScore(const int& nbLine)
+{
+	return 0;
 }

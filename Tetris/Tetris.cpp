@@ -4,7 +4,9 @@
 #include "testDisplay.h"
 #include "testPiece.h"
 #include "inputDevice.h"
-#include <ctime>
+
+#include <chrono>
+using namespace std::chrono;
 
 int main()
 {
@@ -13,8 +15,7 @@ int main()
 	game.refreshUI();
 	InputDevice input;
 	int pieceSpeed = 500;
-
-	time_t ttime = time(0);
+	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 
 	while (game.getState() == GameState::OnGoing)
 	{
@@ -28,8 +29,10 @@ int main()
 		else if (input.rotateLeft())
 			game.rotatePieceLeft();
 
-		if (input.dropOnce())
+		if (input.dropOnce() || duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > pieceSpeed) {
+			lastAutomaticDrop = high_resolution_clock::now();
 			game.translatePieceDown();
+		}
 
 		game.refreshUI();
 	}

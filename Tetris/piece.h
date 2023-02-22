@@ -27,7 +27,14 @@ public:
     /// <param name="board"></param>
     /// <returns></returns>
     bool translateLeft(const ColorArray2D& board);
+    ////
     //Return false if piece can still go down, true if not
+
+    /// <summary>
+    /// Returns true if piece can go down and false is piece touches something
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
     bool touchBottom(const ColorArray2D& board);
     /// <summary>
     /// Rotates piece to the right

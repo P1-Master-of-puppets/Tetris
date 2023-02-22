@@ -47,12 +47,12 @@ bool Piece::touchBottom(const ColorArray2D& board)
     newCoords.y++;
 
     if (isColliding(_array, newCoords, board)) {
-        return true;
+        return false;
     }
 
     _coordinate = newCoords;
 
-    return false;
+    return true;
 }
 
 bool Piece::isColliding(const ColorArray2D* future, const Coordinate pos, const ColorArray2D& board){

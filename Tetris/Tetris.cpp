@@ -20,7 +20,15 @@ int main()
 	{
 		if (input.translateLeft())
 			game.translatePieceLeft();
-		
+		else if (input.translateRight())
+			game.translatePieceRight();
+
+		if (input.rotateRight())
+			game.rotatePieceRight();
+		else if (input.rotateLeft())
+			game.rotatePieceLeft();
+
+		game.refreshUI();
 	}
 	return 0;
 }

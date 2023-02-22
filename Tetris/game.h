@@ -22,7 +22,8 @@ private:
     ColorArray2D _board = ColorArray2D(10,20);
     unsigned int _score = 0;
     std::queue<Piece*> _queue;
-    int a = 5;
+
+    bool _isDirty = true;
     ConsoleDisplay _display;
     int countLineScore(const int& nbLine);
     Piece* getRandomPiece();
@@ -36,6 +37,7 @@ public:
     bool rotatePieceRight();
     bool translatePieceLeft();
     bool translatePieceRight();
+    bool translatePieceDown();
     GameState getState();
     void start();
     void refreshUI();

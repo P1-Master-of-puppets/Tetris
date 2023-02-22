@@ -35,21 +35,25 @@ const Piece* Game::getPiece()
 
 bool Game::rotatePieceLeft()
 {
+	_isDirty = true;
 	return _currentPiece->rotateRight(_board);
 }
 
 bool Game::rotatePieceRight()
 {
+	_isDirty = true;
 	return _currentPiece->rotateRight(_board);
 }
 
 bool Game::translatePieceLeft()
 {
+	_isDirty = true;
 	return _currentPiece->translateLeft(_board);
 }
 
 bool Game::translatePieceRight()
 {
+	_isDirty = true;
 	return _currentPiece->translateRight(_board);
 }
 
@@ -65,9 +69,24 @@ void Game::start()
 	_queue.pop();
 }
 
+bool Game::translatePieceDown()
+{
+	_isDirty = true;
+
+	if (_currentPiece->touchBottom(_board))
+	{
+
+	}
+
+}
+
 void Game::refreshUI()
 {
-	_display.displayBoardWithPiece(_board, _currentPiece);
+	if (_isDirty)
+	{
+		_isDirty = false;
+		_display.displayBoardWithPiece(_board, _currentPiece);
+	}
 }
 
 Piece* Game::getRandomPiece() {

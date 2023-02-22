@@ -5,11 +5,11 @@ int Game::countLineScore(const int& nbLine)
 	return 0;
 }
 
-
-
 Game::Game()
 {
-	_board = ColorArray2D(10, 20);
+	srand(time(0));
+	//_board = ColorArray2D(10, 20);
+	_board.fill(Color::Transparent);
 	//Fill the queue with random pieces
 	// this might be changed for a less rng aproach
 	for (int i = 0; i < 8; i++)
@@ -61,8 +61,14 @@ GameState Game::getState()
 void Game::start()
 {
 	_state = GameState::OnGoing;
+	_currentPiece = _queue.front();
+	_queue.pop();
 }
 
+void Game::refreshUI()
+{
+	_display.displayBoardWithPiece(_board, _currentPiece);
+}
 
 Piece* Game::getRandomPiece() {
 	switch (rand() % 7)

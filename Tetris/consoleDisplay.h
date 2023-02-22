@@ -5,10 +5,6 @@
 #include "piece.h"
 #include <iostream>
 
-//#include "colorDisplay.hpp"
-
-
-
 class ConsoleDisplay
 {
 public:

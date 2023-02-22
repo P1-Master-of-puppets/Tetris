@@ -62,13 +62,8 @@ ConsoleDisplay::~ConsoleDisplay()
 
 void ConsoleDisplay::displayBoardWithPiece(ColorArray2D& board, Piece* somePiece){
 
-	ColorArray2D combinedBoard(board.getWidth(), board.getHeight());
-
-	for(int i = 0; i < board.getHeight(); i++){
-		for(int j = 0; j < board.getWidth(); j++){
-			combinedBoard[i][j] = board[i][j];
-		}
-	}
+	ColorArray2D combinedBoard = ColorArray2D(board);
+	Color allo = combinedBoard.getGrid()[-1][-2];
 
 	for(int i = 0; i < somePiece->getPiece()->getHeight(); i++){
 		for(int j = 0; j < somePiece->getPiece()->getWidth(); j++){

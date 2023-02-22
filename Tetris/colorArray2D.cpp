@@ -14,11 +14,8 @@ Color** ColorArray2D::getGrid() const
 	return _grid;
 }
 
-ColorArray2D::ColorArray2D(const ColorArray2D& colorArray2D) : ColorArray2D(_height, _width)
+ColorArray2D::ColorArray2D(const ColorArray2D& colorArray2D) : ColorArray2D(colorArray2D._width, colorArray2D._height)
 {
-	_height = colorArray2D._height;
-	_width = colorArray2D._width;
-
 	for (int i = 0; i < _height; i++)
 	{
 		for (int j = 0; j < _width; j++)
@@ -37,8 +34,6 @@ ColorArray2D::ColorArray2D(int width, int height)
 	{
 		_grid[i] = new Color[width];
 	}
-
-	fill(Color::Transparent);
 }
 
 ColorArray2D::~ColorArray2D()

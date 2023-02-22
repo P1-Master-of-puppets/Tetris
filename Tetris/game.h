@@ -10,9 +10,9 @@
 #include "square.h"
 #include "thomas.h"
 #include "gameState.h"
+#include "consoleDisplay.h"
 #include <iostream>
 #include <queue>
-
 
 class Game
 {
@@ -22,7 +22,8 @@ private:
     ColorArray2D _board = ColorArray2D(10,20);
     unsigned int _score = 0;
     std::queue<Piece*> _queue;
-
+    int a = 5;
+    ConsoleDisplay _display;
     int countLineScore(const int& nbLine);
     Piece* getRandomPiece();
 public:

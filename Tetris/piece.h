@@ -35,7 +35,7 @@ public:
     /// </summary>
     /// <param name="board"></param>
     /// <returns></returns>
-    bool touchBottom(const ColorArray2D& board);
+    bool translateDown(const ColorArray2D& board);
     /// <summary>
     /// Rotates piece to the right
     /// </summary>

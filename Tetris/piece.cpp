@@ -40,7 +40,7 @@ bool Piece::translateLeft(const ColorArray2D& board)
     
     return true; 
 }
-bool Piece::touchBottom(const ColorArray2D& board)
+bool Piece::translateDown(const ColorArray2D& board)
 {
     Coordinate newCoords = _coordinate;
 

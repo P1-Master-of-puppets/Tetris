@@ -73,7 +73,7 @@ bool Game::translatePieceDown()
 {
 	_isDirty = true;
 
-	if (_currentPiece->touchBottom(_board))
+	if (_currentPiece->translateDown(_board))
 	{
 
 	}

@@ -1,6 +1,3 @@
-// Tetris.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "game.h"
 #include "colorArray2D.h"
@@ -13,7 +10,7 @@ int main()
 	Game game;
 	game.start();
 	game.refreshUI();
-	
+
 	int pieceSpeed = 500;
 
 	time_t ttime = time(0);
@@ -22,7 +19,6 @@ int main()
 	{
 		if (ttime > ttime)
 		{
-
 		}
 	}
 	return 0;

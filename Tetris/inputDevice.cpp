@@ -1,33 +1,31 @@
 #include "inputDevice.h"
-InputDevice::InputDevice()
-{
-}
+
 bool InputDevice::left()
 {
-    return false;
+    return KeyboardInput::left();
 }
 
 bool InputDevice::right()
 {
-    return false;
+    return KeyboardInput::right();
 }
 
 bool InputDevice::rotateRight()
 {
-    return false;
+    return KeyboardInput::rotateRight();
 }
 
 bool InputDevice::rotateLeft()
 {
-    return false;
+    return KeyboardInput::rotateLeft();
 }
 
 bool InputDevice::dropFaster()
 {
-    return false;
+    return KeyboardInput::dropFaster();
 }
 
 bool InputDevice::dropOnce()
 {
-    return false;
+    return KeyboardInput::dropOnce();
 }

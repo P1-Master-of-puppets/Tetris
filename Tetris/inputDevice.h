@@ -1,10 +1,12 @@
 #ifndef INPUT_DEVICE
 #define INPUT_DEVICE
 
-class InputDevice {
+#include "keyboardInput.h"
+
+class InputDevice
+{
 
 public:
-    InputDevice();
     bool left();
     bool right();
     bool rotateRight();

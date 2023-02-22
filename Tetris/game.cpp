@@ -78,6 +78,7 @@ bool Game::translatePieceDown()
 
 	}
 
+	return true;
 }
 
 void Game::refreshUI()

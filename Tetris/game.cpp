@@ -7,6 +7,7 @@ Game::Game(int level)
 	srand(time(0));
 	_board.fill(Color::Transparent);
 	updateLvlAndGravity();
+	setGravity();
 	//Fill the queue with random pieces
 	// this might be changed for a less rng aproach
 	for (int i = 0; i < 8; i++)
@@ -33,6 +34,11 @@ Piece* Game::getPiece()
 int Game::getLevel()
 {
 	return _level;
+}
+
+int Game::getGravitySpeed()
+{
+	return _gravityspeed_milliseconds;
 }
 
 bool Game::rotatePieceLeft()
@@ -119,8 +125,11 @@ void Game::refreshUI()
 	if (_isDirty)
 	{
 		_isDirty = false;
+		system("CLS");
+		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
+
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
-		std::cout << "\n" << "\n" << "\n" << "\n" << "\n" << "\n" << "\n";
+
 	}
 }
 
@@ -223,13 +232,43 @@ bool Game::gameLost()
 
 void Game::updateLvlAndGravity()
 {
-	//int lineLvl = _lin
-	//if ()
-	//{
-	//
-	//}
-	//TODO THIS WILL NEED TO BE CHANGED
+	if ((_level + 1) * 10 <= _totalLines)
+	{
+		_level++;
+		setGravity();
+	}
+}
 
+void Game::setGravity()
+{
+	if (_level < 9)
+	{
+		_gravityspeed_milliseconds = 1000* (((double)48 - ((double)_level * (double)5)) / (double)60);
+	}
+	else if (_level == 9)
+	{
+		_gravityspeed_milliseconds = ((double)6 / (double)60) * 1000;
+	}
+	else if (_level >= 10 && _level <= 12)
+	{
+		_gravityspeed_milliseconds = ((double)5 / (double)60)* 1000;
+	}
+	else if(_level >= 13 && _level <= 15)
+	{
+		_gravityspeed_milliseconds = ((double)4 / (double)60) * 1000;
+	}
+	else if (_level >= 16 && _level <= 18)
+	{
+		_gravityspeed_milliseconds = ((double)3 / (double)60) * 1000;
+	}
+	else if (_level >= 19 && _level <= 28)
+	{
+		_gravityspeed_milliseconds = ((double)2 / (double)60) * 1000;
+	}
+	else 
+	{
+		_gravityspeed_milliseconds = ((double)1 / (double)60) * 1000;
+	}
 }
 
 int Game::countLineScore(const int& nbLine)

@@ -26,9 +26,9 @@ private:
 
     int _level = 0;
     unsigned int _score = 0;
-    int _totalLines = 0;
+    int _totalLines = 9;
     bool _isDirty = true;
-    int gravityspeed_milliseconds = 0;
+    int _gravityspeed_milliseconds = 0;
 
 
     int* getFullRows(int& size);
@@ -38,6 +38,7 @@ private:
     void putPieceInBoard();
     bool gameLost();
     void updateLvlAndGravity();
+    void setGravity();
 public:
     Game(int level);
     ~Game();
@@ -47,6 +48,8 @@ public:
     const ColorArray2D& getBoard();
     Piece* getPiece();
     int getLevel();
+    int getGravitySpeed();
+
     bool rotatePieceLeft();
     bool rotatePieceRight();
     bool translatePieceLeft();

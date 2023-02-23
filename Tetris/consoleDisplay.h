@@ -11,7 +11,10 @@ public:
 	ConsoleDisplay();
 	~ConsoleDisplay();
 	void display2DArray(ColorArray2D& array);
+	void display2DArray(ColorArray2D& colorArray, int startLine);
 	void displayBoardWithPiece(ColorArray2D& board, Piece* somePiece);
+	void displayBoardWithPiece(ColorArray2D& board, Piece* somePiece, int startLine);
+
 private:
 
 };

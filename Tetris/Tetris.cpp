@@ -10,7 +10,7 @@ using namespace std::chrono;
 
 int main()
 {
-	Game game;
+	Game game = Game(0);
 	game.start();
 	game.refreshUI();
 	InputDevice input;
@@ -19,6 +19,8 @@ int main()
 
 	while (game.getState() == GameState::OnGoing)
 	{
+		game.refreshUI();
+
 		if (input.translateLeft())
 			game.translatePieceLeft();
 		else if (input.translateRight())
@@ -34,7 +36,6 @@ int main()
 			game.translatePieceDown();
 		}
 
-		game.refreshUI();
 	}
 	return 0;
 }

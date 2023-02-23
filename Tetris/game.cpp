@@ -1,11 +1,12 @@
 #include "game.h"
 
 
-Game::Game()
+Game::Game(int level)
 {
+	_level = level;
 	srand(time(0));
-	//_board = ColorArray2D(10, 20);
 	_board.fill(Color::Transparent);
+	updateLvlAndGravity();
 	//Fill the queue with random pieces
 	// this might be changed for a less rng aproach
 	for (int i = 0; i < 8; i++)
@@ -24,9 +25,14 @@ const ColorArray2D& Game::getBoard()
 	return _board;
 }
 
-const Piece* Game::getPiece()
+Piece* Game::getPiece()
 {
 	return _currentPiece;
+}
+
+int Game::getLevel()
+{
+	return _level;
 }
 
 bool Game::rotatePieceLeft()
@@ -86,6 +92,11 @@ bool Game::translatePieceDown()
 		int* rows = getFullRows(rowAmount);
 		removeRows(rows, rowAmount);
 		delete rows;
+		_score += countLineScore(rowAmount);
+		_totalLines += rowAmount;
+		updateLvlAndGravity();
+		//Verify if the game is lost
+		return !gameLost();
 	}
 
 	return true;
@@ -108,7 +119,7 @@ void Game::refreshUI()
 	if (_isDirty)
 	{
 		_isDirty = false;
-		_display.displayBoardWithPiece(_board, _currentPiece);
+		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
 		std::cout << "\n" << "\n" << "\n" << "\n" << "\n" << "\n" << "\n";
 	}
 }
@@ -165,8 +176,6 @@ int* Game::getFullRows(int& size)
 }
 
 void Game::removeRows(int* rows, int& size) {
-
-
 	//remove all rows
 	for (int i = 0; i < size; i++)
 	{
@@ -188,23 +197,54 @@ void Game::removeRows(int* rows, int& size) {
 
 void Game::putPieceInBoard()
 {
-	for (int i = 0; i < _currentPiece->getPiece()->getHeight(); i++) {
-		for (int j = 0; j < _currentPiece->getPiece()->getWidth(); j++) {
-			if (_currentPiece->getCoordinate().y + i < _board.getHeight() &&
-				_currentPiece->getCoordinate().y + i >= 0 &&
-				_currentPiece->getCoordinate().x + j < _board.getWidth() &&
-				_currentPiece->getCoordinate().x + j >= 0) {
+	_currentPiece->addToColorArray2D(_board);
+}
 
-				if ((*_currentPiece->getPiece())[i][j] != Color::Transparent)
-				{
-					_board[_currentPiece->getCoordinate().y + i][_currentPiece->getCoordinate().x + j] = (*_currentPiece->getPiece())[i][j];
-				}
-			}
+bool Game::gameLost()
+{
+	//Verify if new piece is over a current piece
+	if (_currentPiece->isColliding(_currentPiece->getPiece(), _currentPiece->getCoordinate(), _board))
+	{
+		_state = GameState::Finished;
+		return true;
+	}
+
+	//Verify if pices are higher than the displayed one
+	for (int i = 0; i < _board.getWidth(); i++)
+	{
+		if (_board.getGrid()[extraRow - 1][i] != Color::Transparent)
+		{
+			GameState::Finished;
+			return true;
 		}
 	}
+	return false;
+}
+
+void Game::updateLvlAndGravity()
+{
+	//int lineLvl = _lin
+	//if ()
+	//{
+	//
+	//}
+	//TODO THIS WILL NEED TO BE CHANGED
+
 }
 
 int Game::countLineScore(const int& nbLine)
 {
-	return 0;
+	switch (nbLine)
+	{
+	case 1:
+		return 40 * (_level + 1);
+	case 2:
+		return 100 * (_level + 1);
+	case 3:
+		return 300 * (_level + 1);
+	case 4:
+		return 1200 * (_level + 1);
+	default:
+		return 0;
+	}
 }

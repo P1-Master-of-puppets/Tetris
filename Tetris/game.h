@@ -20,12 +20,15 @@ class Game
 private:
     GameState _state;
     Piece* _currentPiece = nullptr;
-    ColorArray2D _board = ColorArray2D(10,20);
+    ColorArray2D _board = ColorArray2D(10,22);
     ConsoleDisplay _display;
     std::queue<Piece*> _queue;
-    unsigned int _score = 0;
-    bool _isDirty = true;
 
+    int _level = 0;
+    unsigned int _score = 0;
+    int _totalLines = 0;
+    bool _isDirty = true;
+    int gravityspeed_milliseconds = 0;
 
 
     int* getFullRows(int& size);
@@ -33,12 +36,17 @@ private:
     int countLineScore(const int& nbLine);
     Piece* getRandomPiece();
     void putPieceInBoard();
+    bool gameLost();
+    void updateLvlAndGravity();
 public:
-    Game();
+    Game(int level);
     ~Game();
 
+    const int extraRow = 2;
+
     const ColorArray2D& getBoard();
-    const Piece* getPiece();
+    Piece* getPiece();
+    int getLevel();
     bool rotatePieceLeft();
     bool rotatePieceRight();
     bool translatePieceLeft();

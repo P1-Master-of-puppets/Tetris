@@ -26,7 +26,7 @@ private:
 
     int _level = 0;
     unsigned int _score = 0;
-    int _totalLines = 9;
+    int _totalLines = 0;
     bool _isDirty = true;
     int _gravityspeed_milliseconds = 0;
 

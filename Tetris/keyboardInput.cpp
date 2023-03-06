@@ -2,30 +2,41 @@
 
 bool KeyboardInput::translateLeft(){
     //Left arrow or "A"
-    return GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(0x41);
+    return GetAsyncKeyState(VK_LEFT);
 }
 
 bool KeyboardInput::translateRight(){
     //Right arrow or "D"
-    return GetAsyncKeyState(VK_RIGHT) || GetAsyncKeyState(0x44);
+    return GetAsyncKeyState(VK_RIGHT);
 }
 
 bool KeyboardInput::rotateRight(){
-    //E
-    return GetAsyncKeyState(0x45);
+    //X
+    return GetAsyncKeyState(0x58);
 }
 
 bool KeyboardInput::rotateLeft(){
-    //Q
-    return GetAsyncKeyState(0x51);
+    //Z
+    return GetAsyncKeyState(0x5A);
 }
 
-bool KeyboardInput::dropFaster(){
-    //Down arrow or "S"
-    return GetAsyncKeyState(VK_DOWN) || GetAsyncKeyState(0x53);
+bool KeyboardInput::dropInstant()
+{
+    return false;
 }
 
-bool KeyboardInput::dropOnce(){
-    //Space
-    return GetAsyncKeyState(VK_SPACE);
+bool KeyboardInput::dropFaster()
+{
+    return GetAsyncKeyState(VK_DOWN);
 }
+
+bool KeyboardInput::holdPiece()
+{
+    return false;
+}
+
+bool KeyboardInput::menu()
+{
+    return false;
+}
+

@@ -139,12 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="action.cpp" />
     <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="consoleDisplay.cpp" />
+    <ClCompile Include="controllerInput.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameState.h" />
-    <ClCompile Include="inputDevice.cpp" />
-    <ClCompile Include="inputDevice.h" />
+    <ClCompile Include="gameActions.cpp" />
+    <ClCompile Include="gameActions.h" />
+    <ClCompile Include="holdAction.cpp" />
     <ClCompile Include="keyboardInput.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
@@ -160,11 +163,15 @@
     <ClCompile Include="thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="action.h" />
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
     <ClInclude Include="consoleDisplay.h" />
+    <ClInclude Include="controlInterface.h" />
+    <ClInclude Include="controllerInput.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="holdAction.h" />
     <ClInclude Include="keyboardInput.h" />
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />

@@ -2,16 +2,19 @@
 #define KEYBOARD_INPUT
 
 #include <Windows.h>
+#include "controlInterface.h"
 
-class KeyboardInput {
-
+class KeyboardInput : public ControlInterface
+{
 public:
-	static bool translateLeft();
-	static bool translateRight();
-	static bool rotateRight();
-	static bool rotateLeft();
-	static bool dropFaster();
-	static bool dropOnce();
+	bool translateLeft();
+	bool translateRight();
+	bool rotateRight();
+	bool rotateLeft();
+	bool dropInstant();
+	bool dropFaster();
+	bool holdPiece();
+	bool menu();
 };
 
 #endif

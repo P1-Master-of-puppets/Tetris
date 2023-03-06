@@ -93,13 +93,22 @@
     <ClCompile Include="gameState.h">
       <Filter>Header Files\Logic</Filter>
     </ClCompile>
-    <ClCompile Include="inputDevice.h">
+    <ClCompile Include="gameActions.h">
       <Filter>Header Files\Controller</Filter>
     </ClCompile>
-    <ClCompile Include="inputDevice.cpp">
+    <ClCompile Include="gameActions.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
     <ClCompile Include="keyboardInput.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerInput.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="action.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="holdAction.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
   </ItemGroup>
@@ -150,6 +159,18 @@
       <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
     <ClInclude Include="keyboardInput.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controlInterface.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerInput.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="action.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="holdAction.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
   </ItemGroup>

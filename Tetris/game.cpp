@@ -1,11 +1,13 @@
 #include "game.h"
 
 
-Game::Game()
+Game::Game(int level)
 {
+	_level = level;
 	srand(time(0));
-	//_board = ColorArray2D(10, 20);
 	_board.fill(Color::Transparent);
+	updateLvlAndGravity();
+	setGravity();
 	//Fill the queue with random pieces
 	// this might be changed for a less rng aproach
 	for (int i = 0; i < 8; i++)
@@ -24,9 +26,19 @@ const ColorArray2D& Game::getBoard()
 	return _board;
 }
 
-const Piece* Game::getPiece()
+Piece* Game::getPiece()
 {
 	return _currentPiece;
+}
+
+int Game::getLevel()
+{
+	return _level;
+}
+
+int Game::getGravitySpeed()
+{
+	return _gravityspeed_milliseconds;
 }
 
 bool Game::rotatePieceLeft()
@@ -86,6 +98,11 @@ bool Game::translatePieceDown()
 		int* rows = getFullRows(rowAmount);
 		removeRows(rows, rowAmount);
 		delete rows;
+		_score += countLineScore(rowAmount);
+		_totalLines += rowAmount;
+		updateLvlAndGravity();
+		//Verify if the game is lost
+		return !gameLost();
 	}
 
 	return true;
@@ -108,8 +125,11 @@ void Game::refreshUI()
 	if (_isDirty)
 	{
 		_isDirty = false;
-		_display.displayBoardWithPiece(_board, _currentPiece);
-		std::cout << "\n" << "\n" << "\n" << "\n" << "\n" << "\n" << "\n";
+		system("CLS");
+		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
+
+		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
+
 	}
 }
 
@@ -165,8 +185,6 @@ int* Game::getFullRows(int& size)
 }
 
 void Game::removeRows(int* rows, int& size) {
-
-
 	//remove all rows
 	for (int i = 0; i < size; i++)
 	{
@@ -188,23 +206,84 @@ void Game::removeRows(int* rows, int& size) {
 
 void Game::putPieceInBoard()
 {
-	for (int i = 0; i < _currentPiece->getPiece()->getHeight(); i++) {
-		for (int j = 0; j < _currentPiece->getPiece()->getWidth(); j++) {
-			if (_currentPiece->getCoordinate().y + i < _board.getHeight() &&
-				_currentPiece->getCoordinate().y + i >= 0 &&
-				_currentPiece->getCoordinate().x + j < _board.getWidth() &&
-				_currentPiece->getCoordinate().x + j >= 0) {
+	_currentPiece->addToColorArray2D(_board);
+}
 
-				if ((*_currentPiece->getPiece())[i][j] != Color::Transparent)
-				{
-					_board[_currentPiece->getCoordinate().y + i][_currentPiece->getCoordinate().x + j] = (*_currentPiece->getPiece())[i][j];
-				}
-			}
+bool Game::gameLost()
+{
+	//Verify if new piece is over a current piece
+	if (_currentPiece->isColliding(_currentPiece->getPiece(), _currentPiece->getCoordinate(), _board))
+	{
+		_state = GameState::Finished;
+		return true;
+	}
+
+	//Verify if pices are higher than the displayed one
+	for (int i = 0; i < _board.getWidth(); i++)
+	{
+		if (_board.getGrid()[extraRow - 1][i] != Color::Transparent)
+		{
+			GameState::Finished;
+			return true;
 		}
+	}
+	return false;
+}
+
+void Game::updateLvlAndGravity()
+{
+	if ((_level + 1) * 10 <= _totalLines)
+	{
+		_level++;
+		setGravity();
+	}
+}
+
+void Game::setGravity()
+{
+	if (_level < 9)
+	{
+		_gravityspeed_milliseconds = 1000* (((double)48 - ((double)_level * (double)5)) / (double)60);
+	}
+	else if (_level == 9)
+	{
+		_gravityspeed_milliseconds = ((double)6 / (double)60) * 1000;
+	}
+	else if (_level >= 10 && _level <= 12)
+	{
+		_gravityspeed_milliseconds = ((double)5 / (double)60)* 1000;
+	}
+	else if(_level >= 13 && _level <= 15)
+	{
+		_gravityspeed_milliseconds = ((double)4 / (double)60) * 1000;
+	}
+	else if (_level >= 16 && _level <= 18)
+	{
+		_gravityspeed_milliseconds = ((double)3 / (double)60) * 1000;
+	}
+	else if (_level >= 19 && _level <= 28)
+	{
+		_gravityspeed_milliseconds = ((double)2 / (double)60) * 1000;
+	}
+	else 
+	{
+		_gravityspeed_milliseconds = ((double)1 / (double)60) * 1000;
 	}
 }
 
 int Game::countLineScore(const int& nbLine)
 {
-	return 0;
+	switch (nbLine)
+	{
+	case 1:
+		return 40 * (_level + 1);
+	case 2:
+		return 100 * (_level + 1);
+	case 3:
+		return 300 * (_level + 1);
+	case 4:
+		return 1200 * (_level + 1);
+	default:
+		return 0;
+	}
 }

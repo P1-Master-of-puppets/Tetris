@@ -4,7 +4,7 @@ Piece::Piece(int width, int height){
     _array = new ColorArray2D(width, height);
     _array->fill(Color::Transparent);
     _coordinate.x = 5;
-    _coordinate.y = 0;
+    _coordinate.y = 2;
 }
 
 Piece::~Piece(){
@@ -135,4 +135,21 @@ void Piece::setCoordinate(Coordinate newCoords){
 ColorArray2D* Piece::getPiece() const
 {
     return _array;
+}
+
+void Piece::addToColorArray2D(ColorArray2D& colorArray2D)
+{
+    for (int i = 0; i < _array->getHeight(); i++) {
+        for (int j = 0; j < _array->getWidth(); j++) {
+            if (getCoordinate().y + i < colorArray2D.getHeight() &&
+                getCoordinate().y + i >= 0 &&
+                getCoordinate().x + j < colorArray2D.getWidth() &&
+                getCoordinate().x + j >= 0) {
+                if ((*_array)[i][j] != Color::Transparent)
+                {
+                    colorArray2D[getCoordinate().y + i][getCoordinate().x + j] = (*_array)[i][j];
+                }
+            }
+        }
+    }
 }

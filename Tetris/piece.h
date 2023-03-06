@@ -1,6 +1,5 @@
 #ifndef PIECE_H__
 #define PIECE_H__
-
 #include <iostream>
 #include "colorArray2D.h"
 #include "coordinate.h"
@@ -69,6 +68,8 @@ public:
     /// </summary>
     /// <returns></returns>
     ColorArray2D* getPiece() const;
+
+    void addToColorArray2D(ColorArray2D& colorArray2D);
 };
 
 #endif // PIECE_H__

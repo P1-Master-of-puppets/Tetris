@@ -60,31 +60,33 @@ ConsoleDisplay::~ConsoleDisplay()
 {
 }
 
-void ConsoleDisplay::displayBoardWithPiece(ColorArray2D& board, Piece* somePiece){
+void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
+{
+	//display2DArray(colorArray, 0);
+}
+
+void ConsoleDisplay::displayBoardWithPiece(ColorArray2D& board, Piece* somePiece) {
 
 	ColorArray2D combinedBoard = ColorArray2D(board);
 
-	for(int i = 0; i < somePiece->getPiece()->getHeight(); i++){
-		for(int j = 0; j < somePiece->getPiece()->getWidth(); j++){
-			if(somePiece->getCoordinate().y + i < board.getHeight() && 
-			   somePiece->getCoordinate().y + i >= 0 &&
-			   somePiece->getCoordinate().x + j < board.getWidth() &&
-			   somePiece->getCoordinate().x + j >= 0){
-				if ((*somePiece->getPiece())[i][j] != Color::Transparent)
-				{
-					combinedBoard[somePiece->getCoordinate().y + i][somePiece->getCoordinate().x + j] = (*somePiece->getPiece())[i][j];
-				}
-			}
-		}
-	}
+	somePiece->addToColorArray2D(combinedBoard);
 
 	display2DArray(combinedBoard);
-
 }
 
-void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
+
+void ConsoleDisplay::displayBoardWithPiece(ColorArray2D& board, Piece* somePiece, int startLine)
 {
-	for(int i = 0; i < colorArray.getWidth()*2 + 3; i++){
+	ColorArray2D combinedBoard = ColorArray2D(board);
+
+	somePiece->addToColorArray2D(combinedBoard);
+
+	display2DArray(combinedBoard, startLine);
+}
+
+void ConsoleDisplay::display2DArray(ColorArray2D& colorArray, int startLine)
+{
+	for (int i = 0; i < colorArray.getWidth() * 2 + 3; i++) {
 		std::cout << "#";
 	}
 
@@ -92,23 +94,21 @@ void ConsoleDisplay::display2DArray(ColorArray2D& colorArray)
 
 	//Change console color only if in windows.
 	//Linux might be using a different lib.
-	Color currentColor;
-	for (int i = 0; i < colorArray.getHeight(); i++)
+	int yo = colorArray.getHeight();
+	for (int i = startLine; i < colorArray.getHeight(); i++)
 	{
 		std::cout << " ";
 		for (int j = 0; j < colorArray.getWidth(); j++)
 		{
 			displayWithColor(colorArray.getGrid()[i][j]);
-			//displayWithoutColor(colorArray.getGrid()[i][j]);
 		}
 		std::cout << "#" << "\n" << "#";
 	}
 
-	for(int i = 0; i < colorArray.getWidth()*2 + 2; i++){
+	for (int i = 0; i < colorArray.getWidth() * 2 + 2; i++) {
 		std::cout << "#";
 	}
 
 	std::cout << "\n";
 
 }
-

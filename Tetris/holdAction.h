@@ -9,18 +9,17 @@ using namespace std::chrono;
 class HoldAction : public Action
 {
 
-	public:
+public:
 
-		HoldAction(bool(*assingKeyboardDelegate)(), bool(*assingControllerDelegate)(), int assingInputDelay);
-		bool isActivated();
+	HoldAction(bool(*assingKeyboardDelegate)(), bool(*assingControllerDelegate)(), int assingInputDelay);
+	bool isActivated();
 
-	private:
-		high_resolution_clock::time_point lastActivation;
-		int inputDelay;
+private:
+	high_resolution_clock::time_point lastActivation;
+	int inputDelay;
 
 };
 
 
 
-#endif // ! ACTION_H__
-#pragma once
+#endif // ! HOLDACTION_H__

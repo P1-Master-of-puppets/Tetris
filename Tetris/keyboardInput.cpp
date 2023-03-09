@@ -1,12 +1,12 @@
 #include "keyboardInput.h"
 
 bool KeyboardInput::translateLeft(){
-    //Left arrow or "A"
+    //Left arrow
     return GetAsyncKeyState(VK_LEFT);
 }
 
 bool KeyboardInput::translateRight(){
-    //Right arrow or "D"
+    //Right arrow
     return GetAsyncKeyState(VK_RIGHT);
 }
 
@@ -22,21 +22,25 @@ bool KeyboardInput::rotateLeft(){
 
 bool KeyboardInput::dropInstant()
 {
-    return false;
+    // Space
+    return GetAsyncKeyState(0x20);
 }
 
 bool KeyboardInput::dropFaster()
 {
+    //Down arrow
     return GetAsyncKeyState(VK_DOWN);
 }
 
 bool KeyboardInput::holdPiece()
 {
-    return false;
+    //C
+    return GetAsyncKeyState(0x43);
 }
 
 bool KeyboardInput::menu()
 {
-    return false;
+    //M
+    return GetAsyncKeyState(0x4D);
 }
 

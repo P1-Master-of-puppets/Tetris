@@ -20,7 +20,6 @@ public:
 	bool dropOnce();
 private:
 	Action tLeft();
-
 };
 
 #endif

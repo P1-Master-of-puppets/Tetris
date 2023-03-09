@@ -3,15 +3,15 @@
 
 class Action {
 
-	public:
+public:
 
-		Action(bool (*assingKeyboardDelegate)(), bool (*assingControllerDelegate)());
-		virtual bool isActivated();
+	Action(bool (*assingKeyboardDelegate)(), bool (*assingControllerDelegate)());
+	virtual bool isActivated();
 
-	protected:
-		bool (*keyboardDelegate)();
-		bool (*controllerDelegate)();
-		bool wasPressed;
+protected:
+	bool (*keyboardDelegate)();
+	bool (*controllerDelegate)();
+	bool wasPressed;
 
 };
 

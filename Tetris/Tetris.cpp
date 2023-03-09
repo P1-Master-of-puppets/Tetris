@@ -21,14 +21,13 @@ int main()
 	game.refreshUI();
 	GameActions actions;
 	int pieceSpeed = 500;
-	InputDevice input;
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 
 	while (game.getState() == GameState::OnGoing)
 	{
 		game.refreshUI();
 
-		if (input.translateLeft())
+		if (actions.translateLeft())
 			game.translatePieceLeft();
 		else if (actions.translateRight())
 			game.translatePieceRight();
@@ -39,12 +38,14 @@ int main()
 			game.rotatePieceLeft();
 
 		if (actions.dropOnce() || duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > pieceSpeed) {
-			if (input.dropOnce() || duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
+			if (actions.dropOnce() || duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
 				lastAutomaticDrop = high_resolution_clock::now();
 				game.translatePieceDown();
 			}
 
 		}
 	}
+
+
 	return 0;
 }

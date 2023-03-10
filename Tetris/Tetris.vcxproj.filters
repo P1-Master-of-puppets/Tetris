@@ -43,6 +43,18 @@
     <Filter Include="Source Files\Controller">
       <UniqueIdentifier>{97642535-1242-40ef-bf35-3ed520cdc141}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Controller\Action">
+      <UniqueIdentifier>{97e9c1db-0671-443d-b48f-a26e26977f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\Action">
+      <UniqueIdentifier>{7defb8d4-61da-4056-a8a3-ba4381c2f7c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DAL">
+      <UniqueIdentifier>{544241c8-a8f1-4de3-be2c-07cffd00c63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DAL">
+      <UniqueIdentifier>{c61735cd-278f-4ae2-96bf-42aa0170308c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -102,14 +114,23 @@
     <ClCompile Include="keyboardInput.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
-    <ClCompile Include="controllerInput.cpp">
-      <Filter>Source Files\Controller</Filter>
-    </ClCompile>
     <ClCompile Include="action.cpp">
-      <Filter>Source Files\Controller</Filter>
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="singleInputAction.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
     </ClCompile>
     <ClCompile Include="holdAction.cpp">
-      <Filter>Source Files\Controller</Filter>
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="translateAction.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="settingDataAccess.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="setting.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,17 +182,26 @@
     <ClInclude Include="keyboardInput.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
-    <ClInclude Include="controlInterface.h">
-      <Filter>Header Files\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="controllerInput.h">
-      <Filter>Header Files\Controller</Filter>
+    <ClInclude Include="holdAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
     </ClInclude>
     <ClInclude Include="action.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="singleInputAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="translateAction.h">
+      <Filter>Header Files\Controller\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="setting.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
-    <ClInclude Include="holdAction.h">
+    <ClInclude Include="constrollerInput.h">
       <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="settingDataAccess.h">
+      <Filter>Header Files\DAL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

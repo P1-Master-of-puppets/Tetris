@@ -2,9 +2,8 @@
 #define KEYBOARD_INPUT
 
 #include <Windows.h>
-#include "controlInterface.h"
 
-class KeyboardInput : public ControlInterface
+class KeyboardInput
 {
 public:
 	bool translateLeft();

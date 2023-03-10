@@ -1,21 +1,28 @@
 #include "action.h"
 
-Action::Action(bool(*assingKeyboardDelegate)(), bool(*assingControllerDelegate)()) : keyboardDelegate(assingKeyboardDelegate), controllerDelegate(assingControllerDelegate)
+bool Action::getCurrentState()
 {
-	wasPressed = false;
+	return false;
 }
 
-bool Action::isActivated()
+Action::Action()
 {
-	if (!wasPressed && (keyboardDelegate() || controllerDelegate())) {
-		wasPressed = true;
-		return true;
-	}
+}
 
+Action::~Action()
+{
+}
 
-	if (wasPressed && !keyboardDelegate() && !controllerDelegate()) {
-		wasPressed = false;
-	}
-
+bool Action::isActive()
+{
 	return false;
+}
+
+void Action::resetInputs()
+{
+}
+
+void Action::addInput(bool (*input)())
+{
+	inputs.push_back (input);
 }

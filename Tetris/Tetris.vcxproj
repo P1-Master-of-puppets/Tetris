@@ -142,7 +142,6 @@
     <ClCompile Include="action.cpp" />
     <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="consoleDisplay.cpp" />
-    <ClCompile Include="controllerInput.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameState.h" />
     <ClCompile Include="gameActions.cpp" />
@@ -155,20 +154,23 @@
     <ClCompile Include="piece.cpp" />
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
+    <ClCompile Include="setting.cpp" />
+    <ClCompile Include="settingDataAccess.cpp" />
+    <ClCompile Include="singleInputAction.cpp" />
     <ClCompile Include="square.cpp" />
     <ClCompile Include="testDisplay.cpp" />
     <ClCompile Include="testGame.cpp" />
     <ClCompile Include="testPiece.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="thomas.cpp" />
+    <ClCompile Include="translateAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="action.h" />
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
     <ClInclude Include="consoleDisplay.h" />
-    <ClInclude Include="controlInterface.h" />
-    <ClInclude Include="controllerInput.h" />
+    <ClInclude Include="constrollerInput.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="holdAction.h" />
@@ -179,10 +181,14 @@
     <ClInclude Include="piece.h" />
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
+    <ClInclude Include="setting.h" />
+    <ClInclude Include="settingDataAccess.h" />
+    <ClInclude Include="singleInputAction.h" />
     <ClInclude Include="square.h" />
     <ClInclude Include="testDisplay.h" />
     <ClInclude Include="testGame.h" />
     <ClInclude Include="thomas.h" />
+    <ClInclude Include="translateAction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

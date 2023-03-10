@@ -1,25 +1,20 @@
 #ifndef HOLDACTION_H__
 #define HOLDACTION_H__
-
-#include <chrono>
 #include "action.h"
+#include <chrono>
 
 using namespace std::chrono;
 
 class HoldAction : public Action
 {
+protected:
+	high_resolution_clock::time_point lastInput;
+	bool lastButtonState = false;
+	int interval;
 
 public:
-
-	HoldAction(bool(*assingKeyboardDelegate)(), bool(*assingControllerDelegate)(), int assingInputDelay);
-	bool isActivated();
-
-private:
-	high_resolution_clock::time_point lastActivation;
-	int inputDelay;
-
+	HoldAction();
+	virtual ~HoldAction();
+	virtual bool isActivated();
 };
-
-
-
 #endif // ! HOLDACTION_H__

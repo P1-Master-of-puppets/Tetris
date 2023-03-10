@@ -4,6 +4,10 @@ GameActions::GameActions()
 {
 }
 
+GameActions::~GameActions()
+{
+}
+
 bool GameActions::translateLeft()
 {
 	return false;
@@ -29,7 +33,16 @@ bool GameActions::dropFaster()
 	return false;
 }
 
-bool GameActions::dropOnce()
+bool GameActions::dropInstant()
 {
 	return false;
+}
+
+bool GameActions::menu()
+{
+	return false;
+}
+
+void GameActions::loadSettings(Setting setting)
+{
 }

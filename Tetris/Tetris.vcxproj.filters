@@ -132,6 +132,9 @@
     <ClCompile Include="setting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="testActions.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -202,6 +205,9 @@
     </ClInclude>
     <ClInclude Include="settingDataAccess.h">
       <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="testActions.h">
+      <Filter>Header Files\Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

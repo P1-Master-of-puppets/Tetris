@@ -2,7 +2,13 @@
 
 bool Action::getCurrentState()
 {
-	return false;
+	bool result = false;
+
+	for (int i = 0; i < inputs.size(); i++) {
+		result = result || inputs[i]();
+	}
+	
+	return result;
 }
 
 Action::Action()

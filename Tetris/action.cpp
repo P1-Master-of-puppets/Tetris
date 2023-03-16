@@ -20,11 +20,6 @@ Action::~Action()
 	inputs.clear();
 }
 
-bool Action::isActive()
-{
-	return false;
-}
-
 void Action::resetInputs()
 {
 	inputs.clear();

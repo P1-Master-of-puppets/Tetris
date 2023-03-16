@@ -12,12 +12,6 @@ using namespace std::chrono;
 
 int main()
 {
-	TestActions mesTests;
-
-	mesTests.testerHold();
-
-
-
 	std::cout << "Select starting level from 0 to 9 : ";
 	int startingLevel;
 	std::cin >> startingLevel;

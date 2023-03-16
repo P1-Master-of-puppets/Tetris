@@ -11,6 +11,7 @@ Action::Action()
 
 Action::~Action()
 {
+	inputs.clear();
 }
 
 bool Action::isActive()
@@ -20,9 +21,10 @@ bool Action::isActive()
 
 void Action::resetInputs()
 {
+	inputs.clear();
 }
 
 void Action::addInput(bool (*input)())
 {
-	inputs.push_back (input);
+	inputs.push_back(input);
 }

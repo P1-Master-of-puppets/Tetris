@@ -14,7 +14,8 @@ protected:
 
 public:
 	HoldAction();
+	HoldAction(int setInterval);
 	virtual ~HoldAction();
-	virtual bool isActivated();
+	virtual bool isActive();
 };
 #endif // ! HOLDACTION_H__

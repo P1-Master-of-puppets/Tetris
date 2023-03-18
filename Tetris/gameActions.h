@@ -9,8 +9,6 @@
 #include "singleInputAction.h"
 #include "translateAction.h"
 
-using namespace std::chrono;
-
 class GameActions
 {
 public:

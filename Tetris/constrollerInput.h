@@ -1,6 +1,7 @@
 #ifndef CONTROLLERINPUT_H__
 #define CONTROLLERINPUT_H__
 
+
 enum class ConstrollerInput {
 	LeftTrigger,
 	RightTrigger,

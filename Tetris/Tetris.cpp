@@ -4,9 +4,10 @@
 #include "testDisplay.h"
 #include "testPiece.h"
 #include "gameActions.h"
-
+#include "nlohmann/json.hpp"
 #include <chrono>
 #include "inputDevice.h"
+#include "settingDataAccess.h"
 using namespace std::chrono;
 
 int main()

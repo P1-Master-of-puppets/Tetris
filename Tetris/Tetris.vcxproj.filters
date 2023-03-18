@@ -132,6 +132,9 @@
     <ClCompile Include="setting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="testJson.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -201,6 +204,12 @@
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
     <ClInclude Include="settingDataAccess.h">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="testJson.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="nlohmann\json.hpp">
       <Filter>Header Files\DAL</Filter>
     </ClInclude>
   </ItemGroup>

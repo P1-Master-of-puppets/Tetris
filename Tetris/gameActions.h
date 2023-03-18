@@ -29,7 +29,7 @@ private:
 	TranslateAction translateRightAction;
 	SingleInputAction rotateRightAction;
 	SingleInputAction rotateLeftAction;
-	SingleInputAction dropFasterAction;
+	HoldAction dropFasterAction;
 	SingleInputAction dropInstantAction;
 	SingleInputAction menuAction;
 };

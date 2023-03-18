@@ -11,7 +11,7 @@ protected:
 public:
 	Action();
 	virtual ~Action();
-	virtual bool isActive();
+	virtual bool isActive() = 0;
 	void resetInputs();
 	//ça ne fonctionnera pas pour la manette, il va faloir la mettre statique
 	void addInput(bool (*function)());

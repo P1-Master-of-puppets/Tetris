@@ -13,6 +13,6 @@ private:
 public:
 	SingleInputAction();
 	virtual ~SingleInputAction();
-	virtual bool isActivated();
+	virtual bool isActive();
 };
 #endif // ! SINGLEINPUTACTION_H__

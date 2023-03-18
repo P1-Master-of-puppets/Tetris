@@ -142,6 +142,7 @@
     <ClCompile Include="action.cpp" />
     <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="consoleDisplay.cpp" />
+    <ClCompile Include="controller.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameState.h" />
     <ClCompile Include="gameActions.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="piece.cpp" />
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
+    <ClCompile Include="SerialPort.cpp" />
     <ClCompile Include="setting.cpp" />
     <ClCompile Include="settingDataAccess.cpp" />
     <ClCompile Include="singleInputAction.cpp" />
@@ -170,7 +172,8 @@
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
     <ClInclude Include="consoleDisplay.h" />
-    <ClInclude Include="constrollerInput.h" />
+    <ClInclude Include="controllerInputOutput.h" />
+    <ClInclude Include="controller.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="holdAction.h" />
@@ -181,6 +184,7 @@
     <ClInclude Include="piece.h" />
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
+    <ClInclude Include="SerialPort.hpp" />
     <ClInclude Include="setting.h" />
     <ClInclude Include="settingDataAccess.h" />
     <ClInclude Include="singleInputAction.h" />

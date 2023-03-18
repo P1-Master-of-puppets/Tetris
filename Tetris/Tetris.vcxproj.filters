@@ -55,6 +55,12 @@
     <Filter Include="Source Files\DAL">
       <UniqueIdentifier>{c61735cd-278f-4ae2-96bf-42aa0170308c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Communication">
+      <UniqueIdentifier>{7d86db56-68dd-4a2f-adb4-cab2437690e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Communication">
+      <UniqueIdentifier>{bf578333-e769-4783-a931-175188f687b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -132,6 +138,12 @@
     <ClCompile Include="setting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPort.cpp">
+      <Filter>Source Files\Communication</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -197,11 +209,17 @@
     <ClInclude Include="setting.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
-    <ClInclude Include="constrollerInput.h">
+    <ClInclude Include="controllerInputOutput.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
     <ClInclude Include="settingDataAccess.h">
       <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="controller.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPort.hpp">
+      <Filter>Header Files\Communication</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

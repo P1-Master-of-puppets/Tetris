@@ -1,14 +1,12 @@
 #include <iostream>
+#include <chrono>
+
 #include "game.h"
 #include "colorArray2D.h"
-#include "testDisplay.h"
-#include "testPiece.h"
-#include "testActions.h"
 #include "gameActions.h"
-#include "nlohmann/json.hpp"
-#include <chrono>
 #include "inputDevice.h"
-#include "settingDataAccess.h"
+
+
 using namespace std::chrono;
 
 int main()

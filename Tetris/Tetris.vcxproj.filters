@@ -126,15 +126,6 @@
     <ClCompile Include="translateAction.cpp">
       <Filter>Source Files\Controller\Action</Filter>
     </ClCompile>
-    <ClCompile Include="settingDataAccess.cpp">
-      <Filter>Source Files\DAL</Filter>
-    </ClCompile>
-    <ClCompile Include="setting.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="testJson.cpp">
-      <Filter>Source Files\Test</Filter>
-    </ClCompile>
     <ClCompile Include="testActions.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
@@ -199,21 +190,6 @@
     </ClInclude>
     <ClInclude Include="translateAction.h">
       <Filter>Header Files\Controller\Action</Filter>
-    </ClInclude>
-    <ClInclude Include="setting.h">
-      <Filter>Header Files\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="constrollerInput.h">
-      <Filter>Header Files\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="settingDataAccess.h">
-      <Filter>Header Files\DAL</Filter>
-    </ClInclude>
-    <ClInclude Include="testJson.h">
-      <Filter>Header Files\Tests</Filter>
-    </ClInclude>
-    <ClInclude Include="nlohmann\json.hpp">
-      <Filter>Header Files\DAL</Filter>
     </ClInclude>
     <ClInclude Include="testActions.h">
       <Filter>Header Files\Tests</Filter>

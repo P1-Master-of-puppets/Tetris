@@ -7,7 +7,6 @@
 #include "holdAction.h"
 #include "singleInputAction.h"
 #include "translateAction.h"
-#include "setting.h"
 
 using namespace std::chrono;
 
@@ -23,7 +22,7 @@ public:
 	bool dropFaster();
 	bool dropInstant();
 	bool menu();
-	void loadSettings(Setting setting);
+	//void loadSettings(Setting setting);
 private:
 	TranslateAction translateLeftAction;
 	TranslateAction translateRightAction;

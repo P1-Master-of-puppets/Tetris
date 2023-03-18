@@ -50,8 +50,6 @@ bool GameActions::menu()
 	return menuAction.isActive();
 }
 
-void GameActions::loadSettings(Setting setting)
+/*void GameActions::loadSettings(Setting loadNewSetting)
 {
-
-
-}
+}*/

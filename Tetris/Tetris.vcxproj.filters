@@ -129,6 +129,9 @@
     <ClCompile Include="testActions.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
+    <ClCompile Include="inputSetting.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -193,6 +196,12 @@
     </ClInclude>
     <ClInclude Include="testActions.h">
       <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="inputSetting.h">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files\DAL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

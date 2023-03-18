@@ -1,13 +1,15 @@
 #pragma once
-#ifndef SETTING_H__
-#define SETTING_H__
+#ifndef INPUTSETTING_H__
+#define INPUTSETTING_H__
 
 #include <vector>
 #include <string>
-
+#include <fstream>
+#include <iostream>
+#include "json.hpp"
 #include "controllerInput.h"
 
-class Setting {
+class InputSetting {
 public:
 	bool readSettings(std::string fileName);
 	bool writeSettings(std::string fileName);

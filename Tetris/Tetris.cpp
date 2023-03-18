@@ -9,11 +9,14 @@
 #include <chrono>
 #include "inputDevice.h"
 #include "settingDataAccess.h"
+#include "controller.h"
 using namespace std::chrono;
 
 int main()
 {
-	std::cout << "Select starting level from 0 to 9 : ";
+	Controller controller(6, 115200);
+	controller.init();
+	/*std::cout << "Select starting level from 0 to 9 : ";
 	int startingLevel;
 	std::cin >> startingLevel;
 
@@ -50,8 +53,6 @@ int main()
 			}
 
 		}
-	}
-
-
+	}*/
 	return 0;
 }

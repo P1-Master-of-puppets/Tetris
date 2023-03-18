@@ -143,6 +143,7 @@
     </ClCompile>
     <ClCompile Include="SerialPort.cpp">
       <Filter>Source Files\Communication</Filter>
+    </ClCompile>
     <ClCompile Include="testJson.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>

@@ -1,5 +1,5 @@
-#ifndef CONTROLLERINPUT_H__
-#define CONTROLLERINPUT_H__
+#ifndef CONTROLLERINPUTOUTPUT_H__
+#define CONTROLLERINPUTOUTPUT_H__
 
 enum class ControllerInputOutput {
 	LeftTrigger = 0,
@@ -10,10 +10,11 @@ enum class ControllerInputOutput {
 	JoyStickRight = 5,
 	JoyStickButton = 6,
 	AButton = 7,
-	BButto = 8,
+	BButton = 8,
 	Menu = 9,
 	SevenSegment = 10,
-	Moteur = 11
+	Moteur = 11,
+	None = 12
 };
 
-#endif //CONTROLLERINPUT_H__
+#endif //CONTROLLERINPUTOUTPUT_H__

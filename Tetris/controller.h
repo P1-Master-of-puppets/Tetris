@@ -3,31 +3,40 @@
 
 #include <atomic>
 #include <thread>
-#include "controllerInputOutput.h"
 #include "SerialPort.hpp"
+#include <exception>
+#include <string>
+#include "controllerInputOutput.h"
+
 class Controller {
 private:
 	int _comport;
 	int _baudRate;
-	std::thread communicationThread;
+	std::thread _communicationThread;
 	SerialPort* _arduino;
+	std::atomic<bool> _isRunning;
 	void readThread();
 
 
-	std::atomic<bool> leftTrigger;
-	std::atomic<bool> rightTrigger;
-	std::atomic<bool> joyStickUp;
-	std::atomic<bool> joyStickDown;
-	std::atomic<bool> joystickLeft;
-	std::atomic<bool> joyStickRight;
-	std::atomic<bool> joyStickButton;
-	std::atomic<bool> aButton;
-	std::atomic<bool> bButton;
-	std::atomic<bool> menuButton;
+	std::atomic<ControllerInputOutput> _lastInput{ ControllerInputOutput::None };
 
+	std::atomic<bool> _leftTrigger;
+	std::atomic<bool> _rightTrigger;
+	std::atomic<bool> _joyStickUp;
+	std::atomic<bool> _joyStickDown;
+	std::atomic<bool> _joystickLeft;
+	std::atomic<bool> _joyStickRight;
+	std::atomic<bool> _joyStickButton;
+	std::atomic<bool> _aButton;
+	std::atomic<bool> _bButton;
+	std::atomic<bool> _menuButton;
+	std::atomic<bool> _fastDrop;
 
+	void updateControllerValues(char* buffer);
+	void updateJoystickValues(char value);
 public:
 	Controller(int cumport, int baudRate);
+	~Controller();
 	/// <summary>
 	/// Connects and starts reading from arduino
 	/// </summary>
@@ -43,10 +52,12 @@ public:
 	bool getAButton();
 	bool getBButton();
 	bool getMenuButton();
+	bool getFastDrop();
 
 	void vibrate(int milliseconds);
 	void updateSevenSegment(int twoDigitNumber);
-	
+	void updateThreatIndicator(int threatLevel);
+
 	/// <summary>
 	/// This is a blocking action, it will return the last value pressed on the controller
 	/// </summary>

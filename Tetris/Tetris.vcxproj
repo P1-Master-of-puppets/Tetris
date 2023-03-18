@@ -160,8 +160,10 @@
     <ClCompile Include="settingDataAccess.cpp" />
     <ClCompile Include="singleInputAction.cpp" />
     <ClCompile Include="square.cpp" />
+    <ClCompile Include="testActions.cpp" />
     <ClCompile Include="testDisplay.cpp" />
     <ClCompile Include="testGame.cpp" />
+    <ClCompile Include="testJson.cpp" />
     <ClCompile Include="testPiece.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="thomas.cpp" />
@@ -181,6 +183,7 @@
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />
     <ClInclude Include="longBar.h" />
+    <ClInclude Include="nlohmann\json.hpp" />
     <ClInclude Include="piece.h" />
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
@@ -189,8 +192,10 @@
     <ClInclude Include="settingDataAccess.h" />
     <ClInclude Include="singleInputAction.h" />
     <ClInclude Include="square.h" />
+    <ClInclude Include="testActions.h" />
     <ClInclude Include="testDisplay.h" />
     <ClInclude Include="testGame.h" />
+    <ClInclude Include="testJson.h" />
     <ClInclude Include="thomas.h" />
     <ClInclude Include="translateAction.h" />
   </ItemGroup>

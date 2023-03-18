@@ -143,6 +143,11 @@
     </ClCompile>
     <ClCompile Include="SerialPort.cpp">
       <Filter>Source Files\Communication</Filter>
+    <ClCompile Include="testJson.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="testActions.cpp">
+      <Filter>Source Files\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +225,15 @@
     </ClInclude>
     <ClInclude Include="SerialPort.hpp">
       <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="testJson.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="nlohmann\json.hpp">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="testActions.h">
+      <Filter>Header Files\Tests</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

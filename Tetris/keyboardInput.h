@@ -6,14 +6,15 @@
 class KeyboardInput
 {
 public:
-	bool translateLeft();
-	bool translateRight();
-	bool rotateRight();
-	bool rotateLeft();
-	bool dropInstant();
-	bool dropFaster();
-	bool holdPiece();
-	bool menu();
+	bool keyIsPressed(int key);
+	static bool translateLeft();
+	static bool rotateRight();
+	static bool translateRight();
+	static bool rotateLeft();
+	static bool dropInstant();
+	static bool dropFaster();
+	static bool holdPiece();
+	static bool menu();
 };
 
 #endif

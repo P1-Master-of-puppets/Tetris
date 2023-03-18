@@ -2,6 +2,13 @@
 
 GameActions::GameActions()
 {
+	translateLeftAction.addInput(KeyboardInput::translateLeft);
+	translateRightAction.addInput(KeyboardInput::translateRight);
+	rotateLeftAction.addInput(KeyboardInput::rotateLeft);
+	rotateRightAction.addInput(KeyboardInput::rotateRight);
+	dropFasterAction.addInput(KeyboardInput::dropFaster);
+	dropInstantAction.addInput(KeyboardInput::dropFaster);
+	menuAction.addInput(KeyboardInput::menu);
 }
 
 GameActions::~GameActions()
@@ -10,39 +17,41 @@ GameActions::~GameActions()
 
 bool GameActions::translateLeft()
 {
-	return false;
+	return translateLeftAction.isActive();
 }
 
 bool GameActions::translateRight()
 {
-	return false;
+	return translateRightAction.isActive();
 }
 
 bool GameActions::rotateRight()
 {
-	return false;
+	return rotateRightAction.isActive();
 }
 
 bool GameActions::rotateLeft()
 {
-	return false;
+	return rotateLeftAction.isActive();
 }
 
 bool GameActions::dropFaster()
 {
-	return false;
+	return dropFasterAction.isActive();
 }
 
 bool GameActions::dropInstant()
 {
-	return false;
+	return dropInstantAction.isActive();
 }
 
 bool GameActions::menu()
 {
-	return false;
+	return menuAction.isActive();
 }
 
 void GameActions::loadSettings(Setting setting)
 {
+
+
 }

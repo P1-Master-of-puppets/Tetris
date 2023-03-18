@@ -8,7 +8,16 @@ SingleInputAction::~SingleInputAction()
 {
 }
 
-bool SingleInputAction::isActivated()
+bool SingleInputAction::isActive()
 {
+    if (getCurrentState() && !lastButtonState) {
+        lastButtonState = true;
+        return true;
+    }
+
+    if (!getCurrentState() && lastButtonState) {
+        lastButtonState = false;
+    }
+
     return false;
 }

@@ -3,10 +3,12 @@
 #include "colorArray2D.h"
 #include "testDisplay.h"
 #include "testPiece.h"
+#include "testActions.h"
 #include "gameActions.h"
-
+#include "nlohmann/json.hpp"
 #include <chrono>
 #include "inputDevice.h"
+#include "settingDataAccess.h"
 using namespace std::chrono;
 
 int main()
@@ -37,8 +39,12 @@ int main()
 		else if (actions.rotateLeft())
 			game.rotatePieceLeft();
 
-		if (actions.dropFaster() || duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > pieceSpeed) {
-			if (actions.dropFaster() || duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
+		if (actions.dropFaster()) {
+			game.translatePieceDown();
+		}
+
+		if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > pieceSpeed) {
+			if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
 				lastAutomaticDrop = high_resolution_clock::now();
 				game.translatePieceDown();
 			}

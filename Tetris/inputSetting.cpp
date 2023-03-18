@@ -66,7 +66,7 @@ bool InputSetting::writeSettings(std::string fileName)
 	myJson["accelerometer"] = accelerometer;
 	myJson["vibration"] = vibration;
 
-	fichier << myJson.dump();
+	fichier << myJson.dump(4);
 	fichier.close();
 
 	return true;

@@ -1,1 +1,25 @@
-{"accelerometer":true,"dropFaster":[7,4,6],"dropInstant":[6],"holdPiece":[8],"rotateLeft":[0],"rotateRight":[1],"translateLeft":[4],"translateRight":[5],"vibration":false}
+{
+    "accelerometer": true,
+    "dropFaster": [
+        3
+    ],
+    "dropInstant": [
+        6
+    ],
+    "holdPiece": [
+        8
+    ],
+    "rotateLeft": [
+        8
+    ],
+    "rotateRight": [
+        7
+    ],
+    "translateLeft": [
+        4,0
+    ],
+    "translateRight": [
+        5,1
+    ],
+    "vibration": false
+}

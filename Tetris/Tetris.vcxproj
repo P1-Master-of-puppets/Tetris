@@ -154,6 +154,7 @@
     <ClCompile Include="piece.cpp" />
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
+    <ClCompile Include="inputSetting.cpp" />
     <ClCompile Include="singleInputAction.cpp" />
     <ClCompile Include="square.cpp" />
     <ClCompile Include="testActions.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="holdAction.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="keyboardInput.h" />
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />
@@ -179,6 +181,7 @@
     <ClInclude Include="piece.h" />
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
+    <ClInclude Include="inputSetting.h" />
     <ClInclude Include="singleInputAction.h" />
     <ClInclude Include="square.h" />
     <ClInclude Include="testActions.h" />

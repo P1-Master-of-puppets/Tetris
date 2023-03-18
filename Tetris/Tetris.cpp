@@ -1,17 +1,19 @@
-#include <iostream>
-#include <chrono>
+//#include <iostream>
+//#include <chrono>
+//
+//#include "game.h"
+//#include "colorArray2D.h"
+//#include "gameActions.h"
 
-#include "game.h"
-#include "colorArray2D.h"
-#include "gameActions.h"
-#include "inputDevice.h"
 
-
-using namespace std::chrono;
+//using namespace std::chrono;
 
 int main()
 {
-	std::cout << "Select starting level from 0 to 9 : ";
+	
+
+	
+	/*std::cout << "Select starting level from 0 to 9 : ";
 	int startingLevel;
 	std::cin >> startingLevel;
 
@@ -48,7 +50,7 @@ int main()
 			}
 
 		}
-	}
+	}*/
 
 
 	return 0;

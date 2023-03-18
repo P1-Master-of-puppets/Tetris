@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAME_ACTIONS_H__
 #define GAME_ACTIONS_H__
 

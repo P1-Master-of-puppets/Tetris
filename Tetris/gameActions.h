@@ -8,6 +8,7 @@
 #include "singleInputAction.h"
 #include "translateAction.h"
 #include "setting.h"
+#include "controllerWrapper.h"
 
 using namespace std::chrono;
 

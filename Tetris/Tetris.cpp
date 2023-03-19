@@ -10,12 +10,21 @@
 #include "inputDevice.h"
 #include "settingDataAccess.h"
 #include "controller.h"
+#include "SerialPort.hpp"
+
 using namespace std::chrono;
 
 int main()
 {
-	Controller controller(6, 115200);
-	controller.init();
+	Controller controller(7, 115200);
+
+	controller.updateThreatIndicator(2);
+	controller.updateSevenSegment(3);
+	
+	while (true) {
+
+	}
+
 	/*std::cout << "Select starting level from 0 to 9 : ";
 	int startingLevel;
 	std::cin >> startingLevel;

@@ -32,16 +32,16 @@ private:
 	std::atomic<bool> _menuButton;
 	std::atomic<bool> _fastDrop;
 
-	void updateControllerValues(char* buffer);
+	void updateControllerValues(char buffer[]);
 	void updateJoystickValues(char value);
 public:
+	Controller();
 	Controller(int cumport, int baudRate);
 	~Controller();
 	/// <summary>
 	/// Connects and starts reading from arduino
 	/// </summary>
 	/// <returns> return false if the Arduino could not connect</returns>
-	bool init();
 	bool getLeftTrigger();
 	bool getRightTrigger();
 	bool getJoyStickUp();

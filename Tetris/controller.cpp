@@ -3,23 +3,27 @@
 void Controller::readThread()
 {
 	std::string input;
+	
+	int maxValue = 2;
 	while (_isRunning)
 	{
-		char char_buffer[2];
-		int buffer_size;
-		std::string str_buffer;
-
+		char charBuffer[2];
 		// This will read 
-		buffer_size = _arduino->readSerialPort(char_buffer, 2);
-		
-		str_buffer.assign(char_buffer, buffer_size);
-		input.append(str_buffer);
+		int bufferSize = _arduino->readSerialPort(charBuffer, maxValue);
+		input.append(charBuffer, bufferSize);
 		//Make sure we only send 2 char at a time. Otherwise we might skip data and it will become extra weird
-		updateControllerValues(char_buffer);
+		if (input.length() >= 2)
+		{
+			char inputs[2];
+			inputs[0] = input[0];
+			inputs[1] = input[1];
+			input.erase(0, 2);
+			updateControllerValues(inputs);
+		}
 	}
 }
 
-void Controller::updateControllerValues(char* buffer) {
+void Controller::updateControllerValues(char buffer[]) {
 #ifndef ControllerDebug
 	std::cout << '\n' << buffer[0] << " " << buffer[1] << '\n';
 #endif // !ControllerDebug
@@ -51,8 +55,10 @@ void Controller::updateControllerValues(char* buffer) {
 	case 'G':
 		_joyStickButton = buffer[1] == '1';
 		_lastInput = ControllerInputOutput::JoyStickButton;
+		return;
 	case 'Y':
 		_fastDrop = true;
+		return;
 	default:
 		break;
 	}
@@ -80,35 +86,32 @@ void Controller::updateJoystickValues(char value) {
 	}
 }
 
-
+Controller::Controller()
+{
+	_comport = 7;
+	_baudRate = 115200;
+	std::string port = "COM" + std::to_string(_comport);
+	_arduino = new SerialPort(port.c_str(), _baudRate);
+	_isRunning = true;
+	_communicationThread = std::thread(&Controller::readThread, this);
+}
 
 Controller::Controller(int cumport, int baudRate)
 {
-	_arduino = nullptr;
 	_comport = cumport;
 	_baudRate = baudRate;
+	std::string port = "COM" + std::to_string(_comport);
+	_arduino = new SerialPort(port.c_str(), _baudRate);
+	_isRunning = true;
+	_communicationThread = std::thread(&Controller::readThread, this);
 }
 
 Controller::~Controller()
 {
-	_arduino->closeSerial();
-	delete _arduino;
 	_isRunning = false;
 	// Wait for the thread to finish before destroying the object
 	_communicationThread.join();
-}
-
-bool Controller::init()
-{
-	std::string port = "Com" + std::to_string(_comport);
-	_arduino = new SerialPort(port.c_str(), _baudRate);
-	
-	if (!_arduino->isConnected())
-		return false;
-	
-	_isRunning = true;
-	_communicationThread = std::thread(&Controller::readThread, this);
-	return true;
+	delete _arduino;
 }
 
 bool Controller::getLeftTrigger()
@@ -170,26 +173,38 @@ bool Controller::getFastDrop()
 
 void Controller::vibrate(int milliseconds)
 {
-	char time = (char)milliseconds;
-	char* data = new char[2];
+	if (milliseconds > 254 || milliseconds < 0)
+		return;
+	milliseconds++;
+	char data[2];
 	data[0] = 'V';
-	data[1] = time;
+	//We send value + 1 because 0 is considered as \0 in char (end of string character)
+	data[1] = milliseconds;
 	_arduino->writeSerialPort(data, 2);
-	delete[] data;
 }
 
 void Controller::updateSevenSegment(int twoDigitNumber)
 {
-	if (twoDigitNumber >= 99 || twoDigitNumber < 0)
-	{
+	if (twoDigitNumber > 98 || twoDigitNumber < 0)
 		return;
-	}
-	char* data = new char[2];
-	char number = (char)twoDigitNumber;
+	twoDigitNumber++;
+	char data[2];
 	data[0] = 'S';
-	data[1] = number;
+	//We send value + 1 because 0 is considered as \0 in char (end of string character)
+	data[1] = twoDigitNumber;
 	_arduino->writeSerialPort(data, 2);
-	delete[] data;
+}
+
+void Controller::updateThreatIndicator(int threatLevel)
+{
+	if (threatLevel > 3 || threatLevel < 0)
+		return;
+	threatLevel++;
+	char data[2];
+	data[0] = 'T';
+	//We send value + 1 because 0 is considered as \0 in char (end of string character)
+	data[1] = threatLevel;
+	_arduino->writeSerialPort(data, 2);
 }
 
 ControllerInputOutput Controller::getLastButtonPressed()

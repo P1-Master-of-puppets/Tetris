@@ -157,6 +157,7 @@
     <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="consoleDisplay.cpp" />
     <ClCompile Include="controller.cpp" />
+    <ClCompile Include="controllerWrapper.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameState.h" />
     <ClCompile Include="gameActions.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="consoleDisplay.h" />
     <ClInclude Include="controllerInputOutput.h" />
     <ClInclude Include="controller.h" />
+    <ClInclude Include="controllerWrapper.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="holdAction.h" />

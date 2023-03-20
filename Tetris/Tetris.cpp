@@ -17,12 +17,8 @@ using namespace std::chrono;
 int main()
 {
 
-	GameActions action;
-	while (true)
-	{
-
-	}
-
+	TestActions action;
+	action.testerSingleInput();
 	/*std::cout << "Select starting level from 0 to 9 : ";
 	int startingLevel;
 	std::cin >> startingLevel;

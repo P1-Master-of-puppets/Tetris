@@ -7,6 +7,7 @@
 #include <exception>
 #include <string>
 #include "controllerInputOutput.h"
+#include "control.h"
 
 class Controller : public Control {
 private:
@@ -34,7 +35,6 @@ private:
 	void updateControllerValues(char buffer[]);
 	void updateJoystickValues(char value);
 public:
-	Controller();
 	Controller(int cumport, int baudRate);
 	~Controller();
 	/// <summary>

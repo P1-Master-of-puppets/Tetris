@@ -8,6 +8,7 @@
 #include "holdAction.h"
 #include "singleInputAction.h"
 #include "keyboard.h"
+#include "controller.h"
 
 class TestActions {
 public:

@@ -2,9 +2,9 @@
 
 void TestActions::testerSingleInput()
 {
-	Keyboard* keyboard = new Keyboard();
+	Controller* keyboard = new Controller(7, 115200);
 	SingleInputAction monAction;
-	monAction.addInput(new Input(keyboard, &Control::getInstantDrop));
+	monAction.addInput(new Input(keyboard, &Control::getAButton));
 
 
 	while (1) {

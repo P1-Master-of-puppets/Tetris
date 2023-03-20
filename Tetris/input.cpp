@@ -8,5 +8,5 @@ Input::Input(Control* control, FunctionPtr function)
 
 bool Input::getInput()
 {;
-	return (_control->*(*_function))();
+	return (_control->*_function)();
 }

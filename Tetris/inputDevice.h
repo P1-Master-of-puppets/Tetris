@@ -2,7 +2,6 @@
 #define INPUT_DEVICE
 
 #include <chrono>
-#include "keyboardInput.h"
 
 using namespace std::chrono;
 

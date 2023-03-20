@@ -86,16 +86,6 @@ void Controller::updateJoystickValues(char value) {
 	}
 }
 
-Controller::Controller()
-{
-	_comport = 7;
-	_baudRate = 115200;
-	std::string port = "COM" + std::to_string(_comport);
-	_arduino = new SerialPort(port.c_str(), _baudRate);
-	_isRunning = true;
-	_communicationThread = std::thread(&Controller::readThread, this);
-}
-
 Controller::Controller(int cumport, int baudRate)
 {
 	_comport = cumport;

@@ -304,10 +304,10 @@ void Game::swapPiece()
 	Piece* tmpPiece = _currentPiece;
 
 	// Redéfini la pièce courante avec la pièce en réserve
-	setCurrentPiece(getHoldPiece());
+	_currentPiece = getHoldPiece();
 
 	// Défini la pièce de réserve avec la pièce temporaire
-	setHoldPiece(tmpPiece);
+	_holdPiece = tmpPiece;
 	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
 	//_currentPiece->resetCoordinate();
 
@@ -330,18 +330,4 @@ Piece* Game::getHoldPiece()
 	}
 
 	return _holdPiece;
-}
-
-// Défini la pièce de réserve
-bool Game::setHoldPiece(Piece* piece)
-{
-	_holdPiece = piece;
-	return true;
-}
-
-// Défini la pièce courante
-bool Game::setCurrentPiece(Piece* piece) 
-{
-	_currentPiece = piece;
-	return true;
 }

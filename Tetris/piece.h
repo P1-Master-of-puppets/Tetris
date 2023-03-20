@@ -4,15 +4,27 @@
 #include "colorArray2D.h"
 #include "coordinate.h"
 #include "colors.h"
+#include "type.h"
 
 class Piece
 {
 protected:
     ColorArray2D*  _array;
     Coordinate _coordinate;
+    int _width = 0;
+    int _height = 0;
+    int _typePiece;
 public:
     Piece(int width, int height);
     virtual ~Piece() = 0;
+
+    // Réinitialise les paramètre d'une pièce à ses paramètres d'origine
+    virtual bool resetPieceTodefault();
+    virtual bool resetCoordinate();
+    virtual void printInfoPiece();
+    virtual void setToCurrentPosition(int x, int y);
+    int getX();
+    int getY();
 
     /// <summary>
     /// Translate piece to the right

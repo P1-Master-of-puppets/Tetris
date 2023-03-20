@@ -5,6 +5,9 @@ Piece::Piece(int width, int height){
     _array->fill(Color::Transparent);
     _coordinate.x = 5;
     _coordinate.y = 2;
+    _width = width;
+    _height = height;
+
 }
 
 Piece::~Piece(){
@@ -152,4 +155,57 @@ void Piece::addToColorArray2D(ColorArray2D& colorArray2D)
             }
         }
     }
+}
+
+
+bool Piece::resetPieceTodefault()
+{
+    return true;
+}
+
+bool Piece::resetCoordinate()
+{
+    _coordinate.x = 5;
+    _coordinate.y = 2;
+
+    return true;
+}
+
+void Piece::printInfoPiece()
+{
+    //std::cout << "La piece " << _typePiece << std::endl;
+    for (int i = 0; i < _height; i++)
+    {
+        for (int j = 0; j < _width; j++)
+        {
+            if ((*_array)[i][j] != Color::Transparent)
+            {
+                std::cout << "[" << i << "][" << j << "]" << std::endl;
+            }
+            //std::cout << "[" << i << "]" << "[" << j << "]: " <<  << std::endl;
+        }
+    }
+
+    std::cout << std::endl;
+
+    return;
+}
+
+
+void Piece::setToCurrentPosition(int x, int y)
+{
+    _coordinate.x = x;
+    _coordinate.y = y;
+
+    return;
+}
+
+int Piece::getX()
+{
+    return _coordinate.x;
+}
+
+int Piece::getY()
+{
+    return _coordinate.y;
 }

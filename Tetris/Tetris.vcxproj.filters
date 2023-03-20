@@ -203,5 +203,8 @@
     <ClInclude Include="json.hpp">
       <Filter>Header Files\DAL</Filter>
     </ClInclude>
+    <ClInclude Include="type.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

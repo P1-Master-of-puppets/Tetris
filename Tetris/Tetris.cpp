@@ -24,6 +24,13 @@ int main()
 	{
 		game.refreshUI();
 
+
+		if (GetAsyncKeyState(VK_SPACE))
+		{
+			game.swapPiece();
+
+		}
+
 		if (actions.translateLeft())
 			game.translatePieceLeft();
 		else if (actions.translateRight())

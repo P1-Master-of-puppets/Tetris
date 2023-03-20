@@ -286,11 +286,20 @@ int Game::countLineScore(const int& nbLine)
 // Échange la pièce en courante avec la pièce de réserve
 void Game::swapPiece() 
 {
-	_currentPiece->printInfoPiece();
+	//_currentPiece->printInfoPiece();
 	
 
-	std::cout << "\n La pièce courante est : " << std::endl;
+	//std::cout << "\n La pièce courante est : " << std::endl;
 
+
+	Coordinate newCoord;
+	newCoord.x = _currentPiece->getX();
+	newCoord.y = _currentPiece->getY();
+	if (getHoldPiece()->isColliding(getHoldPiece()->getPiece(), newCoord, _board)) {
+		return;
+	}
+
+	_isDirty = true;
 	// Mettre la pièce courante dans une variable temporaire 
 	Piece* tmpPiece = _currentPiece;
 
@@ -302,9 +311,9 @@ void Game::swapPiece()
 	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
 	//_currentPiece->resetCoordinate();
 
-	std::cout << "swapPiece() A ETE APPELLE.\n" << std::endl;
+	//std::cout << "swapPiece() A ETE APPELLE.\n" << std::endl;
 
-	_currentPiece->printInfoPiece();
+	//_currentPiece->printInfoPiece();
 
 	return;
 }
@@ -312,6 +321,14 @@ void Game::swapPiece()
 // Récupère la pièce en réserve
 Piece* Game::getHoldPiece()
 {
+	if (_holdPiece == nullptr)
+	{
+		_holdPiece = _queue.front();
+		_queue.pop();
+		_queue.push(getRandomPiece());
+
+	}
+
 	return _holdPiece;
 }
 
@@ -325,20 +342,6 @@ bool Game::setHoldPiece(Piece* piece)
 // Défini la pièce courante
 bool Game::setCurrentPiece(Piece* piece) 
 {
-	// S'il n'y a pas encore de pièe de réserve,
-	// mettre la pièce courante en réserve, définir
-	// la pièce courante avec la pièce sur le dessus
-	// de la file des prochaine pièces, retirer cette
-	// pièce de a file, puis générer une nouvelle
-	// pièce à la fin de la file.
-	if (_holdPiece == nullptr)
-	{
-		_currentPiece = _queue.front();
-		_queue.pop();
-		_queue.push(getRandomPiece());
-		return true;
-	}
-	else
-		_currentPiece = piece;
-		return true;
+	_currentPiece = piece;
+	return true;
 }

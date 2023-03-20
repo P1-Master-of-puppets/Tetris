@@ -28,7 +28,6 @@ int main()
 		if (actions.holdPiece())
 		{
 			game.swapPiece();
-
 		}
 
 		if (actions.translateLeft())

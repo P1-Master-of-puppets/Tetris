@@ -164,6 +164,7 @@
     <ClCompile Include="gameActions.h" />
     <ClCompile Include="holdAction.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="inputSetting.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
@@ -172,14 +173,11 @@
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
     <ClCompile Include="SerialPort.cpp" />
-    <ClCompile Include="setting.cpp" />
-    <ClCompile Include="settingDataAccess.cpp" />
     <ClCompile Include="singleInputAction.cpp" />
     <ClCompile Include="square.cpp" />
     <ClCompile Include="testActions.cpp" />
     <ClCompile Include="testDisplay.cpp" />
     <ClCompile Include="testGame.cpp" />
-    <ClCompile Include="testJson.cpp" />
     <ClCompile Include="testPiece.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="thomas.cpp" />
@@ -194,6 +192,8 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="inputSetting.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="type.h" />
     <ClInclude Include="holdAction.h" />
     <ClInclude Include="input.h" />
@@ -201,19 +201,15 @@
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />
     <ClInclude Include="longBar.h" />
-    <ClInclude Include="nlohmann\json.hpp" />
     <ClInclude Include="piece.h" />
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
     <ClInclude Include="SerialPort.hpp" />
-    <ClInclude Include="setting.h" />
-    <ClInclude Include="settingDataAccess.h" />
     <ClInclude Include="singleInputAction.h" />
     <ClInclude Include="square.h" />
     <ClInclude Include="testActions.h" />
     <ClInclude Include="testDisplay.h" />
     <ClInclude Include="testGame.h" />
-    <ClInclude Include="testJson.h" />
     <ClInclude Include="thomas.h" />
     <ClInclude Include="translateAction.h" />
   </ItemGroup>

@@ -76,7 +76,7 @@ bool GameActions::menu()
 	return menuAction.isActive();
 }
 
-void GameActions::loadSettings(Setting setting)
+void GameActions::loadSettings(InputSetting setting)
 {
 	if (_controller == nullptr)
 		return;

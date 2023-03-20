@@ -6,7 +6,7 @@
 #include "holdAction.h"
 #include "singleInputAction.h"
 #include "translateAction.h"
-#include "setting.h"
+#include "inputSetting.h"
 #include "keyboard.h"
 #include "controller.h"
 
@@ -40,7 +40,7 @@ public:
 	bool dropInstant();
 	bool menu();
 	bool holdPiece();
-	void loadSettings(Setting setting);
+	void loadSettings(InputSetting setting);
 
 };
 

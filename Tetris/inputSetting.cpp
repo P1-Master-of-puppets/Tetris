@@ -12,31 +12,31 @@ bool InputSetting::readSettings(std::string fileName)
 
 	myJson = nlohmann::json::parse(fichier);
 
-	for (int i = 0; i < myJson["translateLeft"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["translateLeft"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		translateLeft.push_back(myJson["translateLeft"][i]);
 	}
 
-	for (int i = 0; i < myJson["translateRight"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["translateRight"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		translateRight.push_back(myJson["translateRight"][i]);
 	}
 
-	for (int i = 0; i < myJson["rotateLeft"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["rotateLeft"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		rotateLeft.push_back(myJson["rotateLeft"][i]);
 	}
 
-	for (int i = 0; i < myJson["rotateRight"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["rotateRight"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		rotateRight.push_back(myJson["rotateRight"][i]);
 	}
 
-	for (int i = 0; i < myJson["dropInstant"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["dropInstant"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		dropInstant.push_back(myJson["dropInstant"][i]);
 	}
 
-	for (int i = 0; i < myJson["dropFaster"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["dropFaster"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		dropFaster.push_back(myJson["dropFaster"][i]);
 	}
 
-	for (int i = 0; i < myJson["holdPiece"].get<std::vector<ControllerInput>>().size(); i++) {
+	for (int i = 0; i < myJson["holdPiece"].get<std::vector<ControllerInputOutput>>().size(); i++) {
 		holdPiece.push_back(myJson["holdPiece"][i]);
 	}
 

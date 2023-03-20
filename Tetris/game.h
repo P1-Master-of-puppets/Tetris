@@ -1,6 +1,10 @@
 #ifndef GAME_H__
 #define GAME_H__
 
+
+#include <iostream>
+#include <queue>
+#include <vector>
 #include "piece.h"
 #include "leftL.h"
 #include "leftS.h"
@@ -11,15 +15,14 @@
 #include "thomas.h"
 #include "gameState.h"
 #include "consoleDisplay.h"
-#include <iostream>
-#include <queue>
-#include <vector>
+
 
 class Game
 {
 private:
     GameState _state;
     Piece* _currentPiece = nullptr;
+    Piece* _holdPiece = nullptr;    // ajoute par Daniel
     ColorArray2D _board = ColorArray2D(10,22);
     ConsoleDisplay _display;
     std::queue<Piece*> _queue;
@@ -39,6 +42,7 @@ private:
     bool gameLost();
     void updateLvlAndGravity();
     void setGravity();
+    Piece* getHoldPiece();
 public:
     Game(int level);
     ~Game();
@@ -55,6 +59,9 @@ public:
     bool translatePieceLeft();
     bool translatePieceRight();
     bool translatePieceDown();
+
+    // Fonction hold (ajoute par Daniel)
+    void swapPiece();
     GameState getState();
     void start();
     void refreshUI();

@@ -14,6 +14,7 @@
 
 using namespace std::chrono;
 
+
 int main()
 {
 	std::cout << "Select starting level from 0 to 9 : ";
@@ -34,7 +35,13 @@ int main()
 	{
 		game.refreshUI();
 
-		if (actions->translateLeft())
+
+		if (actions.holdPiece())
+		{
+			game.swapPiece();
+		}
+
+		if (actions.translateLeft())
 			game.translatePieceLeft();
 		else if (actions->translateRight())
 			game.translatePieceRight();

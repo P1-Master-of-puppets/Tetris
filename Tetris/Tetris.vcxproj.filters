@@ -245,5 +245,8 @@
     <ClInclude Include="input.h">
       <Filter>Header Files\Controller\Action</Filter>
     </ClInclude>
+    <ClInclude Include="type.h">
+      <Filter>Header Files\Logic\Pieces</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

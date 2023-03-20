@@ -22,6 +22,7 @@ private:
 	HoldAction dropFasterAction;
 	SingleInputAction dropInstantAction;
 	SingleInputAction menuAction;
+	SingleInputAction holdPieceAction;
 
 	Control* _controller;
 	Control* _keyboard;

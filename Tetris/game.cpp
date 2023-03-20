@@ -287,3 +287,54 @@ int Game::countLineScore(const int& nbLine)
 		return 0;
 	}
 }
+
+// FONCTION HOLD (ajout� par Daniel)
+
+// �change la pi�ce en courante avec la pi�ce de r�serve
+void Game::swapPiece() 
+{
+	//_currentPiece->printInfoPiece();
+	
+
+	//std::cout << "\n La pi�ce courante est : " << std::endl;
+
+
+	Coordinate newCoord;
+	newCoord.x = _currentPiece->getX();
+	newCoord.y = _currentPiece->getY();
+	if (getHoldPiece()->isColliding(getHoldPiece()->getPiece(), newCoord, _board)) {
+		return;
+	}
+
+	_isDirty = true;
+	// Mettre la pi�ce courante dans une variable temporaire 
+	Piece* tmpPiece = _currentPiece;
+
+	// Red�fini la pi�ce courante avec la pi�ce en r�serve
+	_currentPiece = getHoldPiece();
+
+	// D�fini la pi�ce de r�serve avec la pi�ce temporaire
+	_holdPiece = tmpPiece;
+	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
+	//_currentPiece->resetCoordinate();
+
+	//std::cout << "swapPiece() A ETE APPELLE.\n" << std::endl;
+
+	//_currentPiece->printInfoPiece();
+
+	return;
+}
+
+// R�cup�re la pi�ce en r�serve
+Piece* Game::getHoldPiece()
+{
+	if (_holdPiece == nullptr)
+	{
+		_holdPiece = _queue.front();
+		_queue.pop();
+		_queue.push(getRandomPiece());
+
+	}
+
+	return _holdPiece;
+}

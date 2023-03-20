@@ -68,5 +68,9 @@ void GameActions::loadSettings(Setting setting)
 {
 	if (_controller == nullptr)
 		return;
+}
 
+bool GameActions::holdPiece()
+{
+	return holdPieceAction.isActive();
 }

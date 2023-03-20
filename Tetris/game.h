@@ -1,10 +1,10 @@
 #ifndef GAME_H__
 #define GAME_H__
 
-
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <windows.h>
 #include "piece.h"
 #include "leftL.h"
 #include "leftS.h"

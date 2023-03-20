@@ -1,8 +1,8 @@
 #include "translateAction.h"
 
-TranslateAction::TranslateAction() : HoldAction(200)
+TranslateAction::TranslateAction() : HoldAction(100)
 {
-	initialInterval = 750;
+	initialInterval = 500;
 	lastInput = high_resolution_clock::now() - milliseconds(initialInterval);
 	initialPress = true;
 }

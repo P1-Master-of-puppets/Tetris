@@ -2,7 +2,7 @@
 
 HoldAction::HoldAction()
 {
-	interval = 200;
+	interval = 100;
     lastInput = high_resolution_clock::now() - milliseconds(interval);
 }
 

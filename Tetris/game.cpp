@@ -122,12 +122,15 @@ void Game::start()
 	_queue.pop();
 }
 
+
 void Game::refreshUI()
 {
 	if (_isDirty)
 	{
+		COORD topLeft = { 0, 0 };
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), topLeft);
+
 		_isDirty = false;
-		system("CLS");
 		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
 
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);

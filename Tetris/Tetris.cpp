@@ -20,7 +20,7 @@ int main()
 	game.start();
 	game.refreshUI();
 	Keyboard* keyboard = new Keyboard();
-	GameActions* actions = new GameActions(controller, keyboard);
+	GameActions* actions = new GameActions(keyboard);
 	
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 

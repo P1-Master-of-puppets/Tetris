@@ -281,15 +281,15 @@ int Game::countLineScore(const int& nbLine)
 	}
 }
 
-// FONCTION HOLD (ajouté par Daniel)
+// FONCTION HOLD (ajoutï¿½ par Daniel)
 
-// Échange la pièce en courante avec la pièce de réserve
+// ï¿½change la piï¿½ce en courante avec la piï¿½ce de rï¿½serve
 void Game::swapPiece() 
 {
 	//_currentPiece->printInfoPiece();
 	
 
-	//std::cout << "\n La pièce courante est : " << std::endl;
+	//std::cout << "\n La piï¿½ce courante est : " << std::endl;
 
 
 	Coordinate newCoord;
@@ -300,13 +300,13 @@ void Game::swapPiece()
 	}
 
 	_isDirty = true;
-	// Mettre la pièce courante dans une variable temporaire 
+	// Mettre la piï¿½ce courante dans une variable temporaire 
 	Piece* tmpPiece = _currentPiece;
 
-	// Redéfini la pièce courante avec la pièce en réserve
+	// Redï¿½fini la piï¿½ce courante avec la piï¿½ce en rï¿½serve
 	_currentPiece = getHoldPiece();
 
-	// Défini la pièce de réserve avec la pièce temporaire
+	// Dï¿½fini la piï¿½ce de rï¿½serve avec la piï¿½ce temporaire
 	_holdPiece = tmpPiece;
 	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
 	//_currentPiece->resetCoordinate();
@@ -318,7 +318,7 @@ void Game::swapPiece()
 	return;
 }
 
-// Récupère la pièce en réserve
+// Rï¿½cupï¿½re la piï¿½ce en rï¿½serve
 Piece* Game::getHoldPiece()
 {
 	if (_holdPiece == nullptr)

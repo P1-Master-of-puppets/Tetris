@@ -23,7 +23,7 @@ class Game
 private:
     GameState _state;
     Piece* _currentPiece = nullptr;
-    Piece* _holdPiece = nullptr;    // ajouté par Daniel
+    Piece* _holdPiece = nullptr;    // ajoute par Daniel
     ColorArray2D _board = ColorArray2D(10,22);
     ConsoleDisplay _display;
     std::queue<Piece*> _queue;
@@ -43,6 +43,7 @@ private:
     bool gameLost();
     void updateLvlAndGravity();
     void setGravity();
+    Piece* getHoldPiece();
 public:
     Game(int level);
     ~Game();
@@ -60,12 +61,8 @@ public:
     bool translatePieceRight();
     bool translatePieceDown();
 
-    // Fonction hold (ajouté par Daniel)
+    // Fonction hold (ajoute par Daniel)
     void swapPiece();
-    Piece* getHoldPiece();
-    //bool setHoldPiece(Piece* piece);
-    //bool setCurrentPiece(Piece* piece);
-
     GameState getState();
     void start();
     void refreshUI();

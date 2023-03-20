@@ -204,3 +204,33 @@ ControllerInputOutput Controller::getLastButtonPressed()
 	}
 	return _lastInput;
 }
+
+FunctionPtr Controller::controllerInputOutPutToFunctionPointer(ControllerInputOutput setting)
+{
+	switch (setting)
+	{
+	case ControllerInputOutput::LeftTrigger:
+		return Control::getLeftTrigger;
+	case ControllerInputOutput::RightTrigger:
+		return Control::getRightTrigger;
+	case ControllerInputOutput::JoyStickUp:
+		return Control::getJoyStickUp;
+	case ControllerInputOutput::JoyStickDown:
+		return Control::getJoyStickDown;
+	case ControllerInputOutput::JoyStickLeft:
+		return Control::getJoystickLeft;
+	case ControllerInputOutput::JoyStickRight:
+		return Control::getJoyStickRight;
+	case ControllerInputOutput::JoyStickButton:
+		return Control::getJoyStickButton;
+	case ControllerInputOutput::AButton:
+		return Control::getAButton;
+	case ControllerInputOutput::BButton:
+		return Control::getBButton;
+	case ControllerInputOutput::Menu:
+		return Control::getMenuButton;
+	default:
+		break;
+	}
+	return FunctionPtr();
+}

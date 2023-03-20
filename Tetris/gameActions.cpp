@@ -69,6 +69,11 @@ void GameActions::loadSettings(Setting setting)
 {
 	if (_controller == nullptr)
 		return;
+
+	if (setting.accelerometer)
+	{
+
+	}
 }
 
 bool GameActions::holdPiece()

@@ -9,6 +9,7 @@
 #include "controllerInputOutput.h"
 #include "control.h"
 
+typedef bool  (Control::* FunctionPtr)();
 class Controller : public Control {
 private:
 	int _comport;
@@ -62,5 +63,6 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	ControllerInputOutput getLastButtonPressed();
+	static FunctionPtr controllerInputOutPutToFunctionPointer(ControllerInputOutput setting);
 };
 #endif // CONTROLLER_H__

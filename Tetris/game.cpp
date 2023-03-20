@@ -287,3 +287,65 @@ int Game::countLineScore(const int& nbLine)
 		return 0;
 	}
 }
+
+// FONCTION HOLD (ajouté par Daniel)
+
+// Échange la pièce en courante avec la pièce de réserve
+void Game::swapPiece() 
+{
+	_currentPiece->printInfoPiece();
+	
+
+	std::cout << "\n La pièce courante est : " << std::endl;
+
+	// Mettre la pièce courante dans une variable temporaire 
+	Piece* tmpPiece = _currentPiece;
+
+	// Redéfini la pièce courante avec la pièce en réserve
+	setCurrentPiece(getHoldPiece());
+
+	// Défini la pièce de réserve avec la pièce temporaire
+	setHoldPiece(tmpPiece);
+	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
+	//_currentPiece->resetCoordinate();
+
+	std::cout << "swapPiece() A ETE APPELLE.\n" << std::endl;
+
+	_currentPiece->printInfoPiece();
+
+	return;
+}
+
+// Récupère la pièce en réserve
+Piece* Game::getHoldPiece()
+{
+	return _holdPiece;
+}
+
+// Défini la pièce de réserve
+bool Game::setHoldPiece(Piece* piece)
+{
+	_holdPiece = piece;
+	return true;
+}
+
+// Défini la pièce courante
+bool Game::setCurrentPiece(Piece* piece) 
+{
+	// S'il n'y a pas encore de pièe de réserve,
+	// mettre la pièce courante en réserve, définir
+	// la pièce courante avec la pièce sur le dessus
+	// de la file des prochaine pièces, retirer cette
+	// pièce de a file, puis générer une nouvelle
+	// pièce à la fin de la file.
+	if (_holdPiece == nullptr)
+	{
+		_currentPiece = _queue.front();
+		_queue.pop();
+		_queue.push(getRandomPiece());
+		return true;
+	}
+	else
+		_currentPiece = piece;
+		return true;
+}

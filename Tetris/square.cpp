@@ -3,6 +3,7 @@
 Square::Square() : Piece(2, 2)
 {
     _array->fill(Color::Yellow);
+    _typePiece = SQUARE;
 }
 
 Square::~Square()

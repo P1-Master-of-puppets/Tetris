@@ -173,6 +173,7 @@
     <ClInclude Include="constrollerInput.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="type.h" />
     <ClInclude Include="holdAction.h" />
     <ClInclude Include="keyboardInput.h" />
     <ClInclude Include="leftL.h" />

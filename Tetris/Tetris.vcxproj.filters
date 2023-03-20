@@ -218,8 +218,14 @@
     <ClInclude Include="translateAction.h">
       <Filter>Header Files\Controller\Action</Filter>
     </ClInclude>
+    <ClInclude Include="setting.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
     <ClInclude Include="controllerInputOutput.h">
       <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="settingDataAccess.h">
+      <Filter>Header Files\DAL</Filter>
     </ClInclude>
     <ClInclude Include="controller.h">
       <Filter>Header Files\Controller</Filter>

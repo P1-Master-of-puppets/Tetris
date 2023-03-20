@@ -63,8 +63,6 @@ public:
     // Fonction hold (ajouté par Daniel)
     void swapPiece();
     Piece* getHoldPiece();
-    bool setHoldPiece(Piece* piece);
-    bool setCurrentPiece(Piece* piece);
 
     GameState getState();
     void start();

@@ -8,6 +8,7 @@
 #include "holdAction.h"
 #include "singleInputAction.h"
 #include "translateAction.h"
+#include "inputSetting.h"
 
 class GameActions
 {
@@ -21,7 +22,8 @@ public:
 	bool dropFaster();
 	bool dropInstant();
 	bool menu();
-	//void loadSettings(Setting setting);
+	bool holdPiece();
+	void loadSettings(InputSetting newSettings);
 private:
 	TranslateAction translateLeftAction;
 	TranslateAction translateRightAction;
@@ -30,6 +32,7 @@ private:
 	HoldAction dropFasterAction;
 	SingleInputAction dropInstantAction;
 	SingleInputAction menuAction;
+	SingleInputAction holdPieceAction;
 };
 
 #endif

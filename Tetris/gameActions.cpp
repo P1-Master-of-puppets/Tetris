@@ -50,6 +50,12 @@ bool GameActions::menu()
 	return menuAction.isActive();
 }
 
-/*void GameActions::loadSettings(Setting loadNewSetting)
+bool GameActions::holdPiece()
 {
-}*/
+	return holdPieceAction.isActive();
+}
+
+void GameActions::loadSettings(InputSetting newSetting)
+{
+
+}

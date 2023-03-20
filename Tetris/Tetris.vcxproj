@@ -206,8 +206,6 @@
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
     <ClInclude Include="SerialPort.hpp" />
-    <ClInclude Include="setting.h" />
-    <ClInclude Include="settingDataAccess.h" />
     <ClInclude Include="singleInputAction.h" />
     <ClInclude Include="square.h" />
     <ClInclude Include="testActions.h" />

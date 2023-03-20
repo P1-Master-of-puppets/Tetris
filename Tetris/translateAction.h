@@ -5,9 +5,13 @@
 
 class TranslateAction : public HoldAction
 {
+private: 
+	int initialInterval;
+	bool initialPress;
 public:
 	TranslateAction();
+	TranslateAction(int setInitialInterval, int setInterval);
 	~TranslateAction();
-	bool isActivated();
+	bool isActive();
 };
 #endif // ! TRANSLATEACTION_H__

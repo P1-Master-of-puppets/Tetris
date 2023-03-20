@@ -1,6 +1,11 @@
+#pragma once
 #ifndef GAME_H__
 #define GAME_H__
 
+
+#include <iostream>
+#include <queue>
+#include <vector>
 #include "piece.h"
 #include "leftL.h"
 #include "leftS.h"
@@ -11,9 +16,7 @@
 #include "thomas.h"
 #include "gameState.h"
 #include "consoleDisplay.h"
-#include <iostream>
-#include <queue>
-#include <vector>
+
 
 class Game
 {

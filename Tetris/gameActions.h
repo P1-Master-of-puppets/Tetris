@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GAME_ACTIONS_H__
 #define GAME_ACTIONS_H__
 
@@ -7,9 +8,6 @@
 #include "holdAction.h"
 #include "singleInputAction.h"
 #include "translateAction.h"
-#include "setting.h"
-
-using namespace std::chrono;
 
 class GameActions
 {
@@ -23,13 +21,13 @@ public:
 	bool dropFaster();
 	bool dropInstant();
 	bool menu();
-	void loadSettings(Setting setting);
+	//void loadSettings(Setting setting);
 private:
 	TranslateAction translateLeftAction;
 	TranslateAction translateRightAction;
 	SingleInputAction rotateRightAction;
 	SingleInputAction rotateLeftAction;
-	SingleInputAction dropFasterAction;
+	HoldAction dropFasterAction;
 	SingleInputAction dropInstantAction;
 	SingleInputAction menuAction;
 };

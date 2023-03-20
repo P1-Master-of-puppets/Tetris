@@ -126,11 +126,11 @@
     <ClCompile Include="translateAction.cpp">
       <Filter>Source Files\Controller\Action</Filter>
     </ClCompile>
-    <ClCompile Include="settingDataAccess.cpp">
-      <Filter>Source Files\DAL</Filter>
+    <ClCompile Include="testActions.cpp">
+      <Filter>Source Files\Test</Filter>
     </ClCompile>
-    <ClCompile Include="setting.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="inputSetting.cpp">
+      <Filter>Source Files\DAL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,13 +194,13 @@
     <ClInclude Include="translateAction.h">
       <Filter>Header Files\Controller\Action</Filter>
     </ClInclude>
-    <ClInclude Include="setting.h">
-      <Filter>Header Files\Controller</Filter>
+    <ClInclude Include="testActions.h">
+      <Filter>Header Files\Tests</Filter>
     </ClInclude>
-    <ClInclude Include="constrollerInput.h">
-      <Filter>Header Files\Controller</Filter>
+    <ClInclude Include="inputSetting.h">
+      <Filter>Header Files\DAL</Filter>
     </ClInclude>
-    <ClInclude Include="settingDataAccess.h">
+    <ClInclude Include="json.hpp">
       <Filter>Header Files\DAL</Filter>
     </ClInclude>
     <ClInclude Include="type.h">

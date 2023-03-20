@@ -2,7 +2,6 @@
 #define LONGBAR_H__
 
 #include "piece.h"
-#include "type.h"
 
 class LongBar : public Piece
 {
@@ -12,7 +11,6 @@ public:
     
     bool rotateLeft(const ColorArray2D& board);
     bool rotateRight(const ColorArray2D& board);
-    virtual bool resetPieceTodefault();
 
 private:
     bool vertical;

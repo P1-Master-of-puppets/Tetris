@@ -76,15 +76,26 @@ bool GameActions::menu()
 	return menuAction.isActive();
 }
 
+void GameActions::addInputsToAction(Action* action, std::vector<ControllerInputOutput> newSettings)
+{
+	for (int i = 0; i < newSettings.size(); i++)
+	{
+		action->addInput(new Input(_controller, Controller::controllerInputOutPutToFunctionPointer(newSettings[i])));
+	}
+}
+
 void GameActions::loadSettings(InputSetting setting)
 {
 	if (_controller == nullptr)
 		return;
 
-	if (setting.accelerometer)
-	{
-
-	}
+	addInputsToAction(&translateLeftAction, setting.translateLeft);
+	addInputsToAction(&translateRightAction, setting.translateRight);
+	addInputsToAction(&rotateLeftAction, setting.rotateLeft);
+	addInputsToAction(&rotateRightAction, setting.rotateRight);
+	addInputsToAction(&dropFasterAction, setting.dropFaster);
+	addInputsToAction(&dropInstantAction, setting.dropInstant);
+	addInputsToAction(&holdPieceAction, setting.holdPiece);
 }
 
 bool GameActions::holdPiece()

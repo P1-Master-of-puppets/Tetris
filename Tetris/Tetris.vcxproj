@@ -194,7 +194,6 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="inputSetting.h" />
     <ClInclude Include="json.hpp" />
-    <ClInclude Include="type.h" />
     <ClInclude Include="holdAction.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="keyboard.h" />

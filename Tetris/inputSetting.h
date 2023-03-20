@@ -12,6 +12,7 @@
 
 class InputSetting {
 public:
+	InputSetting();
 	bool readSettings(std::string fileName);
 	bool writeSettings(std::string fileName);
 	std::vector<ControllerInputOutput> translateLeft;

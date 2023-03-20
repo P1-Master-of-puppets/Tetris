@@ -305,36 +305,15 @@ void Game::instantDrop()
 // echange la piece en courante avec la piece de reserve
 void Game::swapPiece() 
 {
-	//_currentPiece->printInfoPiece();
-	
-
-	//std::cout << "\n La pi�ce courante est : " << std::endl;
-
-
-	Coordinate newCoord;
-	newCoord.x = _currentPiece->getX();
-	newCoord.y = _currentPiece->getY();
-	if (getHoldPiece()->isColliding(getHoldPiece()->getPiece(), newCoord, _board)) {
+	if (getHoldPiece()->isColliding(getHoldPiece()->getPiece(), _currentPiece->getCoordinate(), _board)) {
 		return;
 	}
 
 	_isDirty = true;
-	// Mettre la piece courante dans une variable temporaire 
 	Piece* tmpPiece = _currentPiece;
-
-	// Red�fini la piece courante avec la piece en reserve
 	_currentPiece = getHoldPiece();
-
-	// D�fini la piece de reserve avec la piece temporaire
 	_holdPiece = tmpPiece;
-	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
-	//_currentPiece->resetCoordinate();
-
-	//std::cout << "swapPiece() A ETE APPELLE.\n" << std::endl;
-
-	//_currentPiece->printInfoPiece();
-
-	return;
+	_currentPiece->setCoordinate(tmpPiece->getCoordinate());
 }
 
 // Recupere la piece en reserve

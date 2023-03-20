@@ -8,7 +8,6 @@ LongBar::LongBar() : Piece(4, 4)
     (*_array)[2][3] = Color::Cyan;
     vertical = true;
     _coordinate.y = 0;
-    _typePiece = LONGBAR;
 }
 
 LongBar::~LongBar()
@@ -56,26 +55,4 @@ bool LongBar::rotateLeft(const ColorArray2D& board){
 
 bool LongBar::rotateRight(const ColorArray2D& board){
     return rotateBar(board);
-}
-
-bool LongBar::resetPieceTodefault()
-{
-    (*_array)[0][0] = Color::Transparent;
-    (*_array)[1][0] = Color::Transparent;
-    (*_array)[2][0] = Color::Cyan;
-    (*_array)[3][0] = Color::Transparent;
-    (*_array)[0][1] = Color::Transparent;
-    (*_array)[1][1] = Color::Transparent;
-    (*_array)[2][1] = Color::Cyan;
-    (*_array)[3][1] = Color::Transparent;
-    (*_array)[0][2] = Color::Transparent;
-    (*_array)[1][2] = Color::Transparent;
-    (*_array)[2][2] = Color::Cyan;
-    (*_array)[3][2] = Color::Transparent;
-    (*_array)[0][3] = Color::Transparent;
-    (*_array)[1][3] = Color::Transparent;
-    (*_array)[2][3] = Color::Cyan;
-    (*_array)[3][3] = Color::Transparent;
-
-    return true;
 }

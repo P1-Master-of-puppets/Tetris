@@ -1,12 +1,30 @@
 #include "inputSetting.h"
 
+InputSetting::InputSetting()
+{
+	if (!readSettings("settings.json")) {
+		translateLeft.push_back(ControllerInputOutput::JoyStickLeft);
+		translateRight.push_back(ControllerInputOutput::JoyStickRight);
+		rotateLeft.push_back(ControllerInputOutput::BButton);
+		rotateRight.push_back(ControllerInputOutput::AButton);
+		dropInstant.push_back(ControllerInputOutput::JoyStickButton);
+		dropFaster.push_back(ControllerInputOutput::JoyStickDown);
+		holdPiece.push_back(ControllerInputOutput::LeftTrigger);
+		holdPiece.push_back(ControllerInputOutput::RightTrigger);
+
+		writeSettings("settings.json");
+
+	}
+
+
+}
+
 bool InputSetting::readSettings(std::string fileName)
 {
 	std::ifstream fichier(fileName);
 	nlohmann::json myJson;
 
 	if (!fichier.is_open()) {
-		std::cout << "Can't open file " << fileName << " for read" << std::endl;
 		return false;
 	}
 
@@ -52,7 +70,6 @@ bool InputSetting::writeSettings(std::string fileName)
 	nlohmann::json myJson;
 	
 	if (!fichier.is_open()) {
-		std::cout << "Can't open file " << fileName << " for write" << std::endl;
 		return false;
 	}
 

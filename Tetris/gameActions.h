@@ -9,6 +9,7 @@
 #include "inputSetting.h"
 #include "keyboard.h"
 #include "controller.h"
+#include "controllerInputOutput.h"
 
 using namespace std::chrono;
 
@@ -40,6 +41,7 @@ public:
 	bool dropInstant();
 	bool menu();
 	bool holdPiece();
+	void addInputsToAction(Action* action, std::vector<ControllerInputOutput> controls);
 	void loadSettings(InputSetting setting);
 
 };

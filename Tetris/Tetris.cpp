@@ -36,12 +36,12 @@ int main()
 		game.refreshUI();
 
 
-		if (actions.holdPiece())
+		if (actions->holdPiece())
 		{
 			game.swapPiece();
 		}
 
-		if (actions.translateLeft())
+		if (actions->translateLeft())
 			game.translatePieceLeft();
 		else if (actions->translateRight())
 			game.translatePieceRight();

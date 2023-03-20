@@ -49,12 +49,12 @@ public:
 	/// <returns></returns>
 	bool getAButton();
 	/// <summary>
-	/// QuickDrop
+	/// Hold Piece (C)
 	/// </summary>
 	/// <returns></returns>
 	bool getBButton();
 	/// <summary>
-	/// Hold Piece (C)
+	/// Menu (M)
 	/// </summary>
 	/// <returns></returns>
 	bool getMenuButton();

@@ -9,6 +9,7 @@ void GameActions::initKeyboardSettings()
 	dropFasterAction.addInput(new Input(_keyboard, &Control::getAButton));
 	dropInstantAction.addInput(new Input(_keyboard, &Control::getJoyStickButton));
 	menuAction.addInput(new Input(_keyboard, &Control::getMenuButton));
+	holdPieceAction.addInput(new Input(_keyboard, &Control::getBButton));
 }
 
 GameActions::GameActions(Controller* controller, Keyboard* keyboard)

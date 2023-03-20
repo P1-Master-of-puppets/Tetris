@@ -39,6 +39,7 @@ public:
 	bool dropFaster();
 	bool dropInstant();
 	bool menu();
+	bool holdPiece();
 	void loadSettings(Setting setting);
 
 };

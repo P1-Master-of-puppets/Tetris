@@ -164,7 +164,7 @@ bool Controller::getMenuButton()
 	return _menuButton;
 }
 
-bool Controller::getFastDrop()
+bool Controller::getInstantDrop()
 {
 	bool temp = _fastDrop;
 	_fastDrop = false;

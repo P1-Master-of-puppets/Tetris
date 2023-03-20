@@ -17,6 +17,7 @@ Action::Action()
 
 Action::~Action()
 {
+	//TODO tous les pointeurs doivent être delete avant de clear le vecteur
 	inputs.clear();
 }
 

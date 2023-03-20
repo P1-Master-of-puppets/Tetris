@@ -18,7 +18,7 @@ int main()
 {
 	Controller controller(7, 115200);
 
-	controller.updateThreatIndicator(2);
+	controller.updateThreatIndicator(3);
 	controller.updateSevenSegment(3);
 	
 	while (true) {

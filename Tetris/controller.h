@@ -17,7 +17,6 @@ private:
 	std::atomic<bool> _isRunning;
 	void readThread();
 
-
 	std::atomic<ControllerInputOutput> _lastInput{ ControllerInputOutput::None };
 
 	std::atomic<bool> _leftTrigger;
@@ -52,7 +51,7 @@ public:
 	bool getAButton();
 	bool getBButton();
 	bool getMenuButton();
-	bool getFastDrop();
+	bool getInstantDrop();
 
 	void vibrate(int milliseconds);
 	void updateSevenSegment(int twoDigitNumber);
@@ -63,6 +62,5 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	ControllerInputOutput getLastButtonPressed();
-
 };
 #endif // CONTROLLER_H__

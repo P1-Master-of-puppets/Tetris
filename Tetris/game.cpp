@@ -53,7 +53,6 @@ bool Game::rotatePieceLeft()
 
 bool Game::rotatePieceRight()
 {
-
 	if (_currentPiece->rotateRight(_board))
 	{
 		_isDirty = true;
@@ -100,9 +99,11 @@ bool Game::translatePieceDown()
 		delete rows;
 		_score += countLineScore(rowAmount);
 		_totalLines += rowAmount;
+		if (rowAmount == 4)
+			addTetris();
 		updateLvlAndGravity();
-		//Verify if the game is lost
-		return !gameLost();
+		gameLost();
+		return false;
 	}
 
 	return true;
@@ -131,6 +132,11 @@ void Game::refreshUI()
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
 
 	}
+}
+
+void Game::setController(Controller* controller)
+{
+	_controller = controller;
 }
 
 Piece* Game::getRandomPiece() {
@@ -288,9 +294,15 @@ int Game::countLineScore(const int& nbLine)
 	}
 }
 
-// FONCTION HOLD (ajout� par Daniel)
+// FONCTION HOLD (ajoute par Daniel)
 
-// �change la pi�ce en courante avec la pi�ce de r�serve
+void Game::instantDrop()
+{
+	while (translatePieceDown()) {
+	}
+}
+
+// echange la piece en courante avec la piece de reserve
 void Game::swapPiece() 
 {
 	//_currentPiece->printInfoPiece();
@@ -307,13 +319,13 @@ void Game::swapPiece()
 	}
 
 	_isDirty = true;
-	// Mettre la pi�ce courante dans une variable temporaire 
+	// Mettre la piece courante dans une variable temporaire 
 	Piece* tmpPiece = _currentPiece;
 
-	// Red�fini la pi�ce courante avec la pi�ce en r�serve
+	// Red�fini la piece courante avec la piece en reserve
 	_currentPiece = getHoldPiece();
 
-	// D�fini la pi�ce de r�serve avec la pi�ce temporaire
+	// D�fini la piece de reserve avec la piece temporaire
 	_holdPiece = tmpPiece;
 	_currentPiece->setToCurrentPosition(tmpPiece->getX(), tmpPiece->getY());
 	//_currentPiece->resetCoordinate();
@@ -325,7 +337,7 @@ void Game::swapPiece()
 	return;
 }
 
-// R�cup�re la pi�ce en r�serve
+// Recupere la piece en reserve
 Piece* Game::getHoldPiece()
 {
 	if (_holdPiece == nullptr)
@@ -337,4 +349,13 @@ Piece* Game::getHoldPiece()
 	}
 
 	return _holdPiece;
+}
+
+void Game::addTetris()
+{
+	_totalTetris++;
+	if (_controller != nullptr)
+	{
+		_controller->updateSevenSegment(_totalTetris);
+	}
 }

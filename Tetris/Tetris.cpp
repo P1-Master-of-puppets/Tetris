@@ -21,12 +21,12 @@ int main()
 	int startingLevel;
 	std::cin >> startingLevel;
 
+	Controller* controller = new Controller(7, 115200);
 	Game game = Game(startingLevel);
-
+	game.setController(controller);
 	game.start();
 	game.refreshUI();
 	Keyboard* keyboard = new Keyboard();
-	Controller* controller = new Controller(7, 115200);
 	GameActions* actions = new GameActions(controller, keyboard);
 	int pieceSpeed = 500;
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
@@ -51,6 +51,10 @@ int main()
 		else if (actions->rotateLeft())
 			game.rotatePieceLeft();
 
+		if (actions->dropInstant())
+		{
+			game.instantDrop();
+		}
 		if (actions->dropFaster()) {
 			game.translatePieceDown();
 		}
@@ -60,7 +64,6 @@ int main()
 				lastAutomaticDrop = high_resolution_clock::now();
 				game.translatePieceDown();
 			}
-
 		}
 	}
 	return 0;

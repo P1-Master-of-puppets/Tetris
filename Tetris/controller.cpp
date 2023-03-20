@@ -210,25 +210,25 @@ FunctionPtr Controller::controllerInputOutPutToFunctionPointer(ControllerInputOu
 	switch (setting)
 	{
 	case ControllerInputOutput::LeftTrigger:
-		return Control::getLeftTrigger;
+		return &Control::getLeftTrigger;
 	case ControllerInputOutput::RightTrigger:
-		return Control::getRightTrigger;
+		return &Control::getRightTrigger;
 	case ControllerInputOutput::JoyStickUp:
-		return Control::getJoyStickUp;
+		return &Control::getJoyStickUp;
 	case ControllerInputOutput::JoyStickDown:
-		return Control::getJoyStickDown;
+		return &Control::getJoyStickDown;
 	case ControllerInputOutput::JoyStickLeft:
-		return Control::getJoystickLeft;
+		return &Control::getJoystickLeft;
 	case ControllerInputOutput::JoyStickRight:
-		return Control::getJoyStickRight;
+		return &Control::getJoyStickRight;
 	case ControllerInputOutput::JoyStickButton:
-		return Control::getJoyStickButton;
+		return &Control::getJoyStickButton;
 	case ControllerInputOutput::AButton:
-		return Control::getAButton;
+		return &Control::getAButton;
 	case ControllerInputOutput::BButton:
-		return Control::getBButton;
+		return &Control::getBButton;
 	case ControllerInputOutput::Menu:
-		return Control::getMenuButton;
+		return &Control::getMenuButton;
 	default:
 		break;
 	}

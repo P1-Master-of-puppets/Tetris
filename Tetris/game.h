@@ -15,6 +15,7 @@
 #include "thomas.h"
 #include "gameState.h"
 #include "consoleDisplay.h"
+#include "controller.h"
 
 
 class Game
@@ -22,14 +23,16 @@ class Game
 private:
     GameState _state;
     Piece* _currentPiece = nullptr;
-    Piece* _holdPiece = nullptr;    // ajoute par Daniel
+    Piece* _holdPiece = nullptr;
     ColorArray2D _board = ColorArray2D(10,22);
     ConsoleDisplay _display;
     std::queue<Piece*> _queue;
+    Controller* _controller = nullptr;
 
     int _level = 0;
     unsigned int _score = 0;
     int _totalLines = 0;
+    int _totalTetris = 0;
     bool _isDirty = true;
     int _gravityspeed_milliseconds = 0;
 
@@ -43,6 +46,7 @@ private:
     void updateLvlAndGravity();
     void setGravity();
     Piece* getHoldPiece();
+    void addTetris();
 public:
     Game(int level);
     ~Game();
@@ -60,11 +64,12 @@ public:
     bool translatePieceRight();
     bool translatePieceDown();
 
-    // Fonction hold (ajoute par Daniel)
+    void instantDrop();
     void swapPiece();
     GameState getState();
     void start();
     void refreshUI();
+    void setController(Controller* controller);
 };
 
 #endif // GAME_H__

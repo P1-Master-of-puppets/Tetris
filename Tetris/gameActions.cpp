@@ -10,6 +10,17 @@ void GameActions::initKeyboardSettings()
 	dropInstantAction.addInput(new Input(_keyboard, &Control::getJoyStickButton));
 	menuAction.addInput(new Input(_keyboard, &Control::getMenuButton));
 	holdPieceAction.addInput(new Input(_keyboard, &Control::getBButton));
+
+
+	translateLeftAction.addInput(new Input(_controller, &Control::getJoystickLeft));
+	translateRightAction.addInput(new Input(_controller, &Control::getJoyStickRight));
+	rotateLeftAction.addInput(new Input(_controller, &Control::getLeftTrigger));
+	rotateRightAction.addInput(new Input(_controller, &Control::getRightTrigger));
+	dropFasterAction.addInput(new Input(_controller, &Control::getAButton));
+	dropInstantAction.addInput(new Input(_controller, &Control::getJoyStickButton));
+	dropInstantAction.addInput(new Input(_controller, &Control::getInstantDrop));
+	menuAction.addInput(new Input(_controller, &Control::getMenuButton));
+	holdPieceAction.addInput(new Input(_controller, &Control::getBButton));
 }
 
 GameActions::GameActions(Controller* controller, Keyboard* keyboard)

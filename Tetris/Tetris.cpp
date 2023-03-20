@@ -21,7 +21,7 @@ int main()
 	game.refreshUI();
 	Keyboard* keyboard = new Keyboard();
 	GameActions* actions = new GameActions(controller, keyboard);
-	int pieceSpeed = 500;
+	
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 
 	while (game.getState() == GameState::OnGoing)
@@ -52,7 +52,7 @@ int main()
 			game.translatePieceDown();
 		}
 
-		if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > pieceSpeed) {
+		if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
 			if (duration_cast<milliseconds>(high_resolution_clock::now() - lastAutomaticDrop).count() > game.getGravitySpeed()) {
 				lastAutomaticDrop = high_resolution_clock::now();
 				game.translatePieceDown();

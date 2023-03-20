@@ -14,12 +14,11 @@ void GameActions::initKeyboardSettings()
 
 GameActions::GameActions(Controller* controller, Keyboard* keyboard)
 {
-	InputSetting settingTemps;
-	loadSettings(settingTemps);
-
 	_controller = controller;
 	_keyboard = keyboard;
 	initKeyboardSettings();
+	InputSetting settingTemps;
+	loadSettings(settingTemps);
 }
 
 GameActions::GameActions(Keyboard* keyboard)

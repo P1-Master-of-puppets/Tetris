@@ -35,7 +35,7 @@ private:
     int _totalTetris = 0;
     bool _isDirty = true;
     int _gravityspeed_milliseconds = 0;
-
+    int _highestPiece = 0;
 
     int* getFullRows(int& size);
     void removeRows(int* rows, int& size);
@@ -47,6 +47,7 @@ private:
     void setGravity();
     Piece* getHoldPiece();
     void addTetris();
+    void updateThreat();
 public:
     Game(int level);
     ~Game();

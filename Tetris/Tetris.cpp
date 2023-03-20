@@ -16,10 +16,7 @@ using namespace std::chrono;
 
 int main()
 {
-
-	TestActions action;
-	action.testerSingleInput();
-	/*std::cout << "Select starting level from 0 to 9 : ";
+	std::cout << "Select starting level from 0 to 9 : ";
 	int startingLevel;
 	std::cin >> startingLevel;
 
@@ -27,7 +24,9 @@ int main()
 
 	game.start();
 	game.refreshUI();
-	GameActions actions;
+	Keyboard* keyboard = new Keyboard();
+	Controller* controller = new Controller(7, 115200);
+	GameActions* actions = new GameActions(controller, keyboard);
 	int pieceSpeed = 500;
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 
@@ -35,17 +34,17 @@ int main()
 	{
 		game.refreshUI();
 
-		if (actions.translateLeft())
+		if (actions->translateLeft())
 			game.translatePieceLeft();
-		else if (actions.translateRight())
+		else if (actions->translateRight())
 			game.translatePieceRight();
 
-		if (actions.rotateRight())
+		if (actions->rotateRight())
 			game.rotatePieceRight();
-		else if (actions.rotateLeft())
+		else if (actions->rotateLeft())
 			game.rotatePieceLeft();
 
-		if (actions.dropFaster()) {
+		if (actions->dropFaster()) {
 			game.translatePieceDown();
 		}
 
@@ -56,6 +55,6 @@ int main()
 			}
 
 		}
-	}*/
+	}
 	return 0;
 }

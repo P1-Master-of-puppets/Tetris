@@ -9,6 +9,7 @@
 #include "singleInputAction.h"
 #include "keyboard.h"
 #include "controller.h"
+#include <vector>
 
 class TestActions {
 public:

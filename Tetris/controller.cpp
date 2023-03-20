@@ -24,10 +24,6 @@ void Controller::readThread()
 }
 
 void Controller::updateControllerValues(char buffer[]) {
-#ifndef ControllerDebug
-	std::cout << '\n' << buffer[0] << " " << buffer[1] << '\n';
-#endif // !ControllerDebug
-
 	switch (buffer[0])
 	{
 	case 'L':
@@ -175,7 +171,7 @@ void Controller::vibrate(int milliseconds)
 
 void Controller::updateSevenSegment(int twoDigitNumber)
 {
-	if (twoDigitNumber > 98 || twoDigitNumber < 0)
+	if (twoDigitNumber > 99 || twoDigitNumber < 0)
 		return;
 	twoDigitNumber++;
 	char data[2];

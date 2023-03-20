@@ -15,12 +15,14 @@ GameActions::GameActions(Controller* controller, Keyboard* keyboard)
 {
 	_controller = controller;
 	_keyboard = keyboard;
+	initKeyboardSettings();
 }
 
 GameActions::GameActions(Keyboard* keyboard)
 {
 	_controller = nullptr;
 	_keyboard = keyboard;
+	initKeyboardSettings();
 }
 
 GameActions::~GameActions()

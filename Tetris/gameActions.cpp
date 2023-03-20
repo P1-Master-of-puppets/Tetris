@@ -9,6 +9,7 @@ GameActions::GameActions()
 	dropFasterAction.addInput(KeyboardInput::dropFaster);
 	dropInstantAction.addInput(KeyboardInput::dropFaster);
 	menuAction.addInput(KeyboardInput::menu);
+	holdPieceAction.addInput(KeyboardInput::holdPiece);
 }
 
 GameActions::~GameActions()

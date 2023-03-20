@@ -25,7 +25,7 @@ int main()
 		game.refreshUI();
 
 
-		if (GetAsyncKeyState(VK_SPACE))
+		if (actions.holdPiece())
 		{
 			game.swapPiece();
 

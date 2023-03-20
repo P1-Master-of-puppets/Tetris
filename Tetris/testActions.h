@@ -7,6 +7,7 @@
 #include "translateAction.h"
 #include "holdAction.h"
 #include "singleInputAction.h"
+#include "keyboard.h"
 
 class TestActions {
 public:

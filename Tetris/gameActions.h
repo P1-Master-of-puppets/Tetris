@@ -2,20 +2,34 @@
 #define GAME_ACTIONS_H__
 
 #include <chrono>
-#include "keyboardInput.h"
 #include "action.h"
 #include "holdAction.h"
 #include "singleInputAction.h"
 #include "translateAction.h"
 #include "setting.h"
-#include "controllerWrapper.h"
+#include "keyboard.h"
+#include "controller.h"
 
 using namespace std::chrono;
 
 class GameActions
 {
+private:
+	TranslateAction translateLeftAction;
+	TranslateAction translateRightAction;
+	SingleInputAction rotateRightAction;
+	SingleInputAction rotateLeftAction;
+	HoldAction dropFasterAction;
+	SingleInputAction dropInstantAction;
+	SingleInputAction menuAction;
+
+	Control* _controller;
+	Control* _keyboard;
+
+	void initKeyboardSettings();
 public:
-	GameActions();
+	GameActions(Controller* controller, Keyboard* keyboard);
+	GameActions(Keyboard* keyboard);
 	~GameActions();
 	bool translateLeft();
 	bool translateRight();
@@ -25,14 +39,7 @@ public:
 	bool dropInstant();
 	bool menu();
 	void loadSettings(Setting setting);
-private:
-	TranslateAction translateLeftAction;
-	TranslateAction translateRightAction;
-	SingleInputAction rotateRightAction;
-	SingleInputAction rotateLeftAction;
-	HoldAction dropFasterAction;
-	SingleInputAction dropInstantAction;
-	SingleInputAction menuAction;
+
 };
 
 #endif

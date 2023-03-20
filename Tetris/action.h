@@ -2,11 +2,12 @@
 #define ACTION_H__
 
 #include <vector>
+#include "input.h"
 
 class Action {
 
 protected:
-	std::vector<bool (*)()> inputs = std::vector<bool (*)()>();
+	std::vector<Input*> inputs = std::vector<Input*>();
 	bool getCurrentState();
 public:
 	Action();
@@ -14,7 +15,7 @@ public:
 	virtual bool isActive() = 0;
 	void resetInputs();
 	//ça ne fonctionnera pas pour la manette, il va faloir la mettre statique
-	void addInput(bool (*function)());
+	void addInput(Input* input);
 };
 
 #endif // ! ACTION_H__

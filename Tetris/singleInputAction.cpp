@@ -10,12 +10,13 @@ SingleInputAction::~SingleInputAction()
 
 bool SingleInputAction::isActive()
 {
-    if (getCurrentState() && !lastButtonState) {
+    bool currentState = getCurrentState();
+    if (currentState && !lastButtonState) {
         lastButtonState = true;
         return true;
     }
 
-    if (!getCurrentState() && lastButtonState) {
+    if (!currentState && lastButtonState) {
         lastButtonState = false;
     }
 

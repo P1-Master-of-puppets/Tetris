@@ -153,6 +153,9 @@
     <ClCompile Include="control.h">
       <Filter>Header Files\Controller</Filter>
     </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">

@@ -13,7 +13,7 @@ public:
 	virtual bool getAButton() = 0;
 	virtual bool getBButton() = 0;
 	virtual bool getMenuButton() = 0;
-	virtual bool getFastDrop() = 0;
+	virtual bool getInstantDrop() = 0;
 };
 
 #endif // !CONTROL_H__

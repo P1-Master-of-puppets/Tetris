@@ -2,13 +2,12 @@
 
 bool Action::getCurrentState()
 {
-	bool result = false;
-
 	for (int i = 0; i < inputs.size(); i++) {
-		result = result || inputs[i]();
+		if (inputs[i]->getInput())
+			return true;
 	}
 	
-	return result;
+	return false;
 }
 
 Action::Action()
@@ -17,16 +16,19 @@ Action::Action()
 
 Action::~Action()
 {
-	//TODO tous les pointeurs doivent être delete avant de clear le vecteur
-	inputs.clear();
+	resetInputs();
 }
 
 void Action::resetInputs()
 {
+	for (int i = 0; i < inputs.size(); i++)
+	{
+		delete inputs[i];
+	}
 	inputs.clear();
 }
 
-void Action::addInput(bool (*input)())
+void Action::addInput(Input* input)
 {
 	inputs.push_back(input);
 }

@@ -16,12 +16,10 @@ using namespace std::chrono;
 
 int main()
 {
-	Controller controller(7, 115200);
 
-	controller.updateThreatIndicator(3);
-	controller.updateSevenSegment(3);
-	
-	while (true) {
+	GameActions action;
+	while (true)
+	{
 
 	}
 

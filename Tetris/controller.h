@@ -8,7 +8,7 @@
 #include <string>
 #include "controllerInputOutput.h"
 
-class Controller {
+class Controller : public Control {
 private:
 	int _comport;
 	int _baudRate;

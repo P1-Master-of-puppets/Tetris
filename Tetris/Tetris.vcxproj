@@ -163,6 +163,7 @@
     <ClCompile Include="gameActions.cpp" />
     <ClCompile Include="gameActions.h" />
     <ClCompile Include="holdAction.cpp" />
+    <ClCompile Include="input.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />

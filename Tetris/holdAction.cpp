@@ -17,19 +17,20 @@ HoldAction::~HoldAction()
 
 bool HoldAction::isActive()
 {
-    if (getCurrentState() && !lastButtonState) {
+    bool currentState = getCurrentState();
+    if (currentState && !lastButtonState) {
         lastButtonState = true;
         lastInput = high_resolution_clock::now();
         return true;
     }
 
-    if (getCurrentState() && lastButtonState && 
+    if (currentState && lastButtonState &&
         milliseconds(interval) < high_resolution_clock::now() - lastInput ) {
         lastInput = high_resolution_clock::now();
         return true;
     }
 
-    if (!getCurrentState() && lastButtonState) {
+    if (!currentState && lastButtonState) {
         lastButtonState = false;
     }
 

@@ -1,9 +1,18 @@
 #include <iostream>
-#include <chrono>
-
 #include "game.h"
 #include "colorArray2D.h"
+#include "testDisplay.h"
+#include "testPiece.h"
+#include "testActions.h"
 #include "gameActions.h"
+#include "nlohmann/json.hpp"
+#include <chrono>
+#include "inputDevice.h"
+#include "settingDataAccess.h"
+#include "controller.h"
+#include "SerialPort.hpp"
+
+using namespace std::chrono;
 
 
 int main()
@@ -16,7 +25,9 @@ int main()
 
 	game.start();
 	game.refreshUI();
-	GameActions actions;
+	Keyboard* keyboard = new Keyboard();
+	Controller* controller = new Controller(7, 115200);
+	GameActions* actions = new GameActions(controller, keyboard);
 	int pieceSpeed = 500;
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 
@@ -25,22 +36,22 @@ int main()
 		game.refreshUI();
 
 
-		if (actions.holdPiece())
+		if (actions->holdPiece())
 		{
 			game.swapPiece();
 		}
 
-		if (actions.translateLeft())
+		if (actions->translateLeft())
 			game.translatePieceLeft();
-		else if (actions.translateRight())
+		else if (actions->translateRight())
 			game.translatePieceRight();
 
-		if (actions.rotateRight())
+		if (actions->rotateRight())
 			game.rotatePieceRight();
-		else if (actions.rotateLeft())
+		else if (actions->rotateLeft())
 			game.rotatePieceLeft();
 
-		if (actions.dropFaster()) {
+		if (actions->dropFaster()) {
 			game.translatePieceDown();
 		}
 

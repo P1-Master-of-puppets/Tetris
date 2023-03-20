@@ -138,18 +138,25 @@ Piece* Game::getRandomPiece() {
 	{
 	case 0:
 		return new LeftL();
+		break;
 	case 1:
 		return new LeftS();
+		break;
 	case 2:
 		return new LongBar();
+		break;
 	case 3:
 		return new RightL();
+		break;
 	case 4:
 		return new RightS();
+		break;
 	case 5:
 		return new Square();
+		break;
 	case 6:
 		return new Thomas();
+		break;
 	}
 }
 

@@ -1,15 +1,29 @@
 #include "gameActions.h"
 
-GameActions::GameActions()
+void GameActions::initKeyboardSettings()
 {
-	translateLeftAction.addInput(KeyboardInput::translateLeft);
-	translateRightAction.addInput(KeyboardInput::translateRight);
-	rotateLeftAction.addInput(KeyboardInput::rotateLeft);
-	rotateRightAction.addInput(KeyboardInput::rotateRight);
-	dropFasterAction.addInput(KeyboardInput::dropFaster);
-	dropInstantAction.addInput(KeyboardInput::dropFaster);
-	menuAction.addInput(KeyboardInput::menu);
-	holdPieceAction.addInput(KeyboardInput::holdPiece);
+	translateLeftAction.addInput(new Input(_keyboard, &Control::getJoystickLeft));
+	translateRightAction.addInput(new Input(_keyboard, &Control::getJoyStickRight));
+	rotateLeftAction.addInput(new Input(_keyboard, &Control::getLeftTrigger));
+	rotateRightAction.addInput(new Input(_keyboard, &Control::getRightTrigger));
+	dropFasterAction.addInput(new Input(_keyboard, &Control::getAButton));
+	dropInstantAction.addInput(new Input(_keyboard, &Control::getJoyStickButton));
+	menuAction.addInput(new Input(_keyboard, &Control::getMenuButton));
+	holdPieceAction.addInput(new Input(_keyboard, &Control::getBButton));
+}
+
+GameActions::GameActions(Controller* controller, Keyboard* keyboard)
+{
+	_controller = controller;
+	_keyboard = keyboard;
+	initKeyboardSettings();
+}
+
+GameActions::GameActions(Keyboard* keyboard)
+{
+	_controller = nullptr;
+	_keyboard = keyboard;
+	initKeyboardSettings();
 }
 
 GameActions::~GameActions()
@@ -51,12 +65,13 @@ bool GameActions::menu()
 	return menuAction.isActive();
 }
 
+void GameActions::loadSettings(Setting setting)
+{
+	if (_controller == nullptr)
+		return;
+}
+
 bool GameActions::holdPiece()
 {
 	return holdPieceAction.isActive();
-}
-
-void GameActions::loadSettings(InputSetting newSetting)
-{
-
 }

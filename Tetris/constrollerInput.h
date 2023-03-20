@@ -2,7 +2,7 @@
 #define CONTROLLERINPUT_H__
 
 
-enum class ControllerInput {
+enum class ConstrollerInput {
 	LeftTrigger,
 	RightTrigger,
 	JoyStickUp,

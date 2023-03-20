@@ -1,4 +1,3 @@
-#pragma once
 #ifndef COLORARRAY2D_H__
 #define COLORARRAY2D_H__
 

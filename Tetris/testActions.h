@@ -7,6 +7,9 @@
 #include "translateAction.h"
 #include "holdAction.h"
 #include "singleInputAction.h"
+#include "keyboard.h"
+#include "controller.h"
+#include <vector>
 
 class TestActions {
 public:

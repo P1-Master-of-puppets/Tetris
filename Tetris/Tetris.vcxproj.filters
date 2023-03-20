@@ -55,6 +55,12 @@
     <Filter Include="Source Files\DAL">
       <UniqueIdentifier>{c61735cd-278f-4ae2-96bf-42aa0170308c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Communication">
+      <UniqueIdentifier>{7d86db56-68dd-4a2f-adb4-cab2437690e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Communication">
+      <UniqueIdentifier>{bf578333-e769-4783-a931-175188f687b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -111,7 +117,7 @@
     <ClCompile Include="gameActions.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
-    <ClCompile Include="keyboardInput.cpp">
+    <ClCompile Include="keyboard.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
     <ClCompile Include="action.cpp">
@@ -126,11 +132,29 @@
     <ClCompile Include="translateAction.cpp">
       <Filter>Source Files\Controller\Action</Filter>
     </ClCompile>
+    <ClCompile Include="settingDataAccess.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPort.cpp">
+      <Filter>Source Files\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="testJson.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
     <ClCompile Include="testActions.cpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
-    <ClCompile Include="inputSetting.cpp">
-      <Filter>Source Files\DAL</Filter>
+    <ClCompile Include="setting.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="control.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files\Controller\Action</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +203,7 @@
     <ClInclude Include="thomas.h">
       <Filter>Header Files\Logic\Pieces</Filter>
     </ClInclude>
-    <ClInclude Include="keyboardInput.h">
+    <ClInclude Include="keyboard.h">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
     <ClInclude Include="holdAction.h">
@@ -194,14 +218,32 @@
     <ClInclude Include="translateAction.h">
       <Filter>Header Files\Controller\Action</Filter>
     </ClInclude>
+    <ClInclude Include="setting.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerInputOutput.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="settingDataAccess.h">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="controller.h">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPort.hpp">
+      <Filter>Header Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="testJson.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="nlohmann\json.hpp">
+      <Filter>Header Files\DAL</Filter>
+    </ClInclude>
     <ClInclude Include="testActions.h">
       <Filter>Header Files\Tests</Filter>
     </ClInclude>
-    <ClInclude Include="inputSetting.h">
-      <Filter>Header Files\DAL</Filter>
-    </ClInclude>
-    <ClInclude Include="json.hpp">
-      <Filter>Header Files\DAL</Filter>
+    <ClInclude Include="input.h">
+      <Filter>Header Files\Controller\Action</Filter>
     </ClInclude>
     <ClInclude Include="type.h">
       <Filter>Header Files\Logic\Pieces</Filter>

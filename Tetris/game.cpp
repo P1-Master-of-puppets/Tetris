@@ -3,6 +3,14 @@
 
 Game::Game(int level)
 {
+
+	CONSOLE_CURSOR_INFO info;
+	info.dwSize = 100;
+	info.bVisible = false;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
+
+
+
 	_level = level;
 	srand(time(0));
 	_board.fill(Color::Transparent);

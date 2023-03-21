@@ -1,31 +1,32 @@
 #include "consoleDisplay.h"
 
 void displayWithColor(Color color) {
+	char wall = '#';
 	switch (color)
 	{
 	case Color::Transparent:
-		std::cout << ". ";
+		std::cout << "  ";
 		break;
 	case Color::Cyan:
-		std::cout << "\x1B[36m# \033[0m";
+		std::cout << "\x1B[36m" << wall << " \033[0m";
 		break;
 	case Color::Yellow:
-		std::cout << "\x1B[33m# \033[0m";
+		std::cout << "\x1B[33m" << wall << " \033[0m";
 		break;
 	case Color::Purple:
-		std::cout << "\x1B[35m# \033[0m";
+		std::cout << "\x1B[35m" << wall << " \033[0m";
 		break;
 	case Color::Green:
-		std::cout << "\x1B[32m# \033[0m";
+		std::cout << "\x1B[32m" << wall << " \033[0m";
 		break;
 	case Color::Blue:
-		std::cout << "\x1B[34m# \033[0m";
+		std::cout << "\x1B[34m" << wall << " \033[0m";
 		break;
 	case Color::Red:
-		std::cout << "\x1B[31m# \033[0m";
+		std::cout << "\x1B[31m" << wall << " \033[0m";
 		break;
 	case Color::Orange:
-		std::cout << "\x1B[37m# \033[0m";
+		std::cout << "\x1B[37m" << wall << " \033[0m";
 		break;
 	default:
 		break;
@@ -148,7 +149,7 @@ void ConsoleDisplay::displayEmptyHoldPiece(ColorArray2D& board)
 		{
 			std::cout << "#";
 		}
-		std::cout << ". . . . ##\n";
+		std::cout << "        ##\n";
 	}
 
 	for (int i = 0; i < board.getWidth() * 2 + 3; i++) {

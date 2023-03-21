@@ -24,6 +24,11 @@ int main()
 	
 	high_resolution_clock::time_point lastAutomaticDrop = high_resolution_clock::now();
 
+	CONSOLE_CURSOR_INFO info;
+	info.dwSize = 100;
+	info.bVisible = false;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
+
 	while (game.getState() == GameState::OnGoing)
 	{
 		game.refreshUI();

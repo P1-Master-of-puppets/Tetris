@@ -134,6 +134,7 @@ void Game::refreshUI()
 		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
 
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
+		_display.displayHoldPiece(_holdPiece, _board);
 
 	}
 }

@@ -112,3 +112,47 @@ void ConsoleDisplay::display2DArray(ColorArray2D& colorArray, int startLine)
 	std::cout << "\n";
 
 }
+
+
+
+void ConsoleDisplay::displayHoldPiece(Piece* holdPiece, ColorArray2D& board)
+{
+	if (holdPiece == nullptr) {
+		displayEmptyHoldPiece(board);
+		return;
+	}
+
+	displayEmptyHoldPiece(board);
+	COORD topLeft = { 0, 26 };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), topLeft);
+	for (int i = 0; i < holdPiece->getPiece()->getHeight(); i++)
+	{
+		for (int j = 0; j < 13; j++) {
+			std::cout << "#";
+		}
+		for (int j = 0; j < holdPiece->getPiece()->getWidth(); j++)
+		{
+			displayWithColor(holdPiece->getPiece()->getGrid()[i][j]);
+		}
+		std::cout << "\n";
+	}
+
+}
+
+void ConsoleDisplay::displayEmptyHoldPiece(ColorArray2D& board)
+{
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < board.getWidth() *2 - 7 ; j++)
+		{
+			std::cout << "#";
+		}
+		std::cout << ". . . . ##\n";
+	}
+
+	for (int i = 0; i < board.getWidth() * 2 + 3; i++) {
+		std::cout << "#";
+	}
+
+}

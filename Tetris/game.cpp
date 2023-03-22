@@ -134,7 +134,6 @@ void Game::refreshUI()
 		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
 
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
-		_display.displayHoldPiece(_holdPiece, _board);
 
 	}
 }
@@ -179,26 +178,26 @@ int* Game::getFullRows(int& size)
 	int currentHighest = -1;
 	for (int i = 0; i < _board.getHeight(); i++)
 	{
+		bool isNotFull = false;
 		for (int j = 0; j < _board.getWidth(); j++)
 		{
 			Color couleur = _board.getGrid()[i][j];
+			if (couleur == Color::Transparent) {
+				isNotFull = true;
+			}
+
 			if (currentHighest == -1)
 			{
 				if (couleur != Color::Transparent)
 					currentHighest = i;
 			}
-			else {
-				if (couleur == Color::Transparent)
-				{
-					break;
-				}
 
-				if (j == _board.getWidth() - 1)
-				{
-					values[rowAmount] = i;
-					rowAmount++;
-				}
+			if (j == _board.getWidth() - 1 && !isNotFull)
+			{
+				values[rowAmount] = i;
+				rowAmount++;
 			}
+
 		}
 	}
 	_highestPiece = currentHighest - rowAmount;
@@ -330,6 +329,7 @@ void Game::swapPiece()
 	_currentPiece = getHoldPiece();
 	_holdPiece = tmpPiece;
 	_currentPiece->setCoordinate(tmpPiece->getCoordinate());
+	_display.displayHoldPiece(_holdPiece, _board);
 }
 
 // Recupere la piece en reserve

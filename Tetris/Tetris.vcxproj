@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="ControllerDebug|Win32">
+      <Configuration>ControllerDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ControllerDebug|x64">
+      <Configuration>ControllerDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -51,6 +59,12 @@
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='ControllerDebug|Win32'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='ControllerDebug|x64'">
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -139,43 +153,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="action.cpp" />
     <ClCompile Include="colorArray2D.cpp" />
     <ClCompile Include="consoleDisplay.cpp" />
+    <ClCompile Include="controller.cpp" />
+    <ClCompile Include="control.h" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameState.h" />
-    <ClCompile Include="inputDevice.cpp" />
-    <ClCompile Include="inputDevice.h" />
-    <ClCompile Include="keyboardInput.cpp" />
+    <ClCompile Include="gameActions.cpp" />
+    <ClCompile Include="gameActions.h" />
+    <ClCompile Include="holdAction.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="inputSetting.cpp" />
+    <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="leftL.cpp" />
     <ClCompile Include="leftS.cpp" />
     <ClCompile Include="longBar.cpp" />
     <ClCompile Include="piece.cpp" />
     <ClCompile Include="rightL.cpp" />
     <ClCompile Include="rightS.cpp" />
+    <ClCompile Include="SerialPort.cpp" />
+    <ClCompile Include="singleInputAction.cpp" />
     <ClCompile Include="square.cpp" />
+    <ClCompile Include="testActions.cpp" />
     <ClCompile Include="testDisplay.cpp" />
     <ClCompile Include="testGame.cpp" />
     <ClCompile Include="testPiece.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="thomas.cpp" />
+    <ClCompile Include="translateAction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="action.h" />
     <ClInclude Include="colorArray2D.h" />
     <ClInclude Include="colors.h" />
     <ClInclude Include="consoleDisplay.h" />
+    <ClInclude Include="controllerInputOutput.h" />
+    <ClInclude Include="controller.h" />
     <ClInclude Include="coordinate.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="keyboardInput.h" />
+    <ClInclude Include="inputSetting.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="holdAction.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="keyboard.h" />
     <ClInclude Include="leftL.h" />
     <ClInclude Include="leftS.h" />
     <ClInclude Include="longBar.h" />
     <ClInclude Include="piece.h" />
     <ClInclude Include="rightL.h" />
     <ClInclude Include="rightS.h" />
+    <ClInclude Include="SerialPort.hpp" />
+    <ClInclude Include="singleInputAction.h" />
     <ClInclude Include="square.h" />
+    <ClInclude Include="testActions.h" />
     <ClInclude Include="testDisplay.h" />
     <ClInclude Include="testGame.h" />
     <ClInclude Include="thomas.h" />
+    <ClInclude Include="translateAction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

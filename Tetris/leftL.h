@@ -7,7 +7,7 @@ class LeftL : public Piece
 {
 public:
     LeftL();
-    ~LeftL();
+    ~LeftL();  
 };
 
 #endif // LEFTL_H__

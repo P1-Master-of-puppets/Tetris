@@ -3,6 +3,7 @@
 
 #include "piece.h"
 
+
 class RightS : public Piece
 {
 public:

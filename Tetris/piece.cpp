@@ -5,6 +5,9 @@ Piece::Piece(int width, int height){
     _array->fill(Color::Transparent);
     _coordinate.x = 5;
     _coordinate.y = 2;
+    _width = width;
+    _height = height;
+
 }
 
 Piece::~Piece(){

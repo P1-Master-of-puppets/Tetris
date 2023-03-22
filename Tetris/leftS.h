@@ -10,6 +10,7 @@ public:
     ~LeftS();
     bool rotateLeft(const ColorArray2D& board);
     bool rotateRight(const ColorArray2D& board);
+
 private:
     bool rotateS(const ColorArray2D& board);
     bool isVertical;

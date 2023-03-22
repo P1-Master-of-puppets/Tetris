@@ -11,6 +11,7 @@ public:
     
     bool rotateLeft(const ColorArray2D& board);
     bool rotateRight(const ColorArray2D& board);
+
 private:
     bool vertical;
     bool rotateBar(const ColorArray2D& board);

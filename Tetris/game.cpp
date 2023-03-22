@@ -53,7 +53,6 @@ bool Game::rotatePieceLeft()
 
 bool Game::rotatePieceRight()
 {
-
 	if (_currentPiece->rotateRight(_board))
 	{
 		_isDirty = true;
@@ -100,9 +99,12 @@ bool Game::translatePieceDown()
 		delete rows;
 		_score += countLineScore(rowAmount);
 		_totalLines += rowAmount;
+		if (rowAmount == 4)
+			addTetris();
 		updateLvlAndGravity();
-		//Verify if the game is lost
-		return !gameLost();
+		updateThreat();
+		gameLost();
+		return false;
 	}
 
 	return true;
@@ -120,17 +122,25 @@ void Game::start()
 	_queue.pop();
 }
 
+
 void Game::refreshUI()
 {
 	if (_isDirty)
 	{
+		COORD topLeft = { 0, 0 };
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), topLeft);
+
 		_isDirty = false;
-		system("CLS");
 		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
 
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
 
 	}
+}
+
+void Game::setController(Controller* controller)
+{
+	_controller = controller;
 }
 
 Piece* Game::getRandomPiece() {
@@ -165,21 +175,32 @@ int* Game::getFullRows(int& size)
 	int* values = new int[4];
 
 	int rowAmount = 0;
-
+	int currentHighest = -1;
 	for (int i = 0; i < _board.getHeight(); i++)
 	{
+		bool isNotFull = false;
 		for (int j = 0; j < _board.getWidth(); j++)
 		{
-			if (_board.getGrid()[i][j] == Color::Transparent)
-				break;
+			Color couleur = _board.getGrid()[i][j];
+			if (couleur == Color::Transparent) {
+				isNotFull = true;
+			}
 
-			if (j == _board.getWidth() - 1)
+			if (currentHighest == -1)
+			{
+				if (couleur != Color::Transparent)
+					currentHighest = i;
+			}
+
+			if (j == _board.getWidth() - 1 && !isNotFull)
 			{
 				values[rowAmount] = i;
 				rowAmount++;
 			}
+
 		}
 	}
+	_highestPiece = currentHighest - rowAmount;
 	size = rowAmount;
 	return values;
 }
@@ -243,7 +264,7 @@ void Game::setGravity()
 {
 	if (_level < 9)
 	{
-		_gravityspeed_milliseconds = 1000* (((double)48 - ((double)_level * (double)5)) / (double)60);
+		_gravityspeed_milliseconds = 1000 * (((double)48 - ((double)_level * (double)5)) / (double)60);
 	}
 	else if (_level == 9)
 	{
@@ -251,9 +272,9 @@ void Game::setGravity()
 	}
 	else if (_level >= 10 && _level <= 12)
 	{
-		_gravityspeed_milliseconds = ((double)5 / (double)60)* 1000;
+		_gravityspeed_milliseconds = ((double)5 / (double)60) * 1000;
 	}
-	else if(_level >= 13 && _level <= 15)
+	else if (_level >= 13 && _level <= 15)
 	{
 		_gravityspeed_milliseconds = ((double)4 / (double)60) * 1000;
 	}
@@ -265,7 +286,7 @@ void Game::setGravity()
 	{
 		_gravityspeed_milliseconds = ((double)2 / (double)60) * 1000;
 	}
-	else 
+	else
 	{
 		_gravityspeed_milliseconds = ((double)1 / (double)60) * 1000;
 	}
@@ -285,5 +306,69 @@ int Game::countLineScore(const int& nbLine)
 		return 1200 * (_level + 1);
 	default:
 		return 0;
+	}
+}
+
+// FONCTION HOLD (ajoute par Daniel)
+
+void Game::instantDrop()
+{
+	while (translatePieceDown()) {
+	}
+}
+
+// echange la piece en courante avec la piece de reserve
+void Game::swapPiece()
+{
+	if (getHoldPiece()->isColliding(getHoldPiece()->getPiece(), _currentPiece->getCoordinate(), _board)) {
+		return;
+	}
+
+	_isDirty = true;
+	Piece* tmpPiece = _currentPiece;
+	_currentPiece = getHoldPiece();
+	_holdPiece = tmpPiece;
+	_currentPiece->setCoordinate(tmpPiece->getCoordinate());
+	_display.displayHoldPiece(_holdPiece, _board);
+}
+
+// Recupere la piece en reserve
+Piece* Game::getHoldPiece()
+{
+	if (_holdPiece == nullptr)
+	{
+		_holdPiece = _queue.front();
+		_queue.pop();
+		_queue.push(getRandomPiece());
+
+	}
+
+	return _holdPiece;
+}
+
+void Game::addTetris()
+{
+	_totalTetris++;
+	if (_controller != nullptr)
+	{
+		_controller->updateSevenSegment(_totalTetris);
+	}
+}
+
+void Game::updateThreat()
+{
+	int lvl = 22 - _highestPiece;
+	if (_controller != nullptr)
+	{
+		if (lvl <= 7)
+		{
+			_controller->updateThreatIndicator(1);
+		}
+		else if (lvl <= 14) {
+			_controller->updateThreatIndicator(2);
+		}
+		else {
+			_controller->updateThreatIndicator(3);
+		}
 	}
 }

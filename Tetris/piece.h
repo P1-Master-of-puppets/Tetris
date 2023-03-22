@@ -10,6 +10,8 @@ class Piece
 protected:
     ColorArray2D*  _array;
     Coordinate _coordinate;
+    int _width = 0;
+    int _height = 0;
 public:
     Piece(int width, int height);
     virtual ~Piece() = 0;

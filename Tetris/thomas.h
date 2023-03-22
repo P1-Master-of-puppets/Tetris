@@ -2,8 +2,8 @@
 #define THOMAS_H__
 
 #include <iostream>
-#include <typeinfo>
 #include "piece.h"
+
 
 class Thomas : public Piece
 {

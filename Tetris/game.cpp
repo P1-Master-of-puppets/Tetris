@@ -125,6 +125,8 @@ void Game::start()
 
 void Game::refreshUI()
 {
+	static bool firstTime = true;
+
 	if (_isDirty)
 	{
 		COORD topLeft = { 0, 0 };
@@ -136,6 +138,12 @@ void Game::refreshUI()
 		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
 
 	}
+
+	if (firstTime) {
+		_display.displayEmptyHoldPiece(_board);
+		firstTime = false;
+	}
+
 }
 
 void Game::setController(Controller* controller)

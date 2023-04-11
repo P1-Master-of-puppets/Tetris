@@ -1,8 +1,8 @@
+#pragma once
 #ifndef COLORARRAY2D_H__
 #define COLORARRAY2D_H__
 
 #include"colors.h"
-//https://www.geeksforgeeks.org/cpp-return-2d-array-from-function/
 class ColorArray2D {
 private:
 	int _width;

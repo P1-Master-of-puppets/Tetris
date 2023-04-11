@@ -150,6 +150,9 @@
     <ClCompile Include="inputSetting.cpp">
       <Filter>Source Files\DAL</Filter>
     </ClCompile>
+    <ClCompile Include="gameDisplay.cpp">
+      <Filter>Source Files\Display</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -232,6 +235,9 @@
     </ClInclude>
     <ClInclude Include="inputSetting.h">
       <Filter>Header Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="gameDisplay.h">
+      <Filter>Header Files\Display</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

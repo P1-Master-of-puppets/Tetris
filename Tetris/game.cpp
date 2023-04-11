@@ -1,8 +1,14 @@
 #include "game.h"
 
 
+Game::Game(int level, GameDisplay* setGameScene) : Game(level)
+{
+	_gameScene = setGameScene;
+}
+
 Game::Game(int level)
 {
+	_gameScene = nullptr;
 	_level = level;
 	srand(time(0));
 	_board.fill(Color::Transparent);
@@ -125,25 +131,7 @@ void Game::start()
 
 void Game::refreshUI()
 {
-	static bool firstTime = true;
-
-	if (_isDirty)
-	{
-		COORD topLeft = { 0, 0 };
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), topLeft);
-
-		_isDirty = false;
-		std::cout << "\nScore: " << _score << "\n" << "Level: " << _level << "\n" << "Nb of lines: " << _totalLines << "\n";
-
-		_display.displayBoardWithPiece(_board, _currentPiece, extraRow);
-
-	}
-
-	if (firstTime) {
-		_display.displayEmptyHoldPiece(_board);
-		firstTime = false;
-	}
-
+	_gameScene->refreshUI(&_board, _currentPiece, _holdPiece, _queue.front(), _score, _totalTetris, _level);
 }
 
 void Game::setController(Controller* controller)
@@ -317,8 +305,6 @@ int Game::countLineScore(const int& nbLine)
 	}
 }
 
-// FONCTION HOLD (ajoute par Daniel)
-
 void Game::instantDrop()
 {
 	while (translatePieceDown()) {
@@ -348,7 +334,6 @@ Piece* Game::getHoldPiece()
 		_holdPiece = _queue.front();
 		_queue.pop();
 		_queue.push(getRandomPiece());
-
 	}
 
 	return _holdPiece;

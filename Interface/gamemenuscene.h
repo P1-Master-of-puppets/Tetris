@@ -9,6 +9,8 @@
 #include "fullScreenRenderer.h"
 #include "assets.h"
 #include "toggledbutton.h"
+#include "coordinate.h"
+#include "rendererhelper.h"
 
 class GameMenuScene : public QGraphicsScene
 {

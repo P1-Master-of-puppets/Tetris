@@ -49,6 +49,6 @@ void ToggledButton::keyPressEvent(QKeyEvent* event) {
 		event->key() != Qt::Key_Return)
 		return;
 
-	if (_isToggled)
-		emit used();
+	//if (_isToggled)
+		//emit used();
 }

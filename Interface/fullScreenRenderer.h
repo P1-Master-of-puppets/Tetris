@@ -21,10 +21,4 @@ private:
 	QGraphicsScene* renderScene;
 };
 
-
-
 #endif // !FULLSCREENRENDERER_H
-
-
-
-

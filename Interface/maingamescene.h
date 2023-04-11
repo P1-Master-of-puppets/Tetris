@@ -8,6 +8,7 @@
 #include <QString>
 #include <QRandomGenerator>
 #include <QKeyEvent>
+#include <QObject>
 
 #include "screenMapper.h"
 #include "textRenderer.h"
@@ -19,7 +20,7 @@
 #include "assets.h"
 #include "gameDisplay.h"
 
-class MainGameScene : public QGraphicsScene, public GameDisplay
+class MainGameScene : public GameDisplay, public QGraphicsScene
 {
 
 public:

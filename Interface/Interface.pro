@@ -22,7 +22,8 @@ SOURCES += \
     screenMapper.cpp \
     textcounter.cpp \
     textRenderer.cpp \
-    pieceRenderer.cpp
+    pieceRenderer.cpp \
+    main.cpp
 
 
 HEADERS += \
@@ -42,7 +43,11 @@ HEADERS += \
     textRenderer.h \
     pieceRenderer.h
 
+INCLUDEPATH += ..\Tetris
+DEPENDPATH += ..\Tetris
+LIBS += ..\Tetris\Tetris.lib
 FORMS +=
+
 TEMPLATE = vcapp
 
 # Default rules for deployment.

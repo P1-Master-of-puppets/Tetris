@@ -5,8 +5,8 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
 #include <QPixmap>
-#include "colorArray2D.h"
-#include "coordinate.h"
+#include "./leftS.h"
+#include "./coordinate.h"
 #include "screenMapper.h"
 #include "assets.h"
 class BoardRenderer
